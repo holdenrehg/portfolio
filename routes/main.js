@@ -1,5 +1,4 @@
-/*
- * GET users listing.
+/**
+ * Non resourceful routes
  */
-
 module.exports = function(app) {};
