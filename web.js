@@ -4,7 +4,9 @@ var logfmt = require('logfmt');
 var http = require('http');
 var path = require('path');
 
-var app = express();
+console.log(' ---- Generating Holden Rehg Portfolio Site ---- ');
+
+app = express();
 
 app.use(logfmt.requestLogger());
 
@@ -27,13 +29,7 @@ if ('development' == app.get('env')) {
 
 
 // define routes
-app.get('/', function(req, res) {
-	res.render('index', { title: 'Express' });
-});
-
-app.get('/users', function(req, res) {
-	res.send("respond with a resource");
-});
+require('./routes');
 
 
 http.createServer(app).listen(app.get('port'), function(){

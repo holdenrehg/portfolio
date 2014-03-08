@@ -3,9 +3,26 @@
   <head>
     <title>{{ title }}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
   </head>
   <body>
-    <h1>{{ title }}</h1>
-    <p>Welcome to {{ title }}</p>
+  	<main>
+  		<nav>
+    		<i class="fa fa-home fa-2x"></i> 
+    		<i class="fa fa-code fa-2x"></i>
+    		<i class="fa fa-file fa-2x"></i>
+    		<i class="fa fa-phone fa-2x"></i> 
+    		<i class="fa fa-user fa-2x"></i> 
+    	</nav>
+    	<div class="grey-con">
+    		<div class="ignore-header"></div>
+	    	<div id="main-img" class="center-con" >
+	    		<i class="fa fa-laptop fa-5x dark"></i>
+	    		<p>Holden Rehg</p>
+	    		<p>Software Engineer</p>
+	    		<p>Web Developer</p>
+	    	</div>
+    	</div>
+  	</main>
   </body>
 </html>
