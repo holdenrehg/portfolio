@@ -3,11 +3,11 @@
 	var ui = {
 
 		// dom element ids
-		homeId: 'home',
-		contactId: 'contact',
-		resumeId: 'resume',
-		experienceId: 'experience',
-		shareId: 'share',
+		// homeId: 'home',
+		// contactId: 'contact',
+		// resumeId: 'resume',
+		// experienceId: 'experience',
+		// shareId: 'share',
 		laptopId: 'laptop',
 		titleDiv: 'title-con',
 
@@ -68,13 +68,14 @@
 		init: function() {
 
 			// find and set dom elements
-			ui.home = document.getElementById(ui.homeId);
-			ui.contact = document.getElementById(ui.contactId);
-			ui.resume = document.getElementById(ui.resumeId);
-			ui.experience = document.getElementById(ui.experienceId);
-			ui.share = document.getElementById(ui.shareId);
+			// ui.home = document.getElementById(ui.homeId);
+			// ui.contact = document.getElementById(ui.contactId);
+			// ui.resume = document.getElementById(ui.resumeId);
+			// ui.experience = document.getElementById(ui.experienceId);
+			// ui.share = document.getElementById(ui.shareId);
 			ui.laptop = document.getElementById(ui.laptopId);
 			ui.title = document.getElementById(ui.titleDiv);
+			ui.skills = document.querySelectorAll('#toolbelt > li');
 			ui.yOffset = window.scrollYOffset;
 
 			ui.addEventListeners();
@@ -82,36 +83,26 @@
 		},
 
 		addEventListeners: function() {
-			ui.contact.addEventListener('click', ui.clickContact);
-			ui.home.addEventListener('click', ui.clickHome);
-			ui.resume.addEventListener('click', ui.clickResume);
-			ui.experience.addEventListener('click', ui.clickExperience);
-			ui.share.addEventListener('click', ui.clickShare);
 			ui.laptop.addEventListener('click', ui.clickLaptop);
+
+			var numSkills = ui.skills.length;
+			for(var i = 0; i < numSkills; i+=1) {
+				ui.skills[i].addEventListener('click', ui.clickSkill, false);
+			}
 
 			window.onscroll = function() {
 				ui.scrollWindow();
 			};
 		},
 
-		clickContact: function(event) { 
-			console.log('clicked contact button');
-		},
+		clickSkill: function(event) {
+			// remove active from others
+			var numSkills = ui.skills.length;
+			for(var i = 0; i < numSkills; i+=1) {
+				ui.skills[i].classList.remove('circle-active');
+			}
 
-		clickHome: function(event) {
-			console.log('clicked home button');
-		},
-
-		clickResume: function(event) {
-			console.log('clicked resume button');
-		},
-
-		clickExperience: function(event) {
-			console.log('clicked experience button');
-		},
-
-		clickShare: function(event) {
-			console.log('clicked share button');
+			ui.toggle(this.classList, 'circle-active');
 		},
 
 		clickLaptop: function(event) {
@@ -191,6 +182,14 @@
 			pTag.fadeOut('slow', function() {
 				pTag.remove();
 			});
+		},
+
+		toggle: function(classes, className) {
+			if(classes.contains(className)) {
+				classes.remove(className);
+			} else {
+				classes.add(className);
+			}
 		}
 	};
 

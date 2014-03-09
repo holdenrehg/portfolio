@@ -14,9 +14,9 @@
 			<div>
 				<a data-scroll href="#home-sec"><i id="home" class="fa fa-home fa-2x"></i></a>
 				<a data-scroll href="#experience-sec"><i id="experience" class="fa fa-code fa-2x"></i></a>
-				<i id="resume" class="fa fa-file fa-2x"></i>
-				<i id="contact" class="fa fa-phone fa-2x"></i> 
-				<i id="share" class="fa fa-user fa-2x"></i> 
+				<a data-scroll href="#contract-sec"><i id="contact" class="fa fa-phone fa-2x"></i></a> 
+				<a href="../images/resume.pdf" target="_blank"><i id="resume" class="fa fa-file fa-2x"></i></a>
+				<!-- <a data-scroll href="#share-sec"><i id="share" class="fa fa-user fa-2x"></i></a>  -->
 			</div>
 		</nav>
 		<main>
@@ -35,7 +35,7 @@
 				<div class="center-con">
 					<h2 class="break">Tools</h2>
 					<p>List of languages, frameworks, and tools that I have expierence with.</p>
-					<ul id="toolbelt">
+					<ul id="toolbelt" class="circle">
 						<li><h3 style="margin-left:30px">PHP</h3></li>
 						<li><h3 style="margin-left:37px">JS</h3></li>
 						<!-- <li><h3 style="margin-left:22px">HTML</h3></li>
@@ -43,8 +43,40 @@
 						<li><h3 style="margin-left:24px">JAVA</h3></li>
 						<li><h3 style="margin-left:10px">MOBILE</h3></li>
 					</ul>
+
+					<div>
+						<ui id="work">
+							<li>example 1</li>
+							<li>example 2</li>
+							<li>example 3</li>
+							<li>example 4</li>
+						</ui>
+					</div>
 				</div>
 			</section>
+			<section id="contract-sec" class="white-con">
+				<div class="center-con">
+					<h4 class="center-break">holdenrehg@gmail.com</h4>
+					<h4>618.691.9180</h4>
+					<ul id="footer-social">
+						<li><a href="http://linkedin.com/in/holdenrehg"><i class="fa fa-linkedin fa-4x dark"></i></a></li>
+						<li><a href="http://twitter.com/reedrehg"><i class="fa fa-twitter fa-4x dark"></i></a></li>
+						<li><a href="http://github.com/holdenrehg"><i class="fa fa-github-alt fa-4x dark"></i></a></li>
+						<li><a href="https://plus.google.com/112345589054343397477"><i class="fa fa-google-plus fa-4x dark"></i></a></li>
+					</ul>
+				</div>
+			</section>
+			<div class="underline"></div>
+			<!-- <footer id="share-sec">
+				<div class="center-con">
+					<ul id="footer-social">
+						<li><a><i class="fa fa-twitter fa-4x dark"></i></a></li>
+						<li><a><i class="fa fa-linkedin fa-4x dark"></i></a></li>
+						<li><a><i class="fa fa-github-alt fa-4x dark"></i></a></li>
+						<li><a><i class="fa fa-google-plus fa-4x dark"></i></a></li>
+					</ul>
+				</div>
+			</footer> -->
 		</main>
 	</body>
 </html>

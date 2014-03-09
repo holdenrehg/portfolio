@@ -5,6 +5,7 @@
 
 html,body,main{
 	height:100%;
+	min-width:900px;
 }
 
 html,body{
@@ -20,33 +21,61 @@ body {
 main{
 }
 
+footer{
+	background: url('../images/black-linen.png');
+	height:100px;
+
+	margin-top:-12px; /* confused? */
+}
+
+#footer-social{
+	padding-top:30px;
+}
+
 a {
   color: #697980;
 }
 
 ul{
 	list-style: none;
-	width:100%;
+	/*width:100%;*/
 }
 
-li{
-	display: inline-block;
-	margin-right:80px;
+.circle > li{
+	line-height: 100px;
+	width: 100px;
+	height:100px;
 	border-radius: 50%;
 	border: 2px solid #697980;
 	background:#f5f5f5;
-	width: 100px;
-	height:100px;
 }
 
-li:hover{
-	background: #697980;
+#footer-social > li{
+	cursor:pointer;
+}
+
+#work > li{
+	width:150px;
+	height:150px;
+	background:#f5f5f5;
+}
+
+.circle > li:hover,
+.circle-active{
+	background: #697980 !important;
 	color: #fff;
 	cursor:pointer;
 }
 
-li > h3{
-	line-height: 100px;
+li{
+	display: inline-block;
+	margin-right:50px;
+	margin-left:30px;
+}
+
+li:hover{
+	color: #697980;
+	cursor:pointer;
 }
 
 /* Fonts */
@@ -72,6 +101,12 @@ h3{
 	font-weight:400;
 }
 
+h4{
+	font-size:20px;
+	font-weight:300;
+	color:#697980;
+}
+
 p{
 	font-size:15px;
 	font-weight:200;
@@ -81,7 +116,7 @@ p{
 	font-weight:600;
 }
 
-.fa:not(.dark){
+.fa:not(.dark):not(#laptop){
 	margin:0 35px 0 5px;
 	border-radius:50%;
 	font-weight:100;
@@ -89,12 +124,20 @@ p{
 }
 
 .fa:hover{
-	color:#ccc;
+	color:#ccc !important;
 	cursor:pointer;
 }
 
-.dark{
+#laptop{
 	color:#697980;
+}
+
+.dark{
+	color:#ccc;
+}
+
+.dark:hover{
+	color:#666 !important;
 }
 
 .fa-pad{
@@ -119,6 +162,7 @@ p{
 	height:50px;
 }
 
+.white-con,
 .light-grey-con,
 .grey-con{
 	height:100%;
@@ -126,9 +170,18 @@ p{
 	overflow:hidden;
 }
 
+.white-con,
+.light-grey-con{
+	color: #1F1F1F;
+}
+
+
+.white-con{
+	background:#fff;
+}
+
 .light-grey-con{
 	background:#eee;
-	color: #1F1F1F;
 }
 
 .grey-con{
@@ -164,6 +217,11 @@ nav{
 
 .break{
 	padding-top:100px;
+}
+
+.center-break{
+	padding-top:12em;
+	/*padding-top:25%;*/
 }
 
 .wrap{
