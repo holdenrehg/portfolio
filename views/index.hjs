@@ -6,27 +6,43 @@
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 		<script type="text/javascript" src="../javascripts/ui.js"></script>
+		<script type="text/javascript" src="../javascripts/vendor/smooth-scroll/smooth-scroll.js"></script>
 	</head>
 	<body>
 		<nav>
-			<i id="home" class="fa fa-home fa-2x"></i> 
-			<i id="experience" class="fa fa-code fa-2x"></i>
-			<i id="resume" class="fa fa-file fa-2x"></i>
-			<i id="contact" class="fa fa-phone fa-2x"></i> 
-			<i id="share" class="fa fa-user fa-2x"></i> 
+			<div>
+				<a data-scroll href="#home-sec"><i id="home" class="fa fa-home fa-2x"></i></a>
+				<a data-scroll href="#experience-sec"><i id="experience" class="fa fa-code fa-2x"></i></a>
+				<i id="resume" class="fa fa-file fa-2x"></i>
+				<i id="contact" class="fa fa-phone fa-2x"></i> 
+				<i id="share" class="fa fa-user fa-2x"></i> 
+			</div>
 		</nav>
 		<main>
-			<div class="grey-con">
+			<section id="home-sec" class="grey-con">
 				<div class="ignore-header"></div>
 				<div class="center-con" >
-					<div id="main-img" class="main-img">
-						<i id="laptop" class="fa fa-laptop fa-5x dark"></i>
-						<p><strong>Holden Rehg</strong></p>
-						<p>Software Engineer</p>
-						<p>Web Developer</p>
+					<div id="title-con">
+						<h1>Software Engineer // Web Developer</h1>
+						<i id="laptop" class="fa fa-laptop fa-3x dark fa-pad"></i>
+						<p>Loves full stack web development.</p>
 					</div>
 				</div>
-			</div>
+			</section>
+			<div class="underline"></div>
+			<section id="experience-sec" class="light-grey-con">
+				<div class="center-con">
+					<h2 class="break">Tools</h2>
+					<p>List of languages, frameworks, and tools that I have expierence with.</p>
+					<ul id="toolbelt">
+						<li><h3 style="margin-left:30px">PHP</h3></li>
+						<li><h3 style="margin-left:37px">JS</h3></li>
+						<li><h3 style="margin-left:22px">HTML</h3></li>
+						<li><h3 style="margin-left:30px">CSS</h3></li>
+						<li><h3 style="margin-left:24px">JAVA</h3></li>
+					</ul>
+				</div>
+			</section>
 		</main>
 	</body>
 </html>
