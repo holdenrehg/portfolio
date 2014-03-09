@@ -25,7 +25,7 @@
 					<div id="title-con">
 						<h1>Software Engineer // Web Developer</h1>
 						<i id="laptop" class="fa fa-laptop fa-3x dark fa-pad"></i>
-						<p>Loves full stack web development.</p>
+						<p>Full stack web, mobile, and non-web based applications development</p>
 					</div>
 				</div>
 			</section>
@@ -37,9 +37,10 @@
 					<ul id="toolbelt">
 						<li><h3 style="margin-left:30px">PHP</h3></li>
 						<li><h3 style="margin-left:37px">JS</h3></li>
-						<li><h3 style="margin-left:22px">HTML</h3></li>
-						<li><h3 style="margin-left:30px">CSS</h3></li>
+						<!-- <li><h3 style="margin-left:22px">HTML</h3></li>
+						<li><h3 style="margin-left:30px">CSS</h3></li> -->
 						<li><h3 style="margin-left:24px">JAVA</h3></li>
+						<li><h3 style="margin-left:10px">MOBILE</h3></li>
 					</ul>
 				</div>
 			</section>
