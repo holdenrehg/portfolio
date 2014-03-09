@@ -15,7 +15,7 @@
 				<a data-scroll href="#home-sec"><i id="home" class="fa fa-home fa-2x"></i></a>
 				<a data-scroll href="#experience-sec"><i id="experience" class="fa fa-code fa-2x"></i></a>
 				<a data-scroll href="#contract-sec"><i id="contact" class="fa fa-phone fa-2x"></i></a> 
-				<a href="../images/resume.pdf" target="_blank"><i id="resume" class="fa fa-file fa-2x"></i></a>
+				<a href="../images/Rehg_Resume.pdf" target="_blank"><i id="resume" class="fa fa-file fa-2x"></i></a>
 				<!-- <a data-scroll href="#share-sec"><i id="share" class="fa fa-user fa-2x"></i></a>  -->
 			</div>
 		</nav>
