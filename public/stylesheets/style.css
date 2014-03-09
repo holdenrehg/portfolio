@@ -34,6 +34,12 @@ footer{
 
 a {
   color: #697980;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ccc;
+  cursor:pointer;
 }
 
 ul{
