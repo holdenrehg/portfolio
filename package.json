@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "",
-    "start": "node web.js"
+    "start": "node web.js",
+	"push": "git push heroku master && git push github master",
   },
   "repository": {
     "type": "git",
