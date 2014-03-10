@@ -47,7 +47,7 @@ ul{
 	/*width:100%;*/
 }
 
-.circle > li{
+.circle li{
 	line-height: 100px;
 	width: 100px;
 	height:100px;
@@ -56,17 +56,17 @@ ul{
 	background:#f5f5f5;
 }
 
-#footer-social > li{
+#footer-social li{
 	cursor:pointer;
 }
 
-#work > li{
-	width:150px;
+#work li{
+	width:15%;
 	height:150px;
 	background:#f5f5f5;
 }
 
-.circle > li:hover,
+.circle li:hover,
 .circle-active{
 	background: #697980 !important;
 	color: #fff;
@@ -75,8 +75,6 @@ ul{
 
 li{
 	display: inline-block;
-	margin-right:50px;
-	margin-left:30px;
 }
 
 li:hover{
@@ -149,6 +147,9 @@ p{
 .fa-pad{
 	margin:30px 0 30px 0;
 }
+
+/* Grids */
+
 
 /* Containers */
 

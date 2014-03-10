@@ -36,20 +36,20 @@
 					<h2 class="break">Tools</h2>
 					<p>List of languages, frameworks, and tools that I have expierence with.</p>
 					<ul id="toolbelt" class="circle">
-						<li><h3 style="margin-left:30px">PHP</h3></li>
-						<li><h3 style="margin-left:37px">JS</h3></li>
-						<!-- <li><h3 style="margin-left:22px">HTML</h3></li>
-						<li><h3 style="margin-left:30px">CSS</h3></li> -->
-						<li><h3 style="margin-left:24px">JAVA</h3></li>
-						<li><h3 style="margin-left:10px">MOBILE</h3></li>
+						<div style="display:inline-block; width: 20%;"><li><h3 style="margin-left:30px">PHP</h3></li></div>
+						<div style="display:inline-block; width: 20%;"><li><h3 style="margin-left:37px">JS</h3></li></div>
+						<div style="display:inline-block; width: 20%;"><li><h3 style="margin-left:24px">JAVA</h3></li></div>
+						<div style="display:inline-block; width: 20%;"><li><h3 style="margin-left:10px">MOBILE</h3></li></div>
 					</ul>
 
 					<div>
 						<ui id="work">
-							<li>example 1</li>
-							<li>example 2</li>
-							<li>example 3</li>
-							<li>example 4</li>
+							<div style="padding-top:60px"> 
+								<div style="display:inline-block; width: 20%;"><li style="width:100%">example 1</li></div>
+								<div style="display:inline-block; width: 20%;"><li style="width:100%">example 2</li></div>
+								<div style="display:inline-block; width: 20%;"><li style="width:100%">example 3</li></div>
+								<div style="display:inline-block; width: 20%;"><li style="width:100%">example 4</li></div>
+							</div>
 						</ui>
 					</div>
 				</div>

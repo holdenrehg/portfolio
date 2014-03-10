@@ -65,6 +65,21 @@
 			'var set = new Set(); set.add("yes").add("no").add("yes"); set.length === 2;'
 		],
 
+		skills: {
+			'php': {
+
+			},
+			'js': {
+
+			},
+			'java':{
+
+			},
+			'mobile':{
+
+			}
+		},
+
 		init: function() {
 
 			// find and set dom elements
@@ -75,7 +90,7 @@
 			// ui.share = document.getElementById(ui.shareId);
 			ui.laptop = document.getElementById(ui.laptopId);
 			ui.title = document.getElementById(ui.titleDiv);
-			ui.skills = document.querySelectorAll('#toolbelt > li');
+			ui.skills = document.querySelectorAll('#toolbelt li');
 			ui.yOffset = window.scrollYOffset;
 
 			ui.addEventListeners();
