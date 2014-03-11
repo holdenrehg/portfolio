@@ -95,10 +95,17 @@
 
 			ui.addEventListeners();
 			smoothScroll.init();
+
+			// start animation after 30 seconds
+			setTimeout(function() {
+				if(!ui.interval) {
+					ui.typingAnimation();
+				}
+			}, 30000);
 		},
 
 		addEventListeners: function() {
-			ui.laptop.addEventListener('click', ui.clickLaptop);
+			ui.laptop.addEventListener('click', ui.typingAnimation);
 
 			var numSkills = ui.skills.length;
 			for(var i = 0; i < numSkills; i+=1) {
@@ -120,8 +127,7 @@
 			ui.toggle(this.classList, 'circle-active');
 		},
 
-		clickLaptop: function(event) {
-			console.log('clicked laptop button');
+		typingAnimation: function(event) {
 			ui.laptop.removeEventListener('click', ui.clickLaptop, false);
 
 			// fun stuff
@@ -129,24 +135,19 @@
 		
 			var i = 0;
 			var length = ui.code.length;
-			var interval = setInterval(function() {
-				if(i === length - 1) {
-					clearInterval(interval);
-					ui.laptop.addEventListener('click', ui.clickLaptop);
-				}
-				console.log('iter : ' + i);
-
-				var randomHeight = Math.floor(Math.random() * home.height());
+			ui.interval = setInterval(function() {
+				
+				var randomHeight = Math.floor(Math.random() * 500);
 				var randomWidth = Math.floor(Math.random() * home.width());
 
-				console.log('height: ' + randomHeight + ' width: ' + randomWidth);
+				// console.log('height: ' + randomHeight + ' width: ' + randomWidth);
 
 				var id = 'code-animate-' + i;
-				home.append('<pre id="' + id + '" style="opacity:.08; position:absolute; top: ' + randomHeight  + 'px; left: ' + randomWidth/2.1 + 'px"></pre>');
+				home.append('<pre id="' + id + '" style="z-index: 0; color:#292929; position:absolute; top: ' + randomHeight  + 'px; left: ' + randomWidth/1.7 + 'px"></pre>');
 			
 				ui.typeCode(ui.code[i], id);
 
-				i++;
+				i = ++i % (length - 1);
 			}, 500);
 
 			// can only use it once
