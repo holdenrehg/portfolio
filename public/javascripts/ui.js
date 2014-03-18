@@ -2,12 +2,6 @@
 
 	var ui = {
 
-		// dom element ids
-		// homeId: 'home',
-		// contactId: 'contact',
-		// resumeId: 'resume',
-		// experienceId: 'experience',
-		// shareId: 'share',
 		laptopId: 'laptop',
 		titleDiv: 'title-con',
 		leftDiv: 'left-arrow',
@@ -16,9 +10,9 @@
 		workTitleDiv: 'work-title',
 		workInfoDiv: 'work-info',
 
-		// config settings
-
-		// code snippets for animation
+		/**
+		 * Static code snippets for typing animation
+		 */
 		code: [
 			'for(int iter = 0; iter < name.length; iter+=1){}',
 			'(function() { Object.create(Map.prototype) })()',
@@ -70,6 +64,10 @@
 			'var set = new Set(); set.add("yes").add("no").add("yes"); set.length === 2;'
 		],
 
+		/**
+		 * Object to keep track of skills display state, and the static content
+		 * for each skill
+		 */
 		skillsInfo: {
 			current: {
 				skill: 'php',
@@ -117,25 +115,22 @@
 			]
 		},
 
-		currentSkill: 'php',
-
+		/**
+		 * Initialize the ui for the single page portfolio site
+		 */ 
 		init: function() {
 
+			ui.yOffset 		= window.scrollYOffset;
+
 			// find and set dom elements
-			// ui.home = document.getElementById(ui.homeId);
-			// ui.contact = document.getElementById(ui.contactId);
-			// ui.resume = document.getElementById(ui.resumeId);
-			// ui.experience = document.getElementById(ui.experienceId);
-			// ui.share = document.getElementById(ui.shareId);
-			ui.laptop = document.getElementById(ui.laptopId);
-			ui.title = document.getElementById(ui.titleDiv);
-			ui.skills = document.querySelectorAll('#toolbelt li');
-			ui.yOffset = window.scrollYOffset;
-			ui.left = document.getElementById(ui.leftDiv);
-			ui.right = document.getElementById(ui.rightDiv);
-			ui.work = document.getElementById(ui.workDiv);
-			ui.workTitle = document.getElementById(ui.workTitleDiv);
-			ui.workInfo = document.getElementById(ui.workInfoDiv);
+			ui.laptop 		= document.getElementById(ui.laptopId);
+			ui.title 		= document.getElementById(ui.titleDiv);
+			ui.skills 		= document.querySelectorAll('#toolbelt li');
+			ui.left 		= document.getElementById(ui.leftDiv);
+			ui.right 		= document.getElementById(ui.rightDiv);
+			ui.work 		= document.getElementById(ui.workDiv);
+			ui.workTitle 	= document.getElementById(ui.workTitleDiv);
+			ui.workInfo 	= document.getElementById(ui.workInfoDiv);
 
 			ui.addEventListeners();
 			smoothScroll.init();
@@ -148,6 +143,9 @@
 			}, 30000);
 		},
 
+		/**
+		 * Add all event listeners for the entire page
+		 */
 		addEventListeners: function() {
 			ui.laptop.addEventListener('click', ui.typingAnimation);
 			ui.left.addEventListener('click', ui.clickLeft);
@@ -161,6 +159,12 @@
 			window.onscroll = ui.scrollWindow;
 		},
 
+		/**
+		 * Event Listener
+		 *
+		 * Fires when the skill bubble is clicked, updating the work
+		 * information to reflect the clicked skill
+		 */
 		clickSkill: function(event) {
 			// remove active from others
 			var numSkills = ui.skills.length;
@@ -176,6 +180,13 @@
 			ui.updateWork();
 		},
 
+		/**
+		 * Event Listener
+		 *
+		 * Fires when the left array next to the work section is clicked,
+		 * which changes the work information to the previous example in the
+		 * array of work for the current skill
+		 */
 		clickLeft: function(event) {
 			console.log('click left');
 			var skill = ui.skillsInfo.current.skill;
@@ -185,6 +196,13 @@
 			ui.updateWork();
 		},
 
+		/**
+		 * Event Listener
+		 *
+		 * Fires when the right array next to the work section is clicked,
+		 * which changes the work information to the next example in the
+		 * array of work for the current skill
+		 */
 		clickRight: function(event) {
 			console.log('click right');
 			var skill = ui.skillsInfo.current.skill;
@@ -194,6 +212,10 @@
 			ui.updateWork();
 		},
 
+		/**
+		 * Helper method to update the work example info to the current skill and example,
+		 * determined the skillInfo object
+		 */
 		updateWork: function() {
 			var workObj = ui.skillsInfo[ui.skillsInfo.current.skill][ui.skillsInfo.current.iter];
 
@@ -202,7 +224,15 @@
 			ui.workInfo.innerHTML = workObj.info;
 		},
 
+		/**
+		 * Event Listener
+		 *
+		 * Fires when either the laptop icon is clicked on the home view,
+		 * or after 30 seconds have passed. The animation will run infinetly after
+		 * it has begun.
+		 */
 		typingAnimation: function(event) {
+			// remove the click listener on the laptop icon
 			ui.laptop.removeEventListener('click', ui.clickLaptop, false);
 
 			// fun stuff
@@ -215,8 +245,6 @@
 				var randomHeight = Math.floor(Math.random() * 500);
 				var randomWidth = Math.floor(Math.random() * home.width());
 
-				// console.log('height: ' + randomHeight + ' width: ' + randomWidth);
-
 				var id = 'code-animate-' + i;
 				home.append('<pre id="' + id + '" style="z-index: 0; color:#292929; position:absolute; top: ' + randomHeight  + 'px; left: ' + randomWidth/1.7 + 'px"></pre>');
 			
@@ -224,8 +252,6 @@
 
 				i = ++i % (length - 1);
 			}, 500);
-
-			// can only use it once
 		},
 
 		/**
@@ -252,6 +278,13 @@
 			ui.yOffset = offset;
 		},
 
+		/**
+		 * Helper method to print a snippet of code to the screen, one
+		 * character at a time
+		 *
+		 * @param code, the snippet of code
+		 * @param id, the div id to print the snippet inside of
+		 */
 		typeCode: function(code, id) {
 			var codeLength = code.length;
 			var pTag = $('#' + id);
@@ -268,13 +301,27 @@
 			}, Math.floor(Math.random() * 100) + 50);
 		},
 
-		eradeCode: function(id, callback) {
+		/**
+		 * Helper method to erase code that was already printed to the screen
+		 *
+		 * @param id, the div id to erase
+		 */
+		eradeCode: function(id) {
 			var pTag = $('#' + id);
 			pTag.fadeOut('slow', function() {
 				pTag.remove();
 			});
 		},
 
+		/**
+		 * Helper method to toggle a specific class on or off
+		 * from a given list of class name. Will be added to the class
+		 * list if the dom element does not already contain the class,
+		 * or removed if it does contain the class.
+		 *
+		 * @param classes, a classList object from an element
+		 * @param className, the name to be toggled on or off
+		 */
 		toggle: function(classes, className) {
 			if(classes.contains(className)) {
 				classes.remove(className);
@@ -284,7 +331,5 @@
 		}
 	};
 
-	window.onload = function() {
-		ui.init();
-	};
+	window.onload = ui.init;
 })();
