@@ -33,25 +33,45 @@
 			<div class="underline"></div>
 			<section id="experience-sec" class="light-grey-con">
 				<div class="center-con">
-					<h2 class="break">Tools</h2>
-					<p>List of languages, frameworks, and tools that I have expierence with.</p>
-					<ul id="toolbelt" class="circle">
-						<div style="display:inline-block; width: 20%;"><li><h3 style="margin-left:30px">PHP</h3></li></div>
-						<div style="display:inline-block; width: 20%;"><li><h3 style="margin-left:37px">JS</h3></li></div>
-						<div style="display:inline-block; width: 20%;"><li><h3 style="margin-left:24px">JAVA</h3></li></div>
-						<div style="display:inline-block; width: 20%;"><li><h3 style="margin-left:10px">MOBILE</h3></li></div>
-					</ul>
-
-					<div>
-						<ui id="work">
-							<div style="padding-top:60px"> 
-								<div style="display:inline-block; width: 20%;"><li style="width:100%">example 1</li></div>
-								<div style="display:inline-block; width: 20%;"><li style="width:100%">example 2</li></div>
-								<div style="display:inline-block; width: 20%;"><li style="width:100%">example 3</li></div>
-								<div style="display:inline-block; width: 20%;"><li style="width:100%">example 4</li></div>
+					<!-- <h2 class="break">Tools</h2> -->
+					<!-- <p>List of languages, frameworks, and tools that I have expierence with.</p> -->
+					<div style="width:100%;">
+						<!-- <ui id="work"> -->
+							<div id="left-arrow" style="display:inline-block;cursor:pointer;">
+								<i style="color:#697980" class="fa fa-angle-left fa-5x"></i>
 							</div>
-						</ui>
+							<div id="work" style="padding-top:120px; display:inline-block;">
+								<h5 id="work-title">Zend Framework 2</h5> 
+								<p id="work-info">Professional Experience at Iowa State University Student Web Development</p>
+
+								<!-- <div style="display:inline-block; width: 18%;">
+									<li style="width:100%">
+									</li>
+								</div>
+								<div style="display:inline-block; width: 18%;">
+									<li style="width:100%">
+									</li>
+								</div>
+								<div style="display:inline-block; width: 18%;">
+									<li style="width:100%">
+									</li>
+								</div>
+								<div style="display:inline-block; width: 18%;">
+									<li style="width:100%">
+									</li>
+								</div> -->
+							</div>
+							<div id="right-arrow" style="display:inline-block;cursor:pointer;">
+								<i style="color:#697980" class="fa fa-angle-right fa-5x"></i>
+							</div>
+						<!-- </ui> -->
 					</div>
+					<ul id="toolbelt" class="circle">
+						<div class="grid-4"><li id="php" class="circle-active"><h3 style="margin-left:30px">PHP</h3></li></div>
+						<div class="grid-4"><li id="js"><h3 style="margin-left:37px">JS</h3></li></div>
+						<div class="grid-4"><li id="javaL"><h3 style="margin-left:24px">JAVA</h3></li></div>
+						<div class="grid-4"><li id="mobile"><h3 style="margin-left:10px">MOBILE</h3></li></div>
+					</ul>
 				</div>
 			</section>
 			<section id="contract-sec" class="white-con">

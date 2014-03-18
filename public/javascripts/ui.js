@@ -10,6 +10,11 @@
 		// shareId: 'share',
 		laptopId: 'laptop',
 		titleDiv: 'title-con',
+		leftDiv: 'left-arrow',
+		rightDiv: 'right-arrow',
+		workDiv: 'work',
+		workTitleDiv: 'work-title',
+		workInfoDiv: 'work-info',
 
 		// config settings
 
@@ -65,20 +70,54 @@
 			'var set = new Set(); set.add("yes").add("no").add("yes"); set.length === 2;'
 		],
 
-		skills: {
-			'php': {
-
+		skillsInfo: {
+			current: {
+				skill: 'php',
+				iter: 0
 			},
-			'js': {
-
-			},
-			'java':{
-
-			},
-			'mobile':{
-
-			}
+			php: [
+				{
+					title: 'Zend Framework 2',
+					info: 'Professional Experience at Iowa State University Student Web Development'
+				},
+				{
+					title: 'Testing',
+					info: 'fake filler information'
+				}
+			],
+			js: [
+				{
+					title: 'Backbone.js',
+					info: 'stuff about backbone'
+				},
+				{
+					title: 'Testing',
+					info: 'fake filler information'
+				}
+			],
+			javaL:[
+				{
+					title: 'Iowa State Universty',
+					info: 'learned much'
+				},
+				{
+					title: 'Testing',
+					info: 'fake filler information'
+				}
+			],
+			mobile:[
+				{
+					title: 'SoCal',
+					info: 'A whole lotta good stuff about socal'
+				},
+				{
+					title: 'Testing',
+					info: 'fake filler information'
+				}
+			]
 		},
+
+		currentSkill: 'php',
 
 		init: function() {
 
@@ -92,6 +131,11 @@
 			ui.title = document.getElementById(ui.titleDiv);
 			ui.skills = document.querySelectorAll('#toolbelt li');
 			ui.yOffset = window.scrollYOffset;
+			ui.left = document.getElementById(ui.leftDiv);
+			ui.right = document.getElementById(ui.rightDiv);
+			ui.work = document.getElementById(ui.workDiv);
+			ui.workTitle = document.getElementById(ui.workTitleDiv);
+			ui.workInfo = document.getElementById(ui.workInfoDiv);
 
 			ui.addEventListeners();
 			smoothScroll.init();
@@ -106,15 +150,15 @@
 
 		addEventListeners: function() {
 			ui.laptop.addEventListener('click', ui.typingAnimation);
+			ui.left.addEventListener('click', ui.clickLeft);
+			ui.right.addEventListener('click', ui.clickRight);
 
 			var numSkills = ui.skills.length;
 			for(var i = 0; i < numSkills; i+=1) {
 				ui.skills[i].addEventListener('click', ui.clickSkill, false);
 			}
 
-			window.onscroll = function() {
-				ui.scrollWindow();
-			};
+			window.onscroll = ui.scrollWindow;
 		},
 
 		clickSkill: function(event) {
@@ -125,6 +169,37 @@
 			}
 
 			ui.toggle(this.classList, 'circle-active');
+
+			// update current info
+			ui.skillsInfo.current.skill = this.id;
+			ui.skillsInfo.current.iter = 0;
+			ui.updateWork();
+		},
+
+		clickLeft: function(event) {
+			console.log('click left');
+			var skill = ui.skillsInfo.current.skill;
+			var iter = ui.skillsInfo.current.iter - 1 < 0 ? ui.skillsInfo[skill].length - 1 : ui.skillsInfo.current.iter - 1;
+
+			ui.skillsInfo.current.iter = iter;
+			ui.updateWork();
+		},
+
+		clickRight: function(event) {
+			console.log('click right');
+			var skill = ui.skillsInfo.current.skill;
+			var iter = (ui.skillsInfo.current.iter + 1) % ui.skillsInfo[skill].length;
+
+			ui.skillsInfo.current.iter = iter;
+			ui.updateWork();
+		},
+
+		updateWork: function() {
+			var workObj = ui.skillsInfo[ui.skillsInfo.current.skill][ui.skillsInfo.current.iter];
+
+			// update div info
+			ui.workTitle.innerHTML = workObj.title;
+			ui.workInfo.innerHTML = workObj.info;
 		},
 
 		typingAnimation: function(event) {
