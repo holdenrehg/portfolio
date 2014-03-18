@@ -20,13 +20,13 @@ body {
 
 main{
 }
-
+/*
 footer{
 	background: url('../images/black-linen.png');
 	height:100px;
 
 	margin-top:-12px; /* confused? */
-}
+/*}*/
 
 section{
 	min-height:500px;
@@ -190,6 +190,10 @@ p{
 	width:79%;	
 }
 
+#work-info{
+	color: #697980;
+}
+
 #left-arrow,
 #right-arrow{
 	width:10%;
@@ -241,7 +245,8 @@ p{
 }
 
 .light-grey-con{
-	background:#eee;
+	background: url('../images/linen.png');
+	/*background:#eee;*/
 }
 
 .grey-con{
