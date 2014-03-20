@@ -27,7 +27,6 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-
 // define routes
 require('./routes');
 

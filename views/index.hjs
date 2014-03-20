@@ -10,14 +10,14 @@
 		<script type="text/javascript" src="../javascripts/vendor/smooth-scroll/smooth-scroll.js"></script>
 	</head>
 	<body>
-		<nav>
+		<header>
 			<div>
 				<a data-scroll href="#home-sec"><i id="home" class="fa fa-home fa-2x"></i></a>
 				<a data-scroll href="#experience-sec"><i id="experience" class="fa fa-code fa-2x"></i></a>
 				<a data-scroll href="#contract-sec"><i id="contact" class="fa fa-phone fa-2x"></i></a> 
 				<a href="../images/Rehg_Resume.pdf" target="_blank"><i id="resume" class="fa fa-file fa-2x"></i></a>
 			</div>
-		</nav>
+		</header>
 		<main>
 			<section id="home-sec" class="grey-con">
 				<div class="ignore-header"></div>
@@ -32,23 +32,24 @@
 			<div class="underline"></div>
 			<section id="experience-sec" class="light-grey-con">
 				<div class="center-con">
-					<div style="width:100%;">
+					<div style="width:100%;min-height:250px;">
 						<div id="left-arrow" style="display:inline-block;cursor:pointer;">
-							<i style="color:#697980" class="fa fa-angle-left fa-5x"></i>
+							<i class="fa fa-angle-left fa-5x blue"></i>
 						</div>
 						<div id="work" style="padding-top:120px; display:inline-block;">
-							<h5 id="work-title">Zend Framework 2</h5> 
-							<p id="work-info">Professional Experience at Iowa State University Student Web Development</p>
+							<h5 id="work-title"></h5> 
+							<p id="work-info"></p>
 						</div>
 						<div id="right-arrow" style="display:inline-block;cursor:pointer;">
-							<i style="color:#697980" class="fa fa-angle-right fa-5x"></i>
+							<i class="fa fa-angle-right fa-5x blue"></i>
 						</div>
 					</div>
 					<ul id="toolbelt" class="circle">
-						<div class="grid-4"><li id="php" class="circle-active"><h3 style="margin-left:30px">PHP</h3></li></div>
-						<div class="grid-4"><li id="js"><h3 style="margin-left:37px">JS</h3></li></div>
-						<div class="grid-4"><li id="javaL"><h3 style="margin-left:24px">JAVA</h3></li></div>
-						<div class="grid-4"><li id="mobile"><h3 style="margin-left:10px">MOBILE</h3></li></div>
+						<div class="grid-5"><li id="jobs" class="circle"><h3 style="margin-left:24px">JOBS</h3></li></div>
+						<div class="grid-5"><li id="php" class="circle"><h3 style="margin-left:30px">PHP</h3></li></div>
+						<div class="grid-5"><li id="js"><h3 style="margin-left:37px">JS</h3></li></div>
+						<div class="grid-5"><li id="javaL"><h3 style="margin-left:24px">JAVA</h3></li></div>
+						<div class="grid-5"><li id="mobile"><h3 style="margin-left:10px">MOBILE</h3></li></div>
 					</ul>
 				</div>
 			</section>
