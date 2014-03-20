@@ -114,7 +114,7 @@
 				},
 				{
 					title: 'Express',
-					info: 'A small amount of experience expermimenting with Express Node.js framework building this portfolio site.<br><a href="#">See the source</a>'
+					info: 'A small amount of experience experimenting with Express Node.js framework building this portfolio site.<br><a href="https://github.com/holdenrehg/portfolio" target="_blank">See the source</a>'
 				}
 			],
 			// java is a reserved word?
