@@ -32,24 +32,44 @@
 			<div class="underline"></div>
 			<section id="experience-sec" class="light-grey-con">
 				<div class="center-con">
-					<div style="width:100%;min-height:250px;">
-						<div id="left-arrow" style="display:inline-block;cursor:pointer;">
+					<div class="row">
+						<div id="left-arrow">
 							<i class="fa fa-angle-left fa-5x blue"></i>
 						</div>
-						<div id="work" style="padding-top:120px; display:inline-block;">
+						<div id="work" style="padding-top:120px;">
 							<h5 id="work-title"></h5> 
 							<p id="work-info"></p>
 						</div>
-						<div id="right-arrow" style="display:inline-block;cursor:pointer;">
+						<div id="right-arrow">
 							<i class="fa fa-angle-right fa-5x blue"></i>
 						</div>
 					</div>
 					<ul id="toolbelt" class="circle">
-						<div class="grid-5"><li id="jobs" class="circle"><h3 style="margin-left:24px">JOBS</h3></li></div>
-						<div class="grid-5"><li id="php" class="circle"><h3 style="margin-left:30px">PHP</h3></li></div>
-						<div class="grid-5"><li id="js"><h3 style="margin-left:37px">JS</h3></li></div>
-						<div class="grid-5"><li id="javaL"><h3 style="margin-left:24px">JAVA</h3></li></div>
-						<div class="grid-5"><li id="mobile"><h3 style="margin-left:10px">MOBILE</h3></li></div>
+						<div class="grid-5">
+							<li id="jobs">
+								<h3 style="margin-left:24px">JOBS</h3>
+							</li>
+						</div>
+						<div class="grid-5">
+							<li id="php">
+								<h3 style="margin-left:30px">PHP</h3>
+							</li>
+						</div>
+						<div class="grid-5">
+							<li id="js">
+								<h3 style="margin-left:37px">JS</h3>
+							</li>
+						</div>
+						<div class="grid-5">
+							<li id="javaL">
+								<h3 style="margin-left:24px">JAVA</h3>
+							</li>
+						</div>
+						<div class="grid-5">
+							<li id="mobile">
+								<h3 style="margin-left:10px">MOBILE</h3>
+							</li>
+						</div>
 					</ul>
 				</div>
 			</section>
@@ -58,10 +78,26 @@
 					<h4 class="center-break"><a href="mailto:holdenrehg@gmail.com">holdenrehg@gmail.com</a></h4>
 					<h4>618.691.9180</h4>
 					<ul id="footer-social">
-						<li><a target="_blank" href="http://linkedin.com/in/holdenrehg"><i class="fa fa-linkedin fa-4x dark"></i></a></li>
-						<li><a target="_blank" href="http://twitter.com/reedrehg"><i class="fa fa-twitter fa-4x dark"></i></a></li>
-						<li><a target="_blank" href="http://github.com/holdenrehg"><i class="fa fa-github-alt fa-4x dark"></i></a></li>
-						<li><a target="_blank" href="https://plus.google.com/112345589054343397477"><i class="fa fa-google-plus fa-4x dark"></i></a></li>
+						<li>
+							<a target="_blank" href="http://linkedin.com/in/holdenrehg">
+								<i class="fa fa-linkedin fa-4x dark"></i>
+							</a>
+						</li>
+						<li>
+							<a target="_blank" href="http://twitter.com/reedrehg">
+								<i class="fa fa-twitter fa-4x dark"></i>
+							</a>
+						</li>
+						<li>
+							<a target="_blank" href="http://github.com/holdenrehg">
+								<i class="fa fa-github-alt fa-4x dark"></i>
+							</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://plus.google.com/112345589054343397477">
+								<i class="fa fa-google-plus fa-4x dark"></i>
+							</a>
+						</li>
 					</ul>
 				</div>
 			</section>

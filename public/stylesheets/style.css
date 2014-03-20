@@ -18,6 +18,25 @@ body {
   color: #DEDEDE;
 }
 
+#left-arrow,
+#right-arrow,
+#footer-social li,
+.circle li:hover,
+.circle-active,
+.fa:hover,
+li:hover,
+a:hover{
+	cursor:pointer;
+}
+
+#left-arrow,
+#right-arrow,
+.grid-4,
+.grid-5,
+li{
+	display:inline-block;
+}
+
 section{
 	min-height:500px;
 }
@@ -37,7 +56,6 @@ a {
 
 a:hover {
   color: #ccc;
-  cursor:pointer;
   text-decoration: none;
 }
 
@@ -54,10 +72,6 @@ ul{
 	background:#f5f5f5;
 }
 
-#footer-social li{
-	cursor:pointer;
-}
-
 #work li{
 	width:15%;
 	height:200px;
@@ -70,16 +84,10 @@ ul{
 .circle-active{
 	background: #697980 !important;
 	color: #fff;
-	cursor:pointer;
-}
-
-li{
-	display: inline-block;
 }
 
 li:hover{
 	color: #697980;
-	cursor:pointer;
 }
 
 /* Fonts */
@@ -138,7 +146,6 @@ p{
 
 .fa:hover{
 	color:#ccc !important;
-	cursor:pointer;
 }
 
 #laptop,
@@ -160,13 +167,16 @@ p{
 
 /* Grids */
 
+.row{
+	width:100%;
+	min-height:250px;
+}
+
 .grid-4{
-	display:inline-block; 
 	width: 24%;
 }
 
 .grid-5{
-	display:inline-block;
 	width:19%;
 }
 
@@ -193,7 +203,7 @@ p{
 }
 
 #right-arrow{
-	text-align:left:;
+	text-align:left
 }
 
 #title-con{
