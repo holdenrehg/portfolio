@@ -9,7 +9,7 @@
 		<script type="text/javascript" src="../javascripts/ui.js"></script>
 		<script type="text/javascript" src="../javascripts/vendor/smooth-scroll/smooth-scroll.js"></script>
 	</head>
-	<body>
+	<body id="hover">
 		<header>
 			<div class="center-con">
 				<a data-scroll href="#home-sec"><i id="home" class="fa fa-home fa-2x"></i></a>

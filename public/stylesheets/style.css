@@ -31,11 +31,11 @@ body {
 #left-arrow,
 #right-arrow,
 #footer-social li,
-.circle li:hover,
-.circle-active,
-.fa:hover,
-li:hover,
-a:hover{
+#hover .circle li:hover,
+#hover .circle-active,
+#hover .fa:hover,
+#hover li:hover,
+#hover a:hover{
 	cursor:pointer;
 }
 
@@ -72,7 +72,7 @@ a {
   text-decoration: underline;
 }
 
-a:hover {
+#hover a:hover {
   color: #ccc;
   text-decoration: none;
 }
@@ -98,13 +98,13 @@ ul{
 	padding-top:10px;
 }
 
-.circle li:hover,
+#hover .circle li:hover,
 .circle-active{
 	background: #697980 !important;
 	color: #fff;
 }
 
-li:hover{
+#hover li:hover{
 	color: #697980;
 }
 
@@ -174,7 +174,7 @@ p{
 	color:#fff;
 }
 
-.fa:hover{
+#hover .fa:hover{
 	color:#ccc !important;
 }
 
@@ -187,7 +187,7 @@ p{
 	color:#ccc;
 }
 
-.dark:hover{
+#hover .dark:hover{
 	color:#666 !important;
 }
 

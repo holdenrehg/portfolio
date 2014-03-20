@@ -160,6 +160,7 @@
 			ui.work 		= document.getElementById(ui.workDiv);
 			ui.workTitle 	= document.getElementById(ui.workTitleDiv);
 			ui.workInfo 	= document.getElementById(ui.workInfoDiv);
+			ui.mobile 		= ui.isMobile();
 
 			ui.addEventListeners();
 			smoothScroll.init();
@@ -167,12 +168,15 @@
 			ui.skills[0].click();
 
 			// start animation after 30 seconds on desktop
-			if(!ui.isMobile) {
+			if(!ui.mobile) {
 				setTimeout(function() {
 					if(!ui.interval) {
 						ui.typingAnimation();
 					}
 				}, 30000);
+			} else {
+				// remove hover elements
+				document.getElementById('hover').setAttribute('id', '');
 			}
 		},
 
@@ -180,7 +184,7 @@
 		 * Add all event listeners for the entire page
 		 */
 		addEventListeners: function() {
-			if(!ui.isMobile) {
+			if(!ui.mobile) {
 				ui.laptop.addEventListener('click', ui.typingAnimation);
 			}
 
