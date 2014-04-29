@@ -272,17 +272,15 @@
 		 * it has begun.
 		 */
 		typingAnimation: function(event) {
-			// remove the click listener on the laptop icon
+
 			ui.laptop.removeEventListener('click', ui.clickLaptop, false);
 
-			// fun stuff
-			var home = $('#home-sec .center-con');
-		
 			var i = 0;
 			var length = ui.code.length;
 			ui.interval = setInterval(function() {
 				
-				var randomHeight = Math.floor(Math.random() * 500);
+				var home = $('#home-sec');				
+				var randomHeight = Math.floor(Math.random() * (home.height() - 50) );
 				var randomWidth = Math.floor(Math.random() * home.width());
 
 				var id = 'code-animate-' + i;

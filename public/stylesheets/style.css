@@ -273,7 +273,7 @@ p{
 .white-con,
 .light-grey-con,
 .grey-con{
-	min-height:100%;
+	height:100%;
 	padding:0 40px 0 40px;
 	overflow:hidden;
 }
