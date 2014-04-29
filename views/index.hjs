@@ -5,9 +5,6 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 		<link rel='stylesheet' href='/stylesheets/style.css' />
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-		<script type="text/javascript" src="../javascripts/ui.js"></script>
-		<script type="text/javascript" src="../javascripts/vendor/smooth-scroll/smooth-scroll.js"></script>
 	</head>
 	<body id="hover">
 		<header>
@@ -103,5 +100,10 @@
 			</section>
 			<div class="underline"></div>
 		</main>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script type="text/javascript" src="../javascripts/ui.js"></script>
+		<script type="text/javascript" src="../javascripts/vendor/smooth-scroll/smooth-scroll.js"></script>
+		<script type="text/javascript" src="../javascripts/vendor/google/analytics.js"></script>
 	</body>
 </html>
