@@ -10,6 +10,7 @@
 		workDiv: 'work',
 		workTitleDiv: 'work-title',
 		workInfoDiv: 'work-info',
+		workImagesDiv: 'work-images',
 
 		/**
 		 * Static code snippets for typing animation
@@ -135,7 +136,13 @@
 				},
 				{
 					title: 'SoCal',
-					info: 'A social calendar Android application. Provides users with a social network, calendar system, and location based reminders. Built to support version 4.0.2 and up.<br><a href="#">Check it out</a>'
+					info: 'A social calendar Android application. Provides users with a social network, calendar system, and location based reminders. Built to support version 4.0.2 and up.<br><a href="#">Check it out</a>',
+					images: [
+						'proj/socal/home.png',
+						'proj/socal/event.png',
+						'proj/socal/settings.png',
+						'proj/socal/calendars.png'
+					]
 				},
 				{
 					title: 'Phonegap',
@@ -160,6 +167,7 @@
 			ui.work 		= document.getElementById(ui.workDiv);
 			ui.workTitle 	= document.getElementById(ui.workTitleDiv);
 			ui.workInfo 	= document.getElementById(ui.workInfoDiv);
+			ui.workImages 	= document.getElementById(ui.workImagesDiv);
 			ui.mobile 		= ui.isMobile();
 
 			ui.addEventListeners();
@@ -206,18 +214,21 @@
 		 * information to reflect the clicked skill
 		 */
 		clickSkill: function(event) {
-			// remove active from others
-			var numSkills = ui.skills.length;
-			for(var i = 0; i < numSkills; i+=1) {
-				ui.skills[i].classList.remove('circle-active');
+			if(!this.classList.contains('circle-active')) {
+
+				// remove active from others
+				var numSkills = ui.skills.length;
+				for(var i = 0; i < numSkills; i+=1) {
+					ui.skills[i].classList.remove('circle-active');
+				}
+
+				ui.toggle(this.classList, 'circle-active');
+
+				// update current info
+				ui.skillsInfo.current.skill = this.id;
+				ui.skillsInfo.current.iter = 0;
+				ui.updateWork();
 			}
-
-			ui.toggle(this.classList, 'circle-active');
-
-			// update current info
-			ui.skillsInfo.current.skill = this.id;
-			ui.skillsInfo.current.iter = 0;
-			ui.updateWork();
 		},
 
 		/**
@@ -228,7 +239,6 @@
 		 * array of work for the current skill
 		 */
 		clickLeft: function(event) {
-			console.log('click left');
 			var skill = ui.skillsInfo.current.skill;
 			var iter = ui.skillsInfo.current.iter - 1 < 0 ? ui.skillsInfo[skill].length - 1 : ui.skillsInfo.current.iter - 1;
 
@@ -244,7 +254,6 @@
 		 * array of work for the current skill
 		 */
 		clickRight: function(event) {
-			console.log('click right');
 			var skill = ui.skillsInfo.current.skill;
 			var iter = (ui.skillsInfo.current.iter + 1) % ui.skillsInfo[skill].length;
 
@@ -262,6 +271,16 @@
 			// update div info
 			ui.workTitle.innerHTML = workObj.title;
 			ui.workInfo.innerHTML = workObj.info;
+			ui.workImages.innerHTML = '';
+			if(workObj.hasOwnProperty('images')) {
+				for(var i = 0; i < workObj.images.length; i+=1) {
+					var img = document.createElement('img');
+					img.src = window.location.origin + '/images/' + workObj.images[i];
+					img.style.width = '180px';
+					img.style.margin = '30px 5px 0px 5px';
+					ui.workImages.appendChild(img);
+				}
+			}
 		},
 
 		/**
@@ -304,7 +323,6 @@
 			}
 
 			var offset = window.pageYOffset;
-			console.log(offset);
 			if(offset > ui.yOffset && offset > 50) {
 				// scrolling down
 				ui.title.style.opacity = Math.max(1 - (offset / 300), 0);
