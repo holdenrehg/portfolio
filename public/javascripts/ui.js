@@ -1,5 +1,6 @@
 (function() {
 
+    << << << < HEAD
     var ui = {
 
         // dom element ids
@@ -254,7 +255,7 @@
             ui.workInfo.innerHTML = workObj.info;
             ui.workImages.innerHTML = '';
             if (workObj.hasOwnProperty('images')) {
-            	var ids = [];
+                var ids = [];
                 for (var i = 0; i < workObj.images.length; i += 1) {
                     var img = document.createElement('img');
                     img.src = window.location.origin + '/images/' + workObj.images[i];
@@ -265,9 +266,9 @@
                     ids.push('image' + i);
                     ui.workImages.appendChild(img);
                 }
-                for(i = 0; i < ids.length; i += 1) {
-                	$('#' + ids[i]).fadeIn();
-                	console.log('fading in');
+                for (i = 0; i < ids.length; i += 1) {
+                    $('#' + ids[i]).fadeIn();
+                    console.log('fading in');
                 }
             }
         },

@@ -4,6 +4,7 @@ var logfmt = require('logfmt');
 var http = require('http');
 var path = require('path');
 
+console.log(' ---- Generating Holden Rehg Portfolio Site ---- ');
 app = express();
 
 app.use(logfmt.requestLogger());
