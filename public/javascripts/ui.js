@@ -1,6 +1,5 @@
 (function() {
 
-    << << << < HEAD
     var ui = {
 
         // dom element ids
@@ -244,6 +243,57 @@
         },
 
         /**
+         * Event Listener
+         *
+         * Fires when the modal window is clicked. Closes the modal.
+         */
+        closeModal: function(event) {
+            console.log('closing modal');
+            var target = $('#modal');
+            target.fadeOut(function() {
+                target.remove();
+                $('body').css('overflowY', 'scroll');
+            });
+        },
+
+        /**
+         * Event Listener
+         *
+         * Fires when an image is clicked. Created a modal window on top of the screen
+         * displaying a full sized image.
+         */
+        clickImage: function(event) {
+            var overlay = document.createElement('div'),
+                img = document.createElement('img');
+
+            overlay.style.position = 'fixed';
+            overlay.style.top = '0';
+            overlay.style.background = '#eee';
+            overlay.style.opacity = '.985';
+            overlay.style.width = '100%';
+            overlay.style.height = '100%';
+            overlay.style.padding = '80px 20px 20px 20px';
+            overlay.style.textAlign = 'center';
+            overlay.style.overflowY = 'scroll';
+            overlay.id = 'modal';
+
+            img.addEventListener('click', ui.closeModal);
+            img.src = event.target.src;
+            img.style.width = '25%';
+            img.style.display = 'none';
+            img.id = 'modal-image';
+
+            overlay.appendChild(img);
+
+            var body = $('body');
+            $('body').append(overlay);
+            $('#modal-image').fadeIn();
+
+            // temporarily disable scroll on body
+            body.css('overflowY', 'hidden');
+        },
+
+        /**
          * Helper method to update the work example info to the current skill and example,
          * determined the skillInfo object
          */
@@ -264,6 +314,7 @@
                     img.style.display = 'none';
                     img.id = 'image' + i;
                     ids.push('image' + i);
+                    img.addEventListener('click', ui.clickImage);
                     ui.workImages.appendChild(img);
                 }
                 for (i = 0; i < ids.length; i += 1) {
