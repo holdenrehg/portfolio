@@ -78,57 +78,50 @@
             // job experience and work
             jobs: [{
                 title: 'Linkedin Web Developer Intern',
-                info: '<i>Summer 2014</i><br/>Not there yet.'
+                info: '<i>Summer 2014</i><p>I\'m currently a Linkedin web development intern, primarily focusing on front end web development. After some training with JSP, <a target="_blank" href="http://akdubya.github.io/dustjs/">Dust.js</a>, <a target="_blank" href="http://sass-lang.com">SASS</a>, <a target="_blank" href="https://github.com/linkedin/archetype">Archetype</a>, and <a target="_blank" href="http://www.venusjs.org/">Venus.js</a>, I started gathering requirements from designers and marketers for an internal redesign of Adobe CQ.</p>'
             }, {
                 title: 'Blue Stingray Web Developer Intern',
-                info: '<i>Summer 2014</i><br/>Collaborated with two other employees to create Streatfeast, a mobile friendly web application used to allow food truck owners to communicate their schedule and locations with their customers. Experienced HTML5, JS, CSS, PHP, Twitter API, Facebook API, and Google Maps API.'
+                info: '<i>Summer 2014</i><p>Collaborated with two other employees to create Streatfeast, a mobile friendly web application used to allow food truck owners to communicate their schedule and locations with their customers. Learned HTML5, JS, CSS, and PHP, while integrating with the Twitter API, Facebook API, and Google Maps API. The entire internship was a large learning experience with web development. The resulting product was incomplete and had a lot of bugs.</p>'
             }, {
                 title: 'Iowa State University Student Web Developer',
-                info: '<i>October 2013 - Current</i><br/>'
+                info: '<i>October 2013 - Current</i><p>Iowa State University Web Development is a division of IT on the Iowa State campus which acts as an internal agency to other departments. I work on small teams of 3-5 developers who meet with clients, gather requirements and design, implement, and maintain various web applications. I help maintain sites such as <a target="_blank" href="http://it.iastate.edu">Iastate IT</a> which was written using Zend 1, and also am currently integrating an internal tool with Jira using the Jira REST API, <a target="_blank" href="http://framework.zend.com/">Zend 2</a>, <a target="_blank" href="http://www.doctrine-project.org/">Doctrine</a>, and <a target="_blank" href="https://getcomposer.org/">Composer</a>.</p>'
             }, {
                 title: 'Computer Science Teaching Assistant',
-                info: '<i>August 2013 - December 2013</i><br/>Explained object oriented fundamentals using Java. Graded and helped create assignments, taught a weekly lab session, and proctored exams. Answered a lot of questions.'
+                info: '<i>August 2013 - December 2013</i><p>Explained object oriented fundamentals such as encapsulation, inheritence, polymorphism, and recursion using Java. Graded and helped create assignments, taught a weekly lab session, and proctored exams. Answered a lot of questions.</p>'
             }],
             php: [{
                 title: 'Zend Framework 2',
-                info: 'Professional experience at Iowa State University as a student web developer. Developed APIs, internal tools, and web applications for university clients in Zend.'
+                info: '<p>Professional experience at Iowa State University as a student web developer. Developed APIs, internal tools, and web applications for university clients in Zend.</p>',
             }, {
                 title: 'Laravel 4',
-                info: 'Personal experience developing a web application for the USPA polo club. Developed in Laravel 4 to compare to get experience in another web MVC framework.<a href="#">Polo App</a>'
+                info: '<p>Currently developing a mock web application for the USPA polo club. Developed in Laravel 4 to compare to get experience in another web MVC framework. The app\'s purpose is to allow polo team managers to track of current polo players, games, and field across the country. <a target="_blank" href="http://atomicthirst.com/uspa">Polo App</a> <a target="_blank" href="https://github.com/holdenrehg/polo">See the source</a>.</p>',
+                wide: true,
+                images: [
+                    'proj/uspa/uspa_home.png',
+                    'proj/uspa/uspa_dash.png'
+                ]
             }],
             js: [{
-                title: 'Backbone.js',
-                info: 'Personal experience developing a web application for the USPA polo club.<br/><a href="#">Polo App</a>'
-            }, {
                 title: 'Require JS',
-                info: 'Personal experience developing a web application for the USPA polo club.<br/><a href="#">Polo App</a>'
+                info: '<p>Experienced using Require modules in personal projects, at Iowa State University Web Development, and at Linkedin during my web development internship.</p>'
             }, {
                 title: 'Express',
-                info: 'A small amount of experience experimenting with Express Node.js framework building this portfolio site.<br><a href="https://github.com/holdenrehg/portfolio" target="_blank">See the source</a>'
+                info: '<p>A small amount of experience experimenting with Express Node.js framework building this portfolio site.<br><a href="https://github.com/holdenrehg/portfolio" target="_blank">See the source</a></p>'
             }],
             // java is a reserved word?
             javaL: [{
                 title: 'Iowa State Universty',
-                info: 'Undergraduate degree in Software Engineering at Iowa State University primarily focused on Java and object oriented programming. Studied UI design, object oriented design and principles, data structures, and algorithms. Experimented with Swing, JDBC, and Android.'
-            }, {
-                title: 'Play Framework',
-                info: 'Developed an Android application in a university setting, that communicated to a server api running Play Framework. Communicated with a MySQL DB and Mongo DB.'
+                info: '<p>Undergraduate degree in Software Engineering at Iowa State University primarily focused on Java and object oriented programming. Studied UI design, object oriented design and principles, data structures, algorithms, and project management. Experimented with Swing, JDBC, and Android.</p>'
             }],
             mobile: [{
-                title: 'Android',
-                info: 'Experience with developing a mobile application for Android 4.0.2 and greater.<br><a href="#">SoCal</a>'
-            }, {
                 title: 'SoCal',
-                info: 'A social calendar Android application. Provides users with a social network, calendar system, and location based reminders. Built to support version 4.0.2 and up.<br><a href="#">Check it out</a>',
+                info: '<p>A social calendar Android application. Provides users with a social network, calendar system, and location based reminders. Built to support version 4.0.2 and up.<br><a target="_blank" href="#">Check it out</a></p>',
                 images: [
                     'proj/socal/home.png',
                     'proj/socal/event.png',
                     'proj/socal/settings.png',
                     'proj/socal/calendars.png'
                 ]
-            }, {
-                title: 'Phonegap',
-                info: 'Personal experiments with porting already built web applications and building Backbone.js applications specifically for Phonegap.<br/><a href="#">Examples</a>'
             }]
         },
 
@@ -279,7 +272,11 @@
 
             img.addEventListener('click', ui.closeModal);
             img.src = event.target.src;
-            img.style.width = '25%';
+            if(event.target.classList.contains('wide')) {
+            	img.style.width = '75%';
+            } else {
+            	img.style.width = '25%';
+            }
             img.style.display = 'none';
             img.id = 'modal-image';
 
@@ -305,6 +302,7 @@
             ui.workInfo.innerHTML = workObj.info;
             ui.workImages.innerHTML = '';
             if (workObj.hasOwnProperty('images')) {
+            	var wide = workObj.hasOwnProperty('wide');
                 var ids = [];
                 for (var i = 0; i < workObj.images.length; i += 1) {
                     var img = document.createElement('img');
@@ -312,6 +310,7 @@
                     img.style.width = '180px';
                     img.style.margin = '30px 5px 0px 5px';
                     img.style.display = 'none';
+                    if(wide) { img.classList.add('wide'); }
                     img.id = 'image' + i;
                     ids.push('image' + i);
                     img.addEventListener('click', ui.clickImage);
