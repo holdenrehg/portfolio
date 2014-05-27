@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{{ title }}</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<link rel='stylesheet' href='/stylesheets/style.css' />
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	</head>
+	<body id="hover">
+		<header>
+			<div class="center-con">
+				<a data-scroll href="#home-sec"><i id="home" class="fa fa-home fa-2x"></i></a>
+				<a data-scroll href="#experience-sec"><i id="experience" class="fa fa-code fa-2x"></i></a>
+				<a data-scroll href="#contract-sec"><i id="contact" class="fa fa-phone fa-2x"></i></a> 
+				<a href="../images/Rehg_Resume.pdf" target="_blank"><i id="resume" class="fa fa-file fa-2x"></i></a>
+			</div>
+		</header>
+		<main>
+			<section id="home-sec" class="grey-con">
+				<div class="ignore-header"></div>
+				<div class="center-con" >
+					<div id="title-con">
+						<h1>Software Engineer // Web Developer</h1>
+						<i id="laptop" class="fa fa-laptop fa-3x dark fa-pad"></i>
+						<p>Full stack web, mobile, and non-web based applications development</p>
+					</div>
+				</div>
+			</section>
+			<div class="underline"></div>
+			<section id="experience-sec" class="light-grey-con">
+				<div class="center-con">
+					<ul id="toolbelt" class="circle">
+						<div class="grid-5">
+							<li id="jobs">
+								<h3 style="margin-left:24px">JOBS</h3>
+							</li>
+						</div>
+						<div class="grid-5">
+							<li id="php">
+								<h3 style="margin-left:30px">PHP</h3>
+							</li>
+						</div>
+						<div class="grid-5">
+							<li id="js">
+								<h3 style="margin-left:37px">JS</h3>
+							</li>
+						</div>
+						<div class="grid-5">
+							<li id="javaL">
+								<h3 style="margin-left:24px">JAVA</h3>
+							</li>
+						</div>
+						<div class="grid-5">
+							<li id="mobile">
+								<h3 style="margin-left:10px">MOBILE</h3>
+							</li>
+						</div>
+					</ul>
+					<div class="row">
+						<div id="left-arrow">
+							<i class="fa fa-angle-left fa-5x blue"></i>
+						</div>
+						<div id="work">
+							<h5 id="work-title"></h5> 
+							<p id="work-info"></p>
+							<div id="work-images">
+							</div>
+						</div>
+						<div id="right-arrow">
+							<i class="fa fa-angle-right fa-5x blue"></i>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="contract-sec" class="white-con">
+				<div class="center-con">
+					<h4 class="center-break"><a href="mailto:holdenrehg@gmail.com">holdenrehg@gmail.com</a></h4>
+					<h4>618.691.9180</h4>
+					<ul id="footer-social" class="row">
+						<li>
+							<a target="_blank" href="http://linkedin.com/in/holdenrehg">
+								<i class="fa fa-linkedin fa-4x dark"></i>
+							</a>
+						</li>
+						<li>
+							<a target="_blank" href="http://twitter.com/reedrehg">
+								<i class="fa fa-twitter fa-4x dark"></i>
+							</a>
+						</li>
+						<li>
+							<a target="_blank" href="http://github.com/holdenrehg">
+								<i class="fa fa-github-alt fa-4x dark"></i>
+							</a>
+						</li>
+						<li>
+							<a target="_blank" href="https://plus.google.com/112345589054343397477">
+								<i class="fa fa-google-plus fa-4x dark"></i>
+							</a>	
+						</li>
+					</ul>
+				</div>
+			</section>
+			<div class="underline"></div>
+		</main>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script type="text/javascript" src="../javascripts/ui.js"></script>
+		<script type="text/javascript" src="../javascripts/vendor/smooth-scroll/smooth-scroll.js"></script>
+		<script type="text/javascript" src="../javascripts/vendor/google/analytics.js"></script>
+	</body>
+</html>
