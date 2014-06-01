@@ -81,20 +81,20 @@
                 info: '<i>Summer 2014</i><p>I\'m currently a Linkedin web development intern, primarily focusing on front end web development. After some training with JSP, <a target="_blank" href="http://akdubya.github.io/dustjs/">Dust.js</a>, <a target="_blank" href="http://sass-lang.com">SASS</a>, <a target="_blank" href="https://github.com/linkedin/archetype">Archetype</a>, and <a target="_blank" href="http://www.venusjs.org/">Venus.js</a>, I started gathering requirements from designers and marketers for an internal redesign of Adobe CQ.</p>'
             }, {
                 title: 'Blue Stingray Web Developer Intern',
-                info: '<i>Summer 2014</i><p>Collaborated with two other employees to create Streatfeast, a mobile friendly web application used to allow food truck owners to communicate their schedule and locations with their customers. Learned HTML5, JS, CSS, and PHP, while integrating with the Twitter API, Facebook API, and Google Maps API. The entire internship was a large learning experience with web development. The resulting product was incomplete and had a lot of bugs.</p>'
+                info: '<i>Summer 2014</i><p>I collaborated with two other employees to create Streatfeast, a mobile friendly web application. It was created to allow food truck owners to communicate their schedule and locations with their customers instead of relying on social media. Learned HTML5, JS, CSS, and PHP, while integrating with the Twitter API, Facebook API, and Google Maps API. The entire internship was a large learning experience with web development. Unfortuantly, the resulting product was incomplete at the end of the internship so was not released.</p>'
             }, {
                 title: 'Iowa State University Student Web Developer',
-                info: '<i>October 2013 - Current</i><p>Iowa State University Web Development is a division of IT on the Iowa State campus which acts as an internal agency to other departments. I work on small teams of 3-5 developers who meet with clients, gather requirements and design, implement, and maintain various web applications. I help maintain sites such as <a target="_blank" href="http://it.iastate.edu">Iastate IT</a> which was written using Zend 1, and also am currently integrating an internal tool with Jira using the Jira REST API, <a target="_blank" href="http://framework.zend.com/">Zend 2</a>, <a target="_blank" href="http://www.doctrine-project.org/">Doctrine</a>, and <a target="_blank" href="https://getcomposer.org/">Composer</a>.</p>'
+                info: '<i>October 2013 - Current</i><p>When school is in session, I work at Iowa State University Web Development. It is a division of IT on the Iowa State campus which acts as an internal agency to other departments. I work on small teams of 3-5 developers who meet with clients, gather requirements and then design, implement, and maintain various web applications. I help maintain sites such as <a target="_blank" href="http://it.iastate.edu">Iastate IT</a> which was written using Zend 1, and also am currently integrating an internal tool with Jira using the Jira REST API, <a target="_blank" href="http://framework.zend.com/">Zend 2</a>, <a target="_blank" href="http://www.doctrine-project.org/">Doctrine</a>, and <a target="_blank" href="https://getcomposer.org/">Composer</a>.</p>'
             }, {
                 title: 'Computer Science Teaching Assistant',
-                info: '<i>August 2013 - December 2013</i><p>Explained object oriented fundamentals such as encapsulation, inheritence, polymorphism, and recursion using Java. Graded and helped create assignments, taught a weekly lab session, and proctored exams. Answered a lot of questions.</p>'
+                info: '<i>August 2013 - December 2013</i><p>The job consisted of explaining object oriented fundamentals such as encapsulation, inheritence, polymorphism, and recursion using Java to students taking the course. I graded and helped create assignments, taught a weekly lab session, and proctored exams. I also answered a lot of questions.</p>'
             }],
             php: [{
                 title: 'Zend Framework 2',
                 info: '<p>Professional experience at Iowa State University as a student web developer. Developed APIs, internal tools, and web applications for university clients in Zend.</p>',
             }, {
                 title: 'Laravel 4',
-                info: '<p>Currently developing a mock web application for the USPA polo club. Developed in Laravel 4 to compare to get experience in another web MVC framework. The app\'s purpose is to allow polo team managers to track of current polo players, games, and field across the country. <a target="_blank" href="http://atomicthirst.com/uspa">Polo App</a> <a target="_blank" href="https://github.com/holdenrehg/polo">See the source</a>.</p>',
+                info: '<p>I\'m currently developing a mock web application for the united states polo. I am developing it in Laravel 4 to experience another web MVC framework and compare to frameworks I already know. The app\'s purpose is to allow polo team managers to keep track of current polo players, games, and fields across the country. <a target="_blank" href="http://atomicthirst.com/uspa">Polo App</a> <a target="_blank" href="https://github.com/holdenrehg/polo">See the source</a>.</p>',
                 wide: true,
                 images: [
                     'proj/uspa/uspa_home.png',
@@ -103,19 +103,19 @@
             }],
             js: [{
                 title: 'Require JS',
-                info: '<p>Experienced using Require modules in personal projects, at Iowa State University Web Development, and at Linkedin during my web development internship.</p>'
+                info: '<p>I\'ve experienced using Require modules in personal projects, at Iowa State University Web Development, and at Linkedin during my web development internship.</p>'
             }, {
                 title: 'Express',
-                info: '<p>A small amount of experience experimenting with Express Node.js framework building this portfolio site.<br><a href="https://github.com/holdenrehg/portfolio" target="_blank">See the source</a></p>'
+                info: '<p>I have a small amount of experience experimenting with Express Node.js framework building this portfolio site.<br><a href="https://github.com/holdenrehg/portfolio" target="_blank">See the source</a></p>'
             }],
             // java is a reserved word?
             javaL: [{
                 title: 'Iowa State Universty',
-                info: '<p>Undergraduate degree in Software Engineering at Iowa State University primarily focused on Java and object oriented programming. Studied UI design, object oriented design and principles, data structures, algorithms, and project management. Experimented with Swing, JDBC, and Android.</p>'
+                info: '<p>I have an undergraduate degree in Software Engineering at Iowa State University primarily focused on Java and object oriented programming. Studied UI design, object oriented design and principles, data structures, algorithms, and project management. Experimented with Swing, JDBC, and Android.</p>'
             }],
             mobile: [{
                 title: 'SoCal',
-                info: '<p>A social calendar Android application. Provides users with a social network, calendar system, and location based reminders. Built to support version 4.0.2 and up.<br><a target="_blank" href="#">Check it out</a></p>',
+                info: '<p>This project was a social calendar Android application. Provides users with a social network, calendar system, and location based reminders. Built to support version 4.0.2 and up.</p>',
                 images: [
                     'proj/socal/home.png',
                     'proj/socal/event.png',
