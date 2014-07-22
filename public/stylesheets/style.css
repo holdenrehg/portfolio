@@ -187,10 +187,11 @@ p {
     color: #658796;
 }
 #left-arrow, #right-arrow {
-    position:absolute;
+    position:relative;
     width:10%;
     padding:0;
-    margin-top:180px;
+    margin-top:120px;
+    vertical-align:top;
 }
 #left-arrow {
     text-align:right;
