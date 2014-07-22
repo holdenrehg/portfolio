@@ -197,7 +197,8 @@ p {
     left:0;
 }
 #right-arrow {
-    text-align:left right:0;
+    text-align:left; 
+    right:0;
 }
 #title-con {
     position:absolute;
