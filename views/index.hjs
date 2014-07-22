@@ -30,7 +30,7 @@
 			<section id="experience-sec" class="light-grey-con">
 				<div class="center-con">
 					<ul id="toolbelt" class="circle">
-						<div class="grid-5">
+						<!-- <div class="grid-5">
 							<li id="jobs">
 								<h3 style="margin-left:24px">JOBS</h3>
 							</li>
@@ -39,20 +39,20 @@
 							<li id="php">
 								<h3 style="margin-left:30px">PHP</h3>
 							</li>
-						</div>
+						</div> -->
 						<div class="grid-5">
-							<li id="js">
-								<h3 style="margin-left:37px">JS</h3>
+							<li id="edu">
+								<h3>EDU</h3>
 							</li>
 						</div>
 						<div class="grid-5">
-							<li id="javaL">
-								<h3 style="margin-left:24px">JAVA</h3>
+							<li id="work">
+								<h3>WORK</h3>
 							</li>
 						</div>
 						<div class="grid-5">
-							<li id="mobile">
-								<h3 style="margin-left:10px">MOBILE</h3>
+							<li id="proj">
+								<h3>PROJ</h3>
 							</li>
 						</div>
 					</ul>
@@ -60,10 +60,10 @@
 						<div id="left-arrow">
 							<i class="fa fa-angle-left fa-5x blue"></i>
 						</div>
-						<div id="work">
-							<h5 id="work-title"></h5> 
-							<p id="work-info"></p>
-							<div id="work-images">
+						<div id="slider-display">
+							<h5 id="display-title"></h5> 
+							<p id="display-info"></p>
+							<div id="display-images">
 							</div>
 						</div>
 						<div id="right-arrow">
