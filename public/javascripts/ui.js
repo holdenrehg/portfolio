@@ -79,6 +79,7 @@
             // job experience and work
             edu: [{
                 title: 'Iowa State Universty',
+                time: '2012 - Current',
                 info: '<p>I am pursuing an undergraduate degree in Software Engineering at Iowa State University primarily focusing on Java and object oriented programming. I studied UI design, object oriented design and principles, data structures, algorithms, and project management. I also experimented with Swing, JDBC, and Android.'
             }],
             work: [{
@@ -100,10 +101,10 @@
             }],
             proj: [{
                 title: 'Portfolio',
-                info: 'I have a small amount of experience experimenting with Express Node.js framework building this portfolio site.<br><a href="https://github.com/holdenrehg/portfolio" target="_blank">See the source.</a>'
+                info: 'I have a small amount of experience experimenting with Express Node.js framework building this portfolio site.<br><p><a href="https://github.com/holdenrehg/portfolio" target="_blank">See the source.</a></p>'
             }, {
                 title: 'Polo App',
-                info: 'I\'m currently developing a mock web application for the United States polo. I am developing it in Laravel 4 to experience another web MVC framework and comparing it to frameworks I already know. The app\'s purpose is to allow polo team managers to keep track of current polo players, games, and fields across the country. <a target="_blank" href="https://github.com/holdenrehg/polo">See the source.</a>.',
+                info: 'I\'m currently developing a mock web application for the United States polo. I am developing it in Laravel 4 to experience another web MVC framework and comparing it to frameworks I already know. The app\'s purpose is to allow polo team managers to keep track of current polo players, games, and fields across the country.<p><a target="_blank" href="https://github.com/holdenrehg/polo">See the source.</a></p>',
                 wide: true,
                 images: [
                     'proj/uspa/uspa_home.png',
@@ -121,7 +122,7 @@
             }, {
                 title: 'Spark',
                 time: 'Summer 2014',
-                info: 'This smart parking application built in 24 hours during AngelHack 2014 Silicon Valley and placed within the top 10. Spark wanted to make paid parking easier by using existing security cameras to tag pictures of cars license plates pulling in and out of lots. The pictures would be sent to our server for processing and notify a user of the fee for parking online. The web client provided users with the ability to create accounts attached to their license plate numbers and pay their fees directly from the page. I built the web side using Express, Backbone, jQuery, Underscore, and Handlebars.</p><p><a href="http://github.com/holdenrehg/SparkWeb" target="_blank">See the source.</a>',
+                info: 'This smart parking application built in 24 hours during AngelHack 2014 Silicon Valley and placed within the top 10. Spark wanted to make paid parking easier by using existing security cameras to tag pictures of cars license plates pulling in and out of lots. The pictures would be sent to our server for processing and notify a user of the fee for parking online. The web client provided users with the ability to create accounts attached to their license plate numbers and pay their fees directly from the page. I built the web site using Express, Backbone, jQuery, Underscore, and Handlebars.</p><p><a href="http://github.com/holdenrehg/SparkWeb" target="_blank">See the source.</a>',
                 wide: true,
                 images: [
                     'proj/spark/spark_home.png',
@@ -176,7 +177,6 @@
             if (!ui.mobile) {
                 ui.laptop.addEventListener('click', ui.typingAnimation);
             }
-
             ui.left.addEventListener('click', ui.clickLeft);
             ui.right.addEventListener('click', ui.clickRight);
 
@@ -209,6 +209,12 @@
                 ui.skillsInfo.current.skill = this.id;
                 ui.skillsInfo.current.iter = 0;
                 ui.updateWork();
+
+                if(ui.skillsInfo[ui.skillsInfo.current.skill].length < 2) {
+                    ui.disableArrows();                
+                } else {
+                    ui.activateArrows();
+                }
             }
         },
 
@@ -240,6 +246,23 @@
 
             ui.skillsInfo.current.iter = iter;
             ui.updateWork();
+        },
+
+        /**
+         * Disable left and right carousel arrows by turning transparency down
+         * and removing events
+         */
+        disableArrows: function() {
+            ui.left.style.opacity = '.2';
+            ui.right.style.opacity = '.2';
+        },
+
+        /**
+         * Activate arrows by turning opacity back to full
+         */
+        activateArrows: function() {
+            ui.left.style.opacity = '1';
+            ui.right.style.opacity = '1';
         },
 
         /**
@@ -395,7 +418,7 @@
             var interval = setInterval(function() {
                 if (j === codeLength) {
                     clearInterval(interval);
-                    ui.eradeCode(id);
+                    ui.eraseCode(id);
                 }
 
                 pTag.html(pTag.html() + code.charAt(j++));
@@ -408,7 +431,7 @@
          *
          * @param id, the div id to erase
          */
-        eradeCode: function(id) {
+        eraseCode: function(id) {
             var pTag = $('#' + id);
             pTag.fadeOut('slow', function() {
                 pTag.remove();
