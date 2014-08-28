@@ -1,8 +1,8 @@
 {
-    "name": "portfolio",
-    "version": "0.0.0",
+    "name": "holdenrehg_portfolio",
+    "version": "1.0.0",
     "description": "Personal portfolio resume site for Holden Rehg.",
-    "main": "index.js",
+    "main": "web.js",
     "scripts": {
         "test": "",
         "start": "node web.js"
@@ -15,10 +15,8 @@
         "portfolio"
     ],
     "author": "holdenrehg",
-    "license": "BSD-2-Clause",
     "dependencies": {
         "express": "~3.5.0",
-        "logfmt": "~0.21.0",
         "hjs": "*"
     }
 }
