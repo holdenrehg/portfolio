@@ -10,6 +10,7 @@
         workDiv: 'slider-display',
         workTitleDiv: 'display-title',
         workInfoDiv: 'display-info',
+        workTimeDiv: 'display-time',
         workImagesDiv: 'display-images',
 
         /**
@@ -78,27 +79,31 @@
             // job experience and work
             edu: [{
                 title: 'Iowa State Universty',
-                info: '<p>I am pursuing an undergraduate degree in Software Engineering at Iowa State University primarily focused on Java and object oriented programming. Studied UI design, object oriented design and principles, data structures, algorithms, and project management. Experimented with Swing, JDBC, and Android.</p>'
+                info: '<p>I am pursuing an undergraduate degree in Software Engineering at Iowa State University primarily focusing on Java and object oriented programming. I studied UI design, object oriented design and principles, data structures, algorithms, and project management. I also experimented with Swing, JDBC, and Android.'
             }],
             work: [{
-                title: 'Linkedin Web Developer Intern',
-                info: '<i>Summer 2014</i><p>I\'m currently a Linkedin web development intern, primarily focusing on front end web development. After some training with JSP, <a target="_blank" href="http://akdubya.github.io/dustjs/">Dust.js</a>, <a target="_blank" href="http://sass-lang.com">SASS</a>, <a target="_blank" href="https://github.com/linkedin/archetype">Archetype</a>, and <a target="_blank" href="http://www.venusjs.org/">Venus.js</a>, I gathered requirements from designers and marketers for an internal redesign of Adobe CQ. I also introduced our platform to Grunt and setup task runners for eslint and jsdoc.</p>'
+                title: 'LinkedIn Web Developer Intern',
+                time: 'Summer 2014',
+                info: 'This past summer, I was a LinkedIn web development intern primarily focusing on front end web development. After some training with JSP, <a target="_blank" href="http://akdubya.github.io/dustjs/">Dust.js</a>, <a target="_blank" href="http://sass-lang.com">SASS</a>, <a target="_blank" href="https://github.com/linkedin/archetype">Archetype</a>, and <a target="_blank" href="http://www.venusjs.org/">Venus.js</a>, I gathered requirements from designers and marketers for an internal redesign of Adobe CQ. I also introduced our platform to Grunt and setup task runners for eslint and jsdoc.'
             }, {
                 title: 'Blue Stingray Web Developer Intern',
-                info: '<i>Summer 2013</i><p>I collaborated with two other employees to create Streatfeast, a mobile friendly web application. It was created to allow food truck owners to communicate their schedule and locations with their customers instead of relying on social media. Learned HTML5, JS, CSS, and PHP, while integrating with the Twitter API, Facebook API, and Google Maps API. The entire internship was a large learning experience with web development. Unfortuantly, the resulting product was incomplete at the end of the internship so was not released.</p>'
+                time: 'Summer 2013',
+                info: 'I collaborated with two other employees to create Streatfeast, a mobile friendly web application. It was created to allow food truck owners to communicate their schedule and locations with their customers instead of relying on social media. I learned HTML5, JS, CSS, and PHP, while integrating with the Twitter API, Facebook API, and Google Maps API. The entire internship was a large learning experience with web development. Unfortunately, the resulting product was incomplete at the end of the internship so was not released.'
             }, {
                 title: 'Iowa State University Student Web Developer',
-                info: '<i>October 2013 - Current</i><p>When school is in session, I work at Iowa State University Web Development. It is a division of IT on the Iowa State campus which acts as an internal agency to other departments. I work on small teams of 3-5 developers who meet with clients, gather requirements and then design, implement, and maintain various web applications. I help maintain sites such as <a target="_blank" href="http://it.iastate.edu">Iastate IT</a> which was written using Zend 1, and also am currently integrating an internal tool with Jira using the Jira REST API, <a target="_blank" href="http://framework.zend.com/">Zend 2</a>, <a target="_blank" href="http://www.doctrine-project.org/">Doctrine</a>, and <a target="_blank" href="https://getcomposer.org/">Composer</a>.</p>'
+                time: 'October 2013 - Current',
+                info: 'When school is in session, I work at Iowa State University Web Development. It is a division of IT on the Iowa State campus which acts as an internal agency to other departments. I work on small teams of 3-5 developers who meet with clients, gather requirements and then design, implement, and maintain various web applications. I help maintain sites such as <a target="_blank" href="http://it.iastate.edu">Iastate IT</a> which was written using Zend 1, and also am currently integrating an internal tool with Jira using the Jira REST API, <a target="_blank" href="http://framework.zend.com/">Zend 2</a>, <a target="_blank" href="http://www.doctrine-project.org/">Doctrine</a>, and <a target="_blank" href="https://getcomposer.org/">Composer</a>.'
             }, {
                 title: 'Computer Science Teaching Assistant',
-                info: '<i>August 2013 - December 2013</i><p>The job consisted of explaining object oriented fundamentals such as encapsulation, inheritence, polymorphism, and recursion using Java to students taking the course. I graded and helped create assignments, taught a weekly lab session, and proctored exams. I also answered a lot of questions.</p>'
+                time: 'August 2013',
+                info: 'The job consisted of explaining object oriented fundamentals such as encapsulation, inheritence, polymorphism, and recursion using Java to students taking the course. I graded and helped create assignments, taught a weekly lab session, and proctored exams. I also answered a lot of questions.'
             }],
             proj: [{
                 title: 'Portfolio',
-                info: '<p>I have a small amount of experience experimenting with Express Node.js framework building this portfolio site.<br><a href="https://github.com/holdenrehg/portfolio" target="_blank">See the source</a></p>'
+                info: 'I have a small amount of experience experimenting with Express Node.js framework building this portfolio site.<br><a href="https://github.com/holdenrehg/portfolio" target="_blank">See the source.</a>'
             }, {
                 title: 'Polo App',
-                info: '<p>I\'m currently developing a mock web application for the united states polo. I am developing it in Laravel 4 to experience another web MVC framework and compare to frameworks I already know. The app\'s purpose is to allow polo team managers to keep track of current polo players, games, and fields across the country. <a target="_blank" href="http://atomicthirst.com/uspa">Polo App</a> <a target="_blank" href="https://github.com/holdenrehg/polo">See the source</a>.</p>',
+                info: 'I\'m currently developing a mock web application for the United States polo. I am developing it in Laravel 4 to experience another web MVC framework and comparing it to frameworks I already know. The app\'s purpose is to allow polo team managers to keep track of current polo players, games, and fields across the country. <a target="_blank" href="https://github.com/holdenrehg/polo">See the source.</a>.',
                 wide: true,
                 images: [
                     'proj/uspa/uspa_home.png',
@@ -106,7 +111,7 @@
                 ]
             }, {
                 title: 'SoCal',
-                info: '<p>This project was a social calendar Android application. Provides users with a social network, calendar system, and location based reminders. Built to support version 4.0.2 and up.</p>',
+                info: 'This project was a social calendar Android application. It provides users with a social network, calendar system, and location based reminders, and was built to support version 4.0.2 and up.',
                 images: [
                     'proj/socal/home.png',
                     'proj/socal/event.png',
@@ -115,7 +120,8 @@
                 ]
             }, {
                 title: 'Spark',
-                info: '<p>Smart parking application built in 24 hours during AngelHack 2014 Silicon Valley and placed within the top 10. Spark wanted to make paid parking easier by using existing security cameras to tag pictures of cars license plates pulling in and out of lots. The pictures would be sent to our server for processing and notify a user of the fee for parking online. The web client provided users with the ability to create accounts attached to their license plate numbers and pay their fees directly from the page. I built the web side using Express, Backbone, jQuery, Underscore, and Handlebars.</p><p><a href="http://github.com/holdenrehg/SparkWeb" target="_blank">See the source</a></p>',
+                time: 'Summer 2014',
+                info: 'This smart parking application built in 24 hours during AngelHack 2014 Silicon Valley and placed within the top 10. Spark wanted to make paid parking easier by using existing security cameras to tag pictures of cars license plates pulling in and out of lots. The pictures would be sent to our server for processing and notify a user of the fee for parking online. The web client provided users with the ability to create accounts attached to their license plate numbers and pay their fees directly from the page. I built the web side using Express, Backbone, jQuery, Underscore, and Handlebars.</p><p><a href="http://github.com/holdenrehg/SparkWeb" target="_blank">See the source.</a>',
                 wide: true,
                 images: [
                     'proj/spark/spark_home.png',
@@ -141,6 +147,7 @@
             ui.work = document.getElementById(ui.workDiv);
             ui.workTitle = document.getElementById(ui.workTitleDiv);
             ui.workInfo = document.getElementById(ui.workInfoDiv);
+            ui.workTime = document.getElementById(ui.workTimeDiv);
             ui.workImages = document.getElementById(ui.workImagesDiv);
             ui.mobile = ui.isMobile();
 
@@ -298,6 +305,7 @@
 
             // update div info
             ui.workTitle.innerHTML = workObj.title;
+            ui.workTime.innerHTML = workObj.time ? workObj.time : '';
             ui.workInfo.innerHTML = workObj.info;
             ui.workImages.innerHTML = '';
             if (workObj.hasOwnProperty('images')) {
@@ -306,7 +314,7 @@
                 for (var i = 0; i < workObj.images.length; i += 1) {
                     var img = document.createElement('img');
                     img.src = window.location.origin + '/images/' + workObj.images[i];
-                    img.style.width = '180px';
+                    img.style.width = '60px';
                     img.style.margin = '30px 5px 0px 5px';
                     img.style.display = 'none';
                     if(wide) { img.classList.add('wide'); }

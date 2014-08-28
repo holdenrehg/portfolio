@@ -3,8 +3,10 @@
 	<head>
 		<title>{{ title }}</title>
 		<meta name="viewport" content="width=device-width, user-scalable=no">
-		<link rel='stylesheet' href='/stylesheets/style.css' />
+		<!-- <link href='http://fonts.googleapis.com/css?family=Merriweather:400,700,300,900' rel='stylesheet' type='text/css'> -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+		<link rel='stylesheet' href='/stylesheets/style.css' />
 	</head>
 	<body id="hover">
 		<header>
@@ -26,20 +28,9 @@
 					</div>
 				</div>
 			</section>
-			<div class="underline"></div>
 			<section id="experience-sec" class="light-grey-con">
 				<div class="center-con">
 					<ul id="toolbelt" class="circle">
-						<!-- <div class="grid-5">
-							<li id="jobs">
-								<h3 style="margin-left:24px">JOBS</h3>
-							</li>
-						</div>
-						<div class="grid-5">
-							<li id="php">
-								<h3 style="margin-left:30px">PHP</h3>
-							</li>
-						</div> -->
 						<div class="grid-5">
 							<li id="edu">
 								<h3>EDU</h3>
@@ -62,6 +53,7 @@
 						</div>
 						<div id="slider-display">
 							<h5 id="display-title"></h5> 
+							<i id="display-time"></i>
 							<p id="display-info"></p>
 							<div id="display-images">
 							</div>
@@ -100,7 +92,6 @@
 					</ul>
 				</div>
 			</section>
-			<div class="underline"></div>
 		</main>
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
