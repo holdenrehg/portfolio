@@ -4,7 +4,7 @@
 
         // dom element ids
         laptopId: 'laptop',
-        titleDiv: 'title-con',
+        titleDiv: 'title',
         leftDiv: 'left-arrow',
         rightDiv: 'right-arrow',
         workDiv: 'slider-display',

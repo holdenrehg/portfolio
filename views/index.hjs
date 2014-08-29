@@ -9,44 +9,35 @@
 	</head>
 	<body id="hover">
 		<header>
-			<div class="center-con">
-				<a data-scroll href="#home-sec"><i id="home" class="fa fa-home fa-2x"></i></a>
-				<a data-scroll href="#experience-sec"><i id="experience" class="fa fa-code fa-2x"></i></a>
-				<a data-scroll href="#contract-sec"><i id="contact" class="fa fa-phone fa-2x"></i></a> 
+			<nav>
+				<a data-scroll href="#home"><i id="home-scroll" class="fa fa-home fa-2x"></i></a>
+				<a data-scroll href="#experience"><i id="experience-scroll" class="fa fa-code fa-2x"></i></a>
+				<a data-scroll href="#contact"><i id="contact-scroll" class="fa fa-phone fa-2x"></i></a> 
 				<a href="../images/Rehg_Resume.pdf" target="_blank"><i id="resume" class="fa fa-file fa-2x"></i></a>
-			</div>
+			</nav>
 		</header>
 		<main>
-			<section id="home-sec" class="grey-con">
+			<section id="home">
 				<div class="ignore-header"></div>
-				<div class="center-con" >
-					<div id="title-con">
-						<h1>Software Engineer // Web Developer</h1>
-						<i id="laptop" class="fa fa-laptop fa-3x dark fa-pad"></i>
-						<p>Full stack web, mobile, and non-web based applications development</p>
-					</div>
+				<div id="title">
+					<h1>Software Engineer // Web Developer</h1>
+					<i id="laptop" class="fa fa-laptop fa-3x dark fa-pad"></i>
+					<p>Full stack web, mobile, and non-web based applications development</p>
 				</div>
 			</section>
-			<section id="experience-sec" class="light-grey-con">
-				<div class="center-con">
+			<section id="experience">
 					<ul id="toolbelt" class="circle">
-						<div class="grid-5">
-							<li id="edu">
-								<h3>EDU</h3>
-							</li>
-						</div>
-						<div class="grid-5">
-							<li id="work">
-								<h3>WORK</h3>
-							</li>
-						</div>
-						<div class="grid-5">
-							<li id="proj">
-								<h3>PROJ</h3>
-							</li>
-						</div>
+						<li id="edu">
+							<h3>EDU</h3>
+						</li>
+						<li id="work">
+							<h3>WORK</h3>
+						</li>
+						<li id="proj">
+							<h3>PROJ</h3>
+						</li>
 					</ul>
-					<div class="row">
+					<div id="slider">
 						<div id="left-arrow">
 							<i class="fa fa-angle-left fa-5x blue"></i>
 						</div>
@@ -61,11 +52,9 @@
 							<i class="fa fa-angle-right fa-5x blue"></i>
 						</div>
 					</div>
-				</div>
 			</section>
-			<section id="contract-sec" class="white-con">
-				<div class="center-con">
-					<h4 class="center-break"><a href="mailto:holdenrehg@gmail.com">holdenrehg@gmail.com</a></h4>
+			<section id="contact">
+					<h4><a href="mailto:holdenrehg@gmail.com">holdenrehg@gmail.com</a></h4>
 					<h4>618.691.9180</h4>
 					<ul id="footer-social" class="row">
 						<li>
@@ -89,7 +78,6 @@
 							</a>	
 						</li>
 					</ul>
-				</div>
 			</section>
 		</main>
 

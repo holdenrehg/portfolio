@@ -3,49 +3,28 @@
     height: 100%;
     width: 100%;
 }
-
 @mixin flex($direction) {
-	display: flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: $direction;
 }
-
 @mixin circle() {
-	line-height: 100px;
+    line-height: 100px;
     width: 100px;
     height: 100px;
     border-radius: 50%;
     border: 2px solid #6592AC;
     background: #f5f5f5;
     opacity: .4;
-    &.circle-active,
-    &:hover {
-    	background: #6592AC !important;
-	    color: #fff;
-	    opacity: 1 !important;
-	    transition: background .05s ease-in-out;
+    &.circle-active, &:hover {
+        background: #6592AC !important;
+        color: #fff;
+        opacity: 1 !important;
+        transition: background .05s ease-in-out;
     }
 }
-
 @mixin lightBackground() {
-	background-color: #FFFFFF;
-	color: #1F1F1F;
+    background-color: #FFFFFF;
+    color: #1F1F1F;
 }
-
-// .circle li {
-//     line-height: 100px;
-//     width: 100px;
-//     height: 100px;
-//     border-radius: 50%;
-//     border: 2px solid #6592AC;
-//     background: #f5f5f5;
-//     opacity: .4;
-// }
-
-// #hover .circle li:hover, .circle-active {
-//     background: #6592AC !important;
-//     color: #fff;
-//     opacity: 1 !important;
-//     transition: background .05s ease-in-out;
-// }
