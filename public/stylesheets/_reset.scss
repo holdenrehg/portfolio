@@ -1,0 +1,15 @@
+html {
+    &, body, main, header {
+        min-width: 260px;
+    }
+    &, body, main {
+        height: 100%;
+    }
+    &, body, ul, div {
+        padding: 0;
+        margin: 0;
+    }
+    ul {
+        list-style: none;
+    }
+}
