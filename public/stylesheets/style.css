@@ -100,7 +100,7 @@ html {
         background: url("../images/linen.png");
         min-height: 100%; }
         html body section#experience #toolbelt {
-          margin: 30px 0 0 0; }
+          margin: 30px 0; }
           html body section#experience #toolbelt li {
             line-height: 100px;
             width: 100px;
