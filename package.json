@@ -1,6 +1,6 @@
 {
     "name": "holdenrehg_portfolio",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "Personal portfolio resume site for Holden Rehg.",
     "main": "web.js",
     "scripts": {

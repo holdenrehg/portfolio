@@ -1,0 +1,68 @@
+section {
+    @include flex(column);
+    height: 100%;
+    text-align: center;
+    #view {
+        padding-bottom: $timelineHeight;
+    }
+}
+#timeline {
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    .tick, .bigTick {
+        display: inline-block;
+    }
+    .tick {
+        margin: 0 2px;
+        width: 1px;
+        height: 14px;
+        background: #eee;
+    }
+    .bigTick {
+        margin: 0 6px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        opacity: .7;
+        background: #eee;
+        cursor: pointer;
+        position: relative;
+    }
+    .tooltip {
+        position: absolute;
+        background: #eee;
+        color: #ddd;
+        top: -50px;
+        width: 150px;
+        left: -75px;
+        padding: 5px;
+        border-radius: 3px;
+        display: none;
+        font-size: 12px;
+        &:after {
+            top: 100%;
+            left: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-color: rgba(102, 102, 102, 0);
+            border-top-color: #eee;
+            border-width: 12px;
+            margin-left: -12px;
+        }
+    }
+    .yearLabel {
+        position: absolute;
+        color: #eee;
+        font-size: 12px;
+        bottom: -24px;
+        left: -6px;
+    }
+}

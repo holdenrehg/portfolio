@@ -3,87 +3,183 @@
 	<head>
 		<title>Holden Rehg</title>
 		<meta name="viewport" content="width=device-width, user-scalable=no">
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300' rel='stylesheet' type='text/css'>
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-		<link rel='stylesheet' href='/stylesheets/style.css' />
+		<link rel='stylesheet' href='/stylesheets/main.css' />
 	</head>
 	<body id="hover">
-		<header>
-			<nav>
-				<a data-scroll href="#home"><i id="home-scroll" class="fa fa-home fa-2x"></i></a>
-				<a data-scroll href="#experience"><i id="experience-scroll" class="fa fa-code fa-2x"></i></a>
-				<a data-scroll href="#contact"><i id="contact-scroll" class="fa fa-phone fa-2x"></i></a> 
-				<a href="../images/Rehg_Resume.pdf" target="_blank"><i id="resume" class="fa fa-file fa-2x"></i></a>
-			</nav>
-		</header>
 		<main>
-			<section id="home">
-				<div class="ignore-header"></div>
-				<div id="title">
-					<h1>Software Engineer // Web Developer</h1>
-					<i id="laptop" class="fa fa-laptop fa-3x dark fa-pad"></i>
-					<p>Full stack web, mobile, and non-web based applications development</p>
+			<section>
+				<div id="view">
+					<h1>Holden Rehg</h1>
 				</div>
 			</section>
-			<section id="experience">
-					<ul id="toolbelt" class="circle">
-						<li id="edu">
-							<h3>EDU</h3>
-						</li>
-						<li id="work">
-							<h3>WORK</h3>
-						</li>
-						<li id="proj">
-							<h3>PROJ</h3>
-						</li>
-					</ul>
-					<div id="slider">
-						<div id="left-arrow">
-							<i class="fa fa-angle-left fa-5x blue"></i>
-						</div>
-						<div id="slider-display">
-							<h5 id="display-title"></h5> 
-							<i id="display-time"></i>
-							<p id="display-info"></p>
-							<div id="display-images">
-							</div>
-						</div>
-						<div id="right-arrow">
-							<i class="fa fa-angle-right fa-5x blue"></i>
-						</div>
-					</div>
-			</section>
-			<section id="contact">
-					<h4><a href="mailto:holdenrehg@gmail.com">holdenrehg@gmail.com</a></h4>
-					<h4>618.691.9180</h4>
-					<ul id="footer-social" class="row">
-						<li>
-							<a target="_blank" href="http://linkedin.com/in/holdenrehg">
-								<i class="fa fa-linkedin fa-4x dark"></i>
-							</a>
-						</li>
-						<li>
-							<a target="_blank" href="http://twitter.com/reedrehg">
-								<i class="fa fa-twitter fa-4x dark"></i>
-							</a>
-						</li>
-						<li>
-							<a target="_blank" href="http://github.com/holdenrehg">
-								<i class="fa fa-github-alt fa-4x dark"></i>
-							</a>
-						</li>
-						<li>
-							<a target="_blank" href="https://plus.google.com/112345589054343397477">
-								<i class="fa fa-google-plus fa-4x dark"></i>
-							</a>	
-						</li>
-					</ul>
-			</section>
+			<div id="timeline">
+				<div class="bigTick">
+					<div class="tooltip">Start College</div>
+					<div class="yearLabel">2012</div>
+				</div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="bigTick">
+					<div class="tooltip">First CS Class</div>
+					<div class="yearLabel">2012</div>
+				</div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="bigTick">
+					<div class="tooltip">Bluestingray Internship</div>
+					<div class="yearLabel">2012</div>
+				</div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="bigTick">
+					<div class="tooltip">Student Web Dev</div>
+					<div class="yearLabel">2013</div>
+				</div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="bigTick">
+					<div class="tooltip">LinkedIn Internship</div>
+					<div class="yearLabel">2013</div>
+				</div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="bigTick">
+					<div class="tooltip">Bluestingray Contractor</div>
+					<div class="yearLabel">2013</div>
+				</div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="bigTick">
+					<div class="tooltip">TelePharm</div>
+					<div class="yearLabel">2014</div>
+				</div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="bigTick">
+					<div class="tooltip">LinkedIn Round 2</div>
+					<div class="yearLabel">2014</div>
+				</div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="bigTick">
+					<div class="tooltip">This is a sweet tooltip</div>
+					<div class="yearLabel">2014</div>
+				</div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="bigTick">
+					<div class="tooltip">This is a sweet tooltip</div>
+					<div class="yearLabel">2014</div>
+				</div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="bigTick">
+					<div class="tooltip">This is a sweet tooltip</div>
+					<div class="yearLabel">2014</div>
+				</div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="bigTick">
+					<div class="tooltip">This is a sweet tooltip</div>
+					<div class="yearLabel">2014</div>
+				</div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="bigTick">
+					<div class="tooltip">This is a sweet tooltip</div>
+					<div class="yearLabel">2014</div>
+				</div>
+			</div>
 		</main>
 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
-		<script type="text/javascript" src="../javascripts/ui.js"></script>
-		<script type="text/javascript" src="../javascripts/vendor/smooth-scroll/smooth-scroll.js"></script>
+		<script type="text/javascript" src="../javascripts/ui.js"></script>		
 		<script type="text/javascript" src="../javascripts/vendor/google/analytics.js"></script>
+		</script>
 	</body>
 </html>

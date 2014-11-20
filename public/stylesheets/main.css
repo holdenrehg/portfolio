@@ -1,0 +1,87 @@
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  color: #EEEEEE; }
+
+h1 {
+  font-size: 50px;
+  font-weight: 800; }
+
+html {
+  font-family: 'Open Sans', helvetica;
+  overflow: hidden; }
+  html, html body, html main, html header {
+    min-width: 260px; }
+  html, html body, html main {
+    height: 100%; }
+  html, html body, html ul, html div {
+    padding: 0;
+    margin: 0; }
+  html ul {
+    list-style: none; }
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  text-align: center; }
+  section #view {
+    padding-bottom: 120px; }
+
+#timeline {
+  position: absolute;
+  bottom: 0;
+  height: 60px;
+  width: 100%;
+  padding: 30px;
+  text-align: center; }
+  #timeline .tick, #timeline .bigTick {
+    display: inline-block; }
+  #timeline .tick {
+    margin: 0 2px;
+    width: 1px;
+    height: 14px;
+    background: #eee; }
+  #timeline .bigTick {
+    margin: 0 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    opacity: .7;
+    background: #eee;
+    cursor: pointer;
+    position: relative; }
+  #timeline .tooltip {
+    position: absolute;
+    background: #eee;
+    color: #ddd;
+    top: -50px;
+    width: 150px;
+    left: -75px;
+    padding: 5px;
+    border-radius: 3px;
+    display: none;
+    font-size: 12px; }
+    #timeline .tooltip:after {
+      top: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba(102, 102, 102, 0);
+      border-top-color: #eee;
+      border-width: 12px;
+      margin-left: -12px; }
+  #timeline .yearLabel {
+    position: absolute;
+    color: #eee;
+    font-size: 12px;
+    bottom: -24px;
+    left: -6px; }
+
+/*# sourceMappingURL=main.css.map */
