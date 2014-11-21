@@ -11,12 +11,12 @@ header {
             display: inline;
             margin: 0 5px;
             i {
-                font-size: 20px;
+                font-size: 26px;
                 color: $filler;
-                transition: color .5s;
+                transition: color .3s;
                 &:hover {
-                    color: $primaryDark;
-                    transition: color .5s;
+                    color: $secondary;
+                    transition: color .3s;
                 }
             }
         }
@@ -26,6 +26,17 @@ section {
     @include flex(column);
     height: 100%;
     text-align: center;
+    &#viewContainer {
+        width: 100%;
+        &.fadeOut {
+            opacity: 0;
+            transition: opacity .4s;
+        }
+        &.fadeIn {
+            opacity: 1;
+            transition: opacity .4s;
+        }
+    }
     #view {
         padding-bottom: $timelineHeight;
     }
@@ -39,7 +50,7 @@ section {
     width: 100%;
     padding: 30px;
     text-align: center;
-    .tick, .bigTick {
+    .tick, .dot {
         display: inline-block;
     }
     .tick {
@@ -47,28 +58,37 @@ section {
         width: 2px;
         height: 14px;
         background: #eee;
+        transition: opacity .3s;
+        &.grow {
+            width: 2px;
+            opacity: .4;
+            transition: opacity .3s;
+        }
     }
-    .bigTick {
+    .dot {
         margin: 0 6px;
         width: 14px;
         height: 14px;
         border-radius: 50%;
-        background: #eee;
+        background: $filler;
         cursor: pointer;
         position: relative;
-        transition: background .6s;
+        transition: background .3s;
+        &.current {
+            background: $secondary;
+        }
         &:hover {
-            background: $secondaryDark;
-            transition: background .6s;
+            background: $secondary;
+            transition: background .3s;
         }
     }
     .tooltip {
         position: absolute;
         background: $greyDark;
         color: $white;
-        top: -50px;
+        top: -60px;
         width: 120px;
-        left: -60px;
+        left: -59px;
         padding: 5px;
         border-radius: 3px;
         display: none;

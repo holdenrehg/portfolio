@@ -4,12 +4,14 @@
 		<title>Holden Rehg</title>
 		<meta name="viewport" content="width=device-width, user-scalable=no">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 		<link rel='stylesheet' href='/stylesheets/main.css' />
 	</head>
 	<body id="hover">
 		<header>
 			<ul id="social">
+				<li><a target="_blank" href="mailto:holdenrehg@gmail.com"><i class="fa fa-envelope"></i></a></li>
 				<li><a target="_blank" href="http://linkedin.com/in/holdenrehg"><i class="fa fa-linkedin"></i></a></li>
 				<li><a target="_blank" href="http://twitter.com/reedrehg"><i class="fa fa-twitter"></i></a></li>
 				<li><a target="_blank" href="http://github.com/holdenrehg"><i class="fa fa-github-alt"></i></a></li>
@@ -17,15 +19,16 @@
 			</ul>
 		</header>
 		<main>
-			<section>
-				<div id="view">
+			<section id="viewContainer">
+				<div id="view" class="landingView">
+					<h5 class="fancy">The Professional History Of</h5>
 					<h1>Holden Rehg</h1>
 					<h6>Coder In Training</h6>
 				</div>
 			</section>
 			<div id="timeline">
-				<div class="bigTick">
-					<div class="tooltip">Start College</div>
+				<div class="dot" data-view="stickman">
+					<div class="tooltip">Discovery</div>
 					<div class="yearLabel">2012</div>
 				</div>
 				<div class="tick"></div>
@@ -37,8 +40,8 @@
 				<div class="tick"></div>
 				<div class="tick"></div>
 				<div class="tick"></div>
-				<div class="bigTick">
-					<div class="tooltip">First CS Class</div>
+				<div class="dot" data-view="college">
+					<div class="tooltip">Education</div>
 					<div class="yearLabel">2012</div>
 				</div>
 				<div class="tick"></div>
@@ -50,8 +53,8 @@
 				<div class="tick"></div>
 				<div class="tick"></div>
 				<div class="tick"></div>
-				<div class="bigTick">
-					<div class="tooltip">Bluestingray Internship</div>
+				<div class="dot" data-view="bluestingray">
+					<div class="tooltip">First Internship</div>
 					<div class="yearLabel">2012</div>
 				</div>
 				<div class="tick"></div>
@@ -63,8 +66,8 @@
 				<div class="tick"></div>
 				<div class="tick"></div>
 				<div class="tick"></div>
-				<div class="bigTick">
-					<div class="tooltip">Student Web Dev</div>
+				<div class="dot" data-view="webdev">
+					<div class="tooltip">Campus Job</div>
 					<div class="yearLabel">2013</div>
 				</div>
 				<div class="tick"></div>
@@ -76,8 +79,8 @@
 				<div class="tick"></div>
 				<div class="tick"></div>
 				<div class="tick"></div>
-				<div class="bigTick">
-					<div class="tooltip">LinkedIn Internship</div>
+				<div class="dot" data-view="linkedin">
+					<div class="tooltip">Silicon Valley</div>
 					<div class="yearLabel">2013</div>
 				</div>
 				<div class="tick"></div>
@@ -89,21 +92,8 @@
 				<div class="tick"></div>
 				<div class="tick"></div>
 				<div class="tick"></div>
-				<div class="bigTick">
-					<div class="tooltip">Bluestingray Contractor</div>
-					<div class="yearLabel">2013</div>
-				</div>
-				<div class="tick"></div>
-				<div class="tick"></div>
-				<div class="tick"></div>
-				<div class="tick"></div>
-				<div class="tick"></div>
-				<div class="tick"></div>
-				<div class="tick"></div>
-				<div class="tick"></div>
-				<div class="tick"></div>
-				<div class="bigTick">
-					<div class="tooltip">TelePharm</div>
+				<div class="dot" data-view="telepharm">
+					<div class="tooltip">Found A Startup</div>
 					<div class="yearLabel">2014</div>
 				</div>
 				<div class="tick"></div>
@@ -115,13 +105,27 @@
 				<div class="tick"></div>
 				<div class="tick"></div>
 				<div class="tick"></div>
-				<div class="bigTick">
-					<div class="tooltip">LinkedIn Round 2</div>
+				<div class="dot" data-view="morelinkedin">
+					<div class="tooltip">Back To The Valley</div>
+					<div class="yearLabel">2014</div>
+				</div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="dot" data-view="landing">
+					<div class="tooltip">Now</div>
 					<div class="yearLabel">2014</div>
 				</div>
 			</div>
 		</main>
 
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script type="text/javascript" src="../javascripts/ui.js"></script>		
 		<script type="text/javascript" src="../javascripts/vendor/google/analytics.js"></script>
 		</script>

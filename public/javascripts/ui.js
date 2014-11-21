@@ -4,26 +4,109 @@
 
         timeline: undefined,
         ticks: undefined,
+        selectedTick: undefined,
+        timelineAnimation: undefined,
 
         init: function() {
-            ui.ticks = document.querySelectorAll('.bigTick');
+            ui.ticks = document.querySelectorAll('.dot');
 
             ui.addEventListeners();
+            ui.startTimelineAnimation();
         },
 
         addEventListeners: function() {
-            for(var i = 0; i < ui.ticks.length; i++) {
+            for (var i = 0; i < ui.ticks.length; i++) {
                 ui.ticks[i].addEventListener('mouseover', ui.events.toggleTooltip);
                 ui.ticks[i].addEventListener('mouseout', ui.events.toggleTooltip);
+                ui.ticks[i].addEventListener('click', ui.events.swapView);
             }
         },
 
+        /**
+         * Start rotating animation for timeline ticks
+         */
+        startTimelineAnimation: function() {
+            ui.timelineAnimation = setTimeout(function() {
+                requestAnimationFrame(ui.startTimelineAnimation);
+                var ticks = document.querySelectorAll('.tick');
+
+                var processTick = function(iter, className) {
+                    var tick = ticks[iter++];
+                    tick.className = className;
+                    setTimeout(function() {
+                        if (iter < ticks.length) {
+                            processTick(iter, className);
+                        }
+                    }, 20);
+                };
+
+                processTick(0, 'tick grow');
+                setTimeout(function() {
+                    processTick(0, 'tick');
+                }, 300);
+
+            }, 4000);
+        },
+
+        /**
+         * Turn off rotating animation for timeline ticks
+         */
+        stopTimelineAnimation: function() {
+            clearInterval(ui.timelineAnimation);
+            ui.timelineAnimation = undefined;
+        },
+
         events: {
+
+            /**
+             * Hover listener
+             */
             toggleTooltip: function(e) {
                 var tooltip = e.target.querySelector('.tooltip');
 
                 if (tooltip) {
                     tooltip.style.display = tooltip.style.display === '' ? 'block' : '';
+                }
+            },
+
+            /**
+             * Click listener
+             */
+            swapView: function(e) {
+                var tick = e.target,
+                    viewName = e.target.dataset.view,
+                    promise = $.get('../views/' + viewName + '.hjs'),
+                    view = document.querySelector('#view'),
+                    viewContainer = document.querySelector('#viewContainer');
+
+                // insert new view
+                promise.done(function(res) {
+
+                    // slide current view off screen
+                    viewContainer.className = 'fadeOut';
+
+                    // set container out of view to the right and slide in
+                    setTimeout(function() {
+                        view.innerHTML = res;
+                        view.className = viewName + 'View';
+                        viewContainer.className = 'fadeIn';
+                    }, 400);
+                });
+
+                // remove old highlight
+                if (ui.selectedTick) {
+                    ui.selectedTick.className = 'dot';
+                }
+
+                // highlight tick
+                tick.className = 'dot current';
+                ui.selectedTick = tick;
+
+                // clear / start timeline animation
+                if (viewName !== 'landing') {
+                    ui.stopTimelineAnimation();
+                } else if (!ui.timelineAnimation) {
+                    ui.startTimelineAnimation();
                 }
             }
         }

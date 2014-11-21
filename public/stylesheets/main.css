@@ -9,14 +9,25 @@ p, h1, h2, h3, h4, h5, h6 {
   color: #EEEEEE; }
 
 h1 {
-  font-size: 60px;
+  font-size: 90px;
   font-weight: 800;
+  color: #474E5D; }
+
+h5 {
+  font-size: 30px;
   color: #474E5D; }
 
 h6 {
   font-size: 14px;
-  font-weight: 400;
-  color: #474E5D; }
+  font-weight: 600;
+  color: #FFFFFF;
+  background: #41C3AC;
+  display: inline-block;
+  padding: 10px 14px;
+  text-transform: uppercase; }
+
+.fancy {
+  font-family: 'Lobster'; }
 
 html {
   font-family: 'Open Sans', helvetica;
@@ -43,12 +54,12 @@ header {
       display: inline;
       margin: 0 5px; }
       header #social li i {
-        font-size: 20px;
+        font-size: 26px;
         color: #EEEEEE;
-        transition: color .5s; }
+        transition: color .3s; }
         header #social li i:hover {
-          color: #373E4D;
-          transition: color .5s; }
+          color: #41C3AC;
+          transition: color .3s; }
 
 section {
   display: flex;
@@ -57,6 +68,14 @@ section {
   flex-direction: column;
   height: 100%;
   text-align: center; }
+  section#viewContainer {
+    width: 100%; }
+    section#viewContainer.fadeOut {
+      opacity: 0;
+      transition: opacity .4s; }
+    section#viewContainer.fadeIn {
+      opacity: 1;
+      transition: opacity .4s; }
   section #view {
     padding-bottom: 90px; }
 
@@ -68,32 +87,39 @@ section {
   width: 100%;
   padding: 30px;
   text-align: center; }
-  #timeline .tick, #timeline .bigTick {
+  #timeline .tick, #timeline .dot {
     display: inline-block; }
   #timeline .tick {
     margin: 0 2px;
     width: 2px;
     height: 14px;
-    background: #eee; }
-  #timeline .bigTick {
+    background: #eee;
+    transition: opacity .3s; }
+    #timeline .tick.grow {
+      width: 2px;
+      opacity: .4;
+      transition: opacity .3s; }
+  #timeline .dot {
     margin: 0 6px;
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    background: #eee;
+    background: #EEEEEE;
     cursor: pointer;
     position: relative;
-    transition: background .6s; }
-    #timeline .bigTick:hover {
-      background: #34B39C;
-      transition: background .6s; }
+    transition: background .3s; }
+    #timeline .dot.current {
+      background: #41C3AC; }
+    #timeline .dot:hover {
+      background: #41C3AC;
+      transition: background .3s; }
   #timeline .tooltip {
     position: absolute;
     background: #2E2E2E;
     color: #FFFFFF;
-    top: -50px;
+    top: -60px;
     width: 120px;
-    left: -60px;
+    left: -59px;
     padding: 5px;
     border-radius: 3px;
     display: none;

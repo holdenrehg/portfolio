@@ -4,12 +4,23 @@ p, h1, h2, h3, h4, h5, h6 {
     color: $filler;
 }
 h1 {
-    font-size: 60px;
+    font-size: 90px;
     font-weight: 800;
     color: $primary;
 }
+h5 {
+	font-size: 30px;
+	color: $primary;
+}
 h6 {
     font-size: 14px;
-    font-weight: 400;
-    color: $primary;
+    font-weight: 600;
+    color: $white;
+    background: $secondary;
+    display: inline-block;
+	padding: 10px 14px;
+	text-transform: uppercase;
+}
+.fancy {
+	font-family: 'Lobster';
 }

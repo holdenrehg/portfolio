@@ -5,7 +5,7 @@ var path = require('path');
 
 app = express();
 app.set('port', process.env.PORT || 4000);
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'public/views'));
 app.set('view engine', 'hjs');
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
