@@ -6,15 +6,22 @@
         ticks: undefined,
         selectedTick: undefined,
         timelineAnimation: undefined,
+        timelineLeft: undefined,
+        timelineRight: undefined,
+        timelineIndex: -1,
 
         init: function() {
             ui.ticks = document.querySelectorAll('.dot');
+            ui.timelineLeft = document.querySelector('#left');
+            ui.timelineRight = document.querySelector('#right');
 
             ui.addEventListeners();
             ui.startTimelineAnimation();
         },
 
         addEventListeners: function() {
+            ui.timelineLeft.addEventListener('click', ui.events.moveTimelineBackwards);
+            ui.timelineRight.addEventListener('click', ui.events.moveTimelineForwards);
             for (var i = 0; i < ui.ticks.length; i++) {
                 ui.ticks[i].addEventListener('mouseover', ui.events.toggleTooltip);
                 ui.ticks[i].addEventListener('mouseout', ui.events.toggleTooltip);
@@ -101,6 +108,16 @@
                 // highlight tick
                 tick.className = 'dot current';
                 ui.selectedTick = tick;
+            },
+
+            moveTimelineBackwards: function(e) {
+                ui.timelineIndex = (ui.timelineIndex + ui.ticks.length - 1) % ui.ticks.length;
+                ui.ticks[ui.timelineIndex].click();
+            },
+
+            moveTimelineForwards: function(e) {
+                ui.timelineIndex = (ui.timelineIndex + 1) % ui.ticks.length;
+                ui.ticks[ui.timelineIndex].click();
             }
         }
 
