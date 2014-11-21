@@ -8,6 +8,12 @@ h1 {
     font-weight: 800;
     color: $primary;
 }
+h2 {
+	font-size: 32px;
+    font-weight: 800;
+    color: $primary;
+    margin-bottom: 10px;
+}
 h5 {
 	font-size: 30px;
 	color: $primary;
@@ -20,6 +26,10 @@ h6 {
     display: inline-block;
 	padding: 10px 14px;
 	text-transform: uppercase;
+}
+p {
+	font-size: 14px;
+	color: $greyDark;
 }
 .fancy {
 	font-family: 'Lobster';

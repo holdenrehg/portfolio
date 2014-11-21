@@ -122,6 +122,13 @@
 					<div class="tooltip">Now</div>
 					<div class="yearLabel">2014</div>
 				</div>
+
+				<div id="left">
+					<i class="fa fa-arrow-left"></i>
+				</div>
+				<div id="right">
+					<i class="fa fa-arrow-right"></i>
+				</div>
 			</div>
 		</main>
 

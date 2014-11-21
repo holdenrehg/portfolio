@@ -45,7 +45,7 @@
                     processTick(0, 'tick');
                 }, 300);
 
-            }, 4000);
+            }, 8000);
         },
 
         /**
@@ -101,13 +101,6 @@
                 // highlight tick
                 tick.className = 'dot current';
                 ui.selectedTick = tick;
-
-                // clear / start timeline animation
-                if (viewName !== 'landing') {
-                    ui.stopTimelineAnimation();
-                } else if (!ui.timelineAnimation) {
-                    ui.startTimelineAnimation();
-                }
             }
         }
 
