@@ -1,11 +1,22 @@
+header, #timeline {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 p, h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
   color: #EEEEEE; }
 
 h1 {
-  font-size: 50px;
-  font-weight: 800; }
+  font-size: 60px;
+  font-weight: 800;
+  color: #474E5D; }
+
+h6 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #474E5D; }
 
 html {
   font-family: 'Open Sans', helvetica;
@@ -20,6 +31,25 @@ html {
   html ul {
     list-style: none; }
 
+header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  padding: 14px 20px;
+  left: 0; }
+  header #social {
+    float: right; }
+    header #social li {
+      display: inline;
+      margin: 0 5px; }
+      header #social li i {
+        font-size: 20px;
+        color: #EEEEEE;
+        transition: color .5s; }
+        header #social li i:hover {
+          color: #373E4D;
+          transition: color .5s; }
+
 section {
   display: flex;
   align-items: center;
@@ -28,12 +58,13 @@ section {
   height: 100%;
   text-align: center; }
   section #view {
-    padding-bottom: 120px; }
+    padding-bottom: 90px; }
 
 #timeline {
+  background: #474E5D;
   position: absolute;
   bottom: 0;
-  height: 60px;
+  height: 90px;
   width: 100%;
   padding: 30px;
   text-align: center; }
@@ -41,7 +72,7 @@ section {
     display: inline-block; }
   #timeline .tick {
     margin: 0 2px;
-    width: 1px;
+    width: 2px;
     height: 14px;
     background: #eee; }
   #timeline .bigTick {
@@ -49,21 +80,24 @@ section {
     width: 14px;
     height: 14px;
     border-radius: 50%;
-    opacity: .7;
     background: #eee;
     cursor: pointer;
-    position: relative; }
+    position: relative;
+    transition: background .6s; }
+    #timeline .bigTick:hover {
+      background: #34B39C;
+      transition: background .6s; }
   #timeline .tooltip {
     position: absolute;
-    background: #eee;
-    color: #ddd;
+    background: #2E2E2E;
+    color: #FFFFFF;
     top: -50px;
-    width: 150px;
-    left: -75px;
+    width: 120px;
+    left: -60px;
     padding: 5px;
     border-radius: 3px;
     display: none;
-    font-size: 12px; }
+    font-size: 10px; }
     #timeline .tooltip:after {
       top: 100%;
       left: 50%;
@@ -74,7 +108,7 @@ section {
       position: absolute;
       pointer-events: none;
       border-color: rgba(102, 102, 102, 0);
-      border-top-color: #eee;
+      border-top-color: #2E2E2E;
       border-width: 12px;
       margin-left: -12px; }
   #timeline .yearLabel {

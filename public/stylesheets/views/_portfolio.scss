@@ -1,3 +1,27 @@
+header {
+    @extend %borderBox;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    padding: 14px 20px;
+    left: 0;
+    #social {
+        float: right;
+        li {
+            display: inline;
+            margin: 0 5px;
+            i {
+                font-size: 20px;
+                color: $filler;
+                transition: color .5s;
+                &:hover {
+                    color: $primaryDark;
+                    transition: color .5s;
+                }
+            }
+        }
+    }
+}
 section {
     @include flex(column);
     height: 100%;
@@ -7,9 +31,11 @@ section {
     }
 }
 #timeline {
+    @extend %borderBox;
+    background: $primary;
     position: absolute;
     bottom: 0;
-    height: 60px;
+    height: $timelineHeight;
     width: 100%;
     padding: 30px;
     text-align: center;
@@ -18,7 +44,7 @@ section {
     }
     .tick {
         margin: 0 2px;
-        width: 1px;
+        width: 2px;
         height: 14px;
         background: #eee;
     }
@@ -27,22 +53,26 @@ section {
         width: 14px;
         height: 14px;
         border-radius: 50%;
-        opacity: .7;
         background: #eee;
         cursor: pointer;
         position: relative;
+        transition: background .6s;
+        &:hover {
+            background: $secondaryDark;
+            transition: background .6s;
+        }
     }
     .tooltip {
         position: absolute;
-        background: #eee;
-        color: #ddd;
+        background: $greyDark;
+        color: $white;
         top: -50px;
-        width: 150px;
-        left: -75px;
+        width: 120px;
+        left: -60px;
         padding: 5px;
         border-radius: 3px;
         display: none;
-        font-size: 12px;
+        font-size: 10px;
         &:after {
             top: 100%;
             left: 50%;
@@ -53,7 +83,7 @@ section {
             position: absolute;
             pointer-events: none;
             border-color: rgba(102, 102, 102, 0);
-            border-top-color: #eee;
+            border-top-color: $greyDark;
             border-width: 12px;
             margin-left: -12px;
         }

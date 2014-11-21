@@ -28,3 +28,8 @@
     background-color: #FFFFFF;
     color: #1F1F1F;
 }
+%borderBox {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
