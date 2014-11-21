@@ -69,18 +69,24 @@ header {
   top: 0;
   padding: 14px 20px;
   left: 0; }
+  header #social li,
+  header #contact li {
+    display: inline;
+    margin: 0 5px; }
+    header #social li i,
+    header #contact li i {
+      font-size: 26px;
+      color: #41C3AC;
+      opacity: .2;
+      transition: opacity .3s; }
+      header #social li i:hover,
+      header #contact li i:hover {
+        opacity: 1;
+        transition: opacity .3s; }
   header #social {
     float: right; }
-    header #social li {
-      display: inline;
-      margin: 0 5px; }
-      header #social li i {
-        font-size: 26px;
-        color: #EEEEEE;
-        transition: color .3s; }
-        header #social li i:hover {
-          color: #41C3AC;
-          transition: color .3s; }
+  header #contact {
+    float: left; }
 
 section {
   display: flex;

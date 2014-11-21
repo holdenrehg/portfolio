@@ -10,12 +10,15 @@
 	</head>
 	<body id="hover">
 		<header>
+			<ul id="contact">
+				<li><a target="_blank" href="mailto:holdenrehg@gmail.com" title="Email Holden"><i class="fa fa-envelope"></i></a></li>
+				<li><a target="_blank" href="../images/Rehg_Resume.pdf" title="Resume"><i class="fa fa-file"></i></a></li>
+			</ul>
 			<ul id="social">
-				<li><a target="_blank" href="mailto:holdenrehg@gmail.com"><i class="fa fa-envelope"></i></a></li>
-				<li><a target="_blank" href="http://linkedin.com/in/holdenrehg"><i class="fa fa-linkedin"></i></a></li>
-				<li><a target="_blank" href="http://twitter.com/reedrehg"><i class="fa fa-twitter"></i></a></li>
-				<li><a target="_blank" href="http://github.com/holdenrehg"><i class="fa fa-github-alt"></i></a></li>
-				<li><a target="_blank" href="https://plus.google.com/112345589054343397477"><i class="fa fa-google-plus"></i></a></li>
+				<li><a target="_blank" href="http://linkedin.com/in/holdenrehg" title="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
+				<li><a target="_blank" href="http://twitter.com/reedrehg" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+				<li><a target="_blank" href="http://github.com/holdenrehg" title="Github"><i class="fa fa-github-alt"></i></a></li>
+				<li><a target="_blank" href="https://plus.google.com/112345589054343397477" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
 			</ul>
 		</header>
 		<main>

@@ -5,21 +5,28 @@ header {
     top: 0;
     padding: 14px 20px;
     left: 0;
-    #social {
-        float: right;
+    #social,
+    #contact {
         li {
             display: inline;
             margin: 0 5px;
             i {
                 font-size: 26px;
-                color: $filler;
-                transition: color .3s;
+                color: $secondary;
+                opacity: .2;
+                transition: opacity .3s;
                 &:hover {
-                    color: $secondary;
-                    transition: color .3s;
+                    opacity: 1;
+                    transition: opacity .3s;
                 }
             }
         }
+    }
+    #social {
+        float: right;
+    }
+    #contact {
+        float: left;
     }
 }
 section {
