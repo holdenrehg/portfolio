@@ -76,7 +76,7 @@ header {
     header #social li i, header #contact li i {
       font-size: 26px;
       color: #41C3AC;
-      opacity: .2;
+      opacity: .5;
       transition: opacity .3s; }
       header #social li i:hover, header #contact li i:hover {
         opacity: 1;
