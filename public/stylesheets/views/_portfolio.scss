@@ -5,8 +5,7 @@ header {
     top: 0;
     padding: 14px 20px;
     left: 0;
-    #social,
-    #contact {
+    #social, #contact {
         li {
             display: inline;
             margin: 0 5px;
@@ -46,6 +45,17 @@ section {
     }
     #view {
         overflow-y: auto;
-        padding: 0 80px ($timelineHeight + 20px) 80px;
+        padding: 0 280px ($timelineHeight + 20px) 280px;
+    }
+}
+.profileContainer {
+    background: #41C3AC;
+    display: inline-block;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    padding: 6px;
+    .profile {
+        border-radius: 50%;
     }
 }

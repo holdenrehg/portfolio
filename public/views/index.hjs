@@ -26,13 +26,14 @@
 				<div id="view" class="landingView">
 					<h5 class="fancy">The Professional History Of</h5>
 					<h1>Holden Rehg</h1>
-					<h6>Coder In Training</h6>
+					<div class="profileContainer"><img class="profile" src="https://lh6.googleusercontent.com/-RXtNNSWIU0w/VG9-pO6bSBI/AAAAAAAACbs/s1Tp3rLWoWk/s900-no/holden.jpg" width="70" /></div>
+					<!-- <h6>Coder In Training</h6> -->
 				</div>
 			</section>
 			<div id="timeline">
 				<div class="dot" data-view="stickman">
-					<div class="tooltip">Discovery</div>
-					<div class="yearLabel">2012</div>
+					<div class="tooltip">Discover Tech</div>
+					<div class="yearLabel">05/12</div>
 				</div>
 				<div class="tick"></div>
 				<div class="tick"></div>
@@ -45,7 +46,7 @@
 				<div class="tick"></div>
 				<div class="dot" data-view="college">
 					<div class="tooltip">Education</div>
-					<div class="yearLabel">2012</div>
+					<div class="yearLabel">08/12</div>
 				</div>
 				<div class="tick"></div>
 				<div class="tick"></div>
@@ -58,7 +59,20 @@
 				<div class="tick"></div>
 				<div class="dot" data-view="bluestingray">
 					<div class="tooltip">First Internship</div>
-					<div class="yearLabel">2012</div>
+					<div class="yearLabel">05/13</div>
+				</div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="tick"></div>
+				<div class="dot" data-view="ta">
+					<div class="tooltip">Teaching Assistance</div>
+					<div class="yearLabel">08/13</div>
 				</div>
 				<div class="tick"></div>
 				<div class="tick"></div>
@@ -71,7 +85,7 @@
 				<div class="tick"></div>
 				<div class="dot" data-view="webdev">
 					<div class="tooltip">Campus Job</div>
-					<div class="yearLabel">2013</div>
+					<div class="yearLabel">10/13</div>
 				</div>
 				<div class="tick"></div>
 				<div class="tick"></div>
@@ -84,7 +98,7 @@
 				<div class="tick"></div>
 				<div class="dot" data-view="linkedin">
 					<div class="tooltip">Silicon Valley</div>
-					<div class="yearLabel">2013</div>
+					<div class="yearLabel">05/14</div>
 				</div>
 				<div class="tick"></div>
 				<div class="tick"></div>
@@ -96,21 +110,8 @@
 				<div class="tick"></div>
 				<div class="tick"></div>
 				<div class="dot" data-view="telepharm">
-					<div class="tooltip">Found A Startup</div>
-					<div class="yearLabel">2014</div>
-				</div>
-				<div class="tick"></div>
-				<div class="tick"></div>
-				<div class="tick"></div>
-				<div class="tick"></div>
-				<div class="tick"></div>
-				<div class="tick"></div>
-				<div class="tick"></div>
-				<div class="tick"></div>
-				<div class="tick"></div>
-				<div class="dot" data-view="morelinkedin">
-					<div class="tooltip">Back To The Valley</div>
-					<div class="yearLabel">2014</div>
+					<div class="tooltip">Work For A Startup</div>
+					<div class="yearLabel">09/14</div>
 				</div>
 				<div class="tick"></div>
 				<div class="tick"></div>
@@ -123,9 +124,9 @@
 				<div class="tick"></div>
 				<div class="dot" data-view="landing">
 					<div class="tooltip">Now</div>
-					<div class="yearLabel">2014</div>
 				</div>
 
+				<!-- Left / right timeline arrows -->
 				<div id="left">
 					<i class="fa fa-arrow-left"></i>
 				</div>
@@ -136,6 +137,7 @@
 		</main>
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script type="text/javascript" src="../javascripts/override.js"></script>
 		<script type="text/javascript" src="../javascripts/ui.js"></script>		
 		<script type="text/javascript" src="../javascripts/vendor/google/analytics.js"></script>
 		</script>

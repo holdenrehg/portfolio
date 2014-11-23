@@ -86,17 +86,19 @@
                     view = document.querySelector('#view'),
                     viewContainer = document.querySelector('#viewContainer');
 
-                // insert new view
                 promise.done(function(res) {
 
-                    // slide current view off screen
+                    // fade container out
                     viewContainer.className = 'fadeOut';
 
-                    // set container out of view to the right and slide in
+                    // load new view and fade container in
                     setTimeout(function() {
                         view.innerHTML = res;
                         view.className = viewName + 'View';
                         viewContainer.className = 'fadeIn';
+
+                        // set index of view
+                        ui.timelineIndex = ui.ticks.toArray().indexOf(tick);
                     }, 400);
                 });
 
