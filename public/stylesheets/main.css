@@ -124,15 +124,28 @@ section {
     section #view .innerView {
       padding: 160px 300px; }
       section #view .innerView.grey {
-        background: #EEEEEE; }
+        background: #F3F3F3; }
         section #view .innerView.grey h2 {
           color: #555555; }
       section #view .innerView.valign {
         position: relative;
         top: 50%;
         transform: translateY(-50%); }
-      section #view .innerView .title {
-        margin-bottom: 10px; }
+      section #view .innerView.gallery {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0; }
+        section #view .innerView.gallery img {
+          margin: 34px 0 0 0; }
+        section #view .innerView.gallery .description {
+          padding-left: 300px;
+          padding-right: 300px; }
+      section #view .innerView .subtitle {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #888888; }
+      section #view .innerView .description {
+        margin-bottom: 20px; }
 
 .profileContainer {
   display: inline-block;
