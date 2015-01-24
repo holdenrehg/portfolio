@@ -11,27 +11,36 @@
         timelineRight: undefined,
         timelineIndex: -1,
 
+        /**
+         *
+         */
         init: function() {
             ui.ticks = document.querySelectorAll('.dot');
             ui.timelineLeft = document.querySelector('#left');
             ui.timelineRight = document.querySelector('#right');
-            ui.homeLink = document.querySelector('#home');
 
             ui.addEventListeners();
             ui.startTimelineAnimation();
 
             // load in default landing view
-            document.querySelector('.dot[data-view="landing"]').click();
+            if(location.hash) {
+              ui.swapView(location.hash.substr(1));
+            } else {
+              document.querySelector('.dot[data-view="landing"]').click();
+            }
         },
 
+        /**
+         *
+         */
         addEventListeners: function() {
-            ui.homeLink.addEventListener('click', ui.events.clickHome);
+            window.addEventListener("hashchange", ui.events.onHash, false);
             ui.timelineLeft.addEventListener('click', ui.events.moveTimelineBackwards);
             ui.timelineRight.addEventListener('click', ui.events.moveTimelineForwards);
             for (var i = 0; i < ui.ticks.length; i++) {
                 ui.ticks[i].addEventListener('mouseover', ui.events.toggleTooltip);
                 ui.ticks[i].addEventListener('mouseout', ui.events.toggleTooltip);
-                ui.ticks[i].addEventListener('click', ui.events.swapView);
+                ui.ticks[i].addEventListener('click', ui.events.clickTick);
             }
         },
 
@@ -62,14 +71,62 @@
         },
 
         /**
-         * Turn off rotating animation for timeline ticks
+         * @param viewName
          */
-        stopTimelineAnimation: function() {
-            clearInterval(ui.timelineAnimation);
-            ui.timelineAnimation = undefined;
+        swapView: function(viewName) {
+          var promise = $.get('../views/' + viewName + '.hbs'),
+              view = document.querySelector('#view'),
+              viewContainer = document.querySelector('#viewContainer'),
+              tick = document.querySelector('.dot[data-view="' + viewName + '"]');
+
+              promise
+                .done(function(res) {
+
+                  // fade container out
+                  viewContainer.className = 'fadeOut';
+
+                  // load new view and fade container in
+                  setTimeout(function() {
+                      view.innerHTML = res;
+                      view.className = viewName + 'View';
+                      viewContainer.className = 'fadeIn';
+
+                      if(tick) {
+                        ui.setTick(tick);
+                      }
+
+                      ui.timelineIndex = ui.ticks.toArray().indexOf(ui.selectedTick);
+                  }, 400);
+              })
+              .fail(function() {
+                location.hash = '#404';
+              });
+
+        },
+
+        /**
+         * @param tick
+         */
+        setTick: function(tick) {
+          // remove old highlight
+          if (ui.selectedTick) {
+            ui.selectedTick.className = 'dot';
+          }
+
+          // highlight tick
+          tick.className = 'dot current';
+          ui.selectedTick = tick;
         },
 
         events: {
+
+            /**
+             * @param e
+             */
+            onHash: function(e) {
+              var viewName = location.hash.substr(1);
+              ui.swapView(viewName);
+            },
 
             /**
              * Hover listener
@@ -85,52 +142,27 @@
             /**
              * Click listener
              */
-            swapView: function(e) {
-                var tick = e.target,
-                    viewName = e.target.dataset.view,
-                    promise = $.get('../views/' + viewName + '.hbs'),
-                    view = document.querySelector('#view'),
-                    viewContainer = document.querySelector('#viewContainer');
-
-                promise.done(function(res) {
-
-                    // fade container out
-                    viewContainer.className = 'fadeOut';
-
-                    // load new view and fade container in
-                    setTimeout(function() {
-                        view.innerHTML = res;
-                        view.className = viewName + 'View';
-                        viewContainer.className = 'fadeIn';
-
-                        // set index of view
-                        ui.timelineIndex = ui.ticks.toArray().indexOf(tick);
-                    }, 400);
-                });
-
-                // remove old highlight
-                if (ui.selectedTick) {
-                    ui.selectedTick.className = 'dot';
-                }
-
-                // highlight tick
-                tick.className = 'dot current';
-                ui.selectedTick = tick;
+            clickTick: function(e) {
+                ui.setTick(e.target);
+                location.hash = '#' + e.target.dataset.view;
             },
 
+            /**
+             * @param e
+             */
             moveTimelineBackwards: function(e) {
                 ui.timelineIndex = (ui.timelineIndex + ui.ticks.length - 1) % ui.ticks.length;
                 ui.ticks[ui.timelineIndex].click();
             },
 
+            /**
+             * @param e
+             */
             moveTimelineForwards: function(e) {
                 ui.timelineIndex = (ui.timelineIndex + 1) % ui.ticks.length;
                 ui.ticks[ui.timelineIndex].click();
-            },
-
-            clickHome: function(e) {
-                location.reload();
             }
+
         }
 
     };
