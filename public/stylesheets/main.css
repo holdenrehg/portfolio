@@ -136,7 +136,9 @@ section {
         padding-left: 0;
         padding-right: 0; }
         section #view .innerView.gallery img {
-          margin: 34px 0 0 0; }
+          margin: 34px 1% 0 1%;
+          width: 28%;
+          box-shadow: 0 0 30px -10px #555555; }
         section #view .innerView.gallery .description {
           padding-left: 300px;
           padding-right: 300px; }

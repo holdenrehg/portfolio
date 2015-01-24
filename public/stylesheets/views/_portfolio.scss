@@ -62,7 +62,9 @@ section {
                 padding-left: 0;
                 padding-right: 0;
                 img {
-                    margin: 34px 0 0 0;
+                    margin: 34px 1% 0 1%;
+                    width: 28%;
+                    box-shadow: 0 0 30px -10px $shark;
                 }
                 .description {
                     padding-left: 300px;
