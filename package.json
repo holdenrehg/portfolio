@@ -4,7 +4,6 @@
     "description": "Personal portfolio resume site for Holden Rehg.",
     "main": "web.js",
     "scripts": {
-        "test": "",
         "start": "node web.js"
     },
     "repository": {
@@ -17,6 +16,6 @@
     "author": "holdenrehg",
     "dependencies": {
         "express": "~3.5.0",
-        "hjs": "*"
+        "hbs": "*"
     }
 }

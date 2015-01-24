@@ -4,6 +4,7 @@
 
         timeline: undefined,
         ticks: undefined,
+        dataViews: undefined,
         selectedTick: undefined,
         timelineAnimation: undefined,
         timelineLeft: undefined,
@@ -14,12 +15,17 @@
             ui.ticks = document.querySelectorAll('.dot');
             ui.timelineLeft = document.querySelector('#left');
             ui.timelineRight = document.querySelector('#right');
+            ui.homeLink = document.querySelector('#home');
 
             ui.addEventListeners();
             ui.startTimelineAnimation();
+
+            // load in default landing view
+            document.querySelector('.dot[data-view="landing"]').click();
         },
 
         addEventListeners: function() {
+            ui.homeLink.addEventListener('click', ui.events.clickHome);
             ui.timelineLeft.addEventListener('click', ui.events.moveTimelineBackwards);
             ui.timelineRight.addEventListener('click', ui.events.moveTimelineForwards);
             for (var i = 0; i < ui.ticks.length; i++) {
@@ -82,7 +88,7 @@
             swapView: function(e) {
                 var tick = e.target,
                     viewName = e.target.dataset.view,
-                    promise = $.get('../views/' + viewName + '.hjs'),
+                    promise = $.get('../views/' + viewName + '.hbs'),
                     view = document.querySelector('#view'),
                     viewContainer = document.querySelector('#viewContainer');
 
@@ -120,6 +126,10 @@
             moveTimelineForwards: function(e) {
                 ui.timelineIndex = (ui.timelineIndex + 1) % ui.ticks.length;
                 ui.ticks[ui.timelineIndex].click();
+            },
+
+            clickHome: function(e) {
+                location.reload();
             }
         }
 

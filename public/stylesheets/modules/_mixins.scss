@@ -24,9 +24,10 @@
         transition: background .05s ease-in-out;
     }
 }
-@mixin lightBackground() {
-    background-color: #FFFFFF;
-    color: #1F1F1F;
+@mixin valign() {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 %borderBox {
     -webkit-box-sizing: border-box;

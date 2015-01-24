@@ -1,16 +1,26 @@
 html {
     font-family: 'Open Sans', helvetica;
-    overflow: hidden;
+    overflow-x: hidden;
+    min-height: 100%;
+    position: relative;
     &, body, main, header {
         min-width: 260px;
     }
     &, body, main {
-        height: 100%;
         min-width: $minWidth;
     }
     &, body, ul, div {
         padding: 0;
         margin: 0;
+    }
+    body {
+        // fix height on child inside a container with min-height
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    main {
+        height: 100%;
     }
     div {
         vertical-align: top;

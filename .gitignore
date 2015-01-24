@@ -1,2 +1,5 @@
 public/stylesheets/.sass-cache
+public/stylesheets/main.css
+node_modules
 .sass-cache
+.idea

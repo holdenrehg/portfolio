@@ -35,3 +35,15 @@ p {
 .fancy {
 	font-family: 'Lobster';
 }
+
+// LINKS
+a {
+    text-decoration: none;
+    color: inherit;
+    opacity: .75;
+    transition: .3s opacity;
+    &:hover {
+        opacity: 1;
+        transition: .3s opacity;
+    }
+}
