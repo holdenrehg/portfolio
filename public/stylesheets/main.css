@@ -81,6 +81,10 @@ a {
     opacity: 1;
     transition: .3s opacity; }
 
+.fa.big {
+  font-size: 30px;
+  color: #474E5D; }
+
 header {
   position: fixed;
   width: 100%;
@@ -123,10 +127,14 @@ section {
     padding-bottom: 110px; }
     section #view .innerView {
       padding: 160px 300px; }
+      section #view .innerView p {
+        margin: 10px 0; }
       section #view .innerView.grey {
         background: #F3F3F3; }
         section #view .innerView.grey h2 {
           color: #555555; }
+      section #view .innerView.border {
+        border-top: 1px inset #F3F3F3; }
       section #view .innerView.valign {
         position: relative;
         top: 50%;
@@ -148,6 +156,13 @@ section {
         color: #888888; }
       section #view .innerView .description {
         margin-bottom: 20px; }
+      section #view .innerView .cover {
+        margin-top: -100px;
+        margin-bottom: 100px;
+        width: 350px;
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+        opacity: .3; }
 
 .profileContainer {
   display: inline-block;
@@ -168,9 +183,6 @@ section {
   #tableOfContents .entry .date {
     float: right;
     color: #B8B8B9; }
-
-#aboutMe p {
-  margin: 10px 0; }
 
 .messageContainer {
   width: 100%;

@@ -48,11 +48,17 @@ section {
         padding-bottom: ($timelineHeight + 20px);
         .innerView {
             padding: 160px 300px;
+            p {
+                margin: 10px 0;
+            }
             &.grey {
                 background: $perl;
                 h2 {
                     color: $shark;
                 }
+            }
+            &.border {
+                border-top: 1px inset $perl;
             }
             &.valign {
                 @include valign();
@@ -78,6 +84,14 @@ section {
             }
             .description {
                 margin-bottom: 20px;
+            }
+            .cover {
+                margin-top: -100px;
+                margin-bottom: 100px;
+                width: 350px;
+                -webkit-filter: grayscale(100%);
+                filter: grayscale(100%);
+                opacity: .3;
             }
         }
     }
@@ -105,11 +119,6 @@ section {
             float: right;
             color: $silver;
         }
-    }
-}
-#aboutMe {
-    p {
-        margin: 10px 0;
     }
 }
 .messageContainer {
