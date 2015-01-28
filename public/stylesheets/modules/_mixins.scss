@@ -4,9 +4,17 @@
     width: 100%;
 }
 @mixin flex($direction) {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     align-items: center;
+    -webkit-align-items: center;
     justify-content: center;
+    -webkit-justify-content: center;
+    -webkit-flex-direction: $direction;
+    -ms-flex-direction: $direction;
     flex-direction: $direction;
 }
 @mixin circle() {
