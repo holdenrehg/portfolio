@@ -143,8 +143,13 @@
              * Click listener
              */
             clickTick: function(e) {
-                ui.setTick(e.target);
-                location.hash = '#' + e.target.dataset.view;
+              var tick = e.target;
+              if(tick.className.indexOf('dot') === -1) {
+                tick = $(tick).parent('.dot')[0];
+              }
+
+              ui.setTick(tick);
+              location.hash = '#' + tick.dataset.view;
             },
 
             /**
