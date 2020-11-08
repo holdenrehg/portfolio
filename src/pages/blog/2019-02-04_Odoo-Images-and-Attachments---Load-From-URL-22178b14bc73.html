@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Odoo Images and Attachments — Load From URL</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Odoo Images and Attachments — Load From URL</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Storing Binary Fields From Image URLs
+</section>
+<section data-field="body" class="e-content">
+<section name="8c5d" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="795c" id="795c" class="graf graf--h3 graf--leading graf--title">Odoo Images and Attachments — Load From URL</h3><h3 name="236c" id="236c" class="graf graf--h3 graf-after--h3">Preface</h3><p name="1f12" id="1f12" class="graf graf--p graf-after--h3">This is the first in a series of posts about images and attachments in Odoo. I think it’s a topic that not all Odoo developers are completely clear on.</p><p name="01a6" id="01a6" class="graf graf--p graf-after--p">Each post will be a quick dive into detail about images or attachments in Odoo. Of course, we’ll focus on the latest and greatest (currently version 12.0) but there is some overlap between version.</p><figure name="5e22" id="5e22" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="0*_wlTizyFkqylPOYM" data-width="4015" data-height="5020" data-unsplash-photo-id="bntqYy5C0yw" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/0*_wlTizyFkqylPOYM"><figcaption class="imageCaption">Photo by <a href="https://unsplash.com/@_javardh_001?utm_source=medium&amp;utm_medium=referral" data-href="https://unsplash.com/@_javardh_001?utm_source=medium&amp;utm_medium=referral" class="markup--anchor markup--figure-anchor" rel="photo-creator noopener" target="_blank">Javardh</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral" data-href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral" class="markup--anchor markup--figure-anchor" rel="photo-source noopener" target="_blank">Unsplash</a></figcaption></figure><h3 name="91b3" id="91b3" class="graf graf--h3 graf-after--figure">Loading Binary Fields From A URL</h3><p name="b40a" id="b40a" class="graf graf--p graf-after--h3">Odoo stores images/Binary fields directly in the database.</p><p name="8d79" id="8d79" class="graf graf--p graf-after--p">So I’m talking about things like the following:</p><pre name="a25c" id="a25c" class="graf graf--pre graf-after--p">from odoo import models</pre><pre name="bf84" id="bf84" class="graf graf--pre graf-after--pre"><br>class ProductTemplate(models.Model):<br>    _inherit = &#39;product.template&#39;</pre><pre name="b891" id="b891" class="graf graf--pre graf-after--pre">    image = fields.Binary(string=&#39;Product Image&#39;, attachment=False)</pre><p name="8142" id="8142" class="graf graf--p graf-after--pre">In the example above we are looking at a <code class="markup--code markup--p-code">Binary</code> field called <code class="markup--code markup--p-code">image</code> which is stored on the <code class="markup--code markup--p-code">product.template</code> model, not as an attachment. The default for <code class="markup--code markup--p-code">Binary</code> fields will be <code class="markup--code markup--p-code">attachment=False</code> .</p><p name="ec37" id="ec37" class="graf graf--p graf-after--p">So if you take a look at the database table, in this case, it would be <code class="markup--code markup--p-code">product_template</code> we will see a blob column for the<code class="markup--code markup--p-code">image</code> field. The contents contain a <strong class="markup--strong markup--p-strong">base64 encoded binary string</strong> of the image.</p><h4 name="8441" id="8441" class="graf graf--h4 graf-after--p">Create A Image Helper Mixin</h4><p name="30ae" id="30ae" class="graf graf--p graf-after--h4">But sometimes it’s nice to work with URLs, so consider creating a mixin like the following as a helper:</p><figure name="95a9" id="95a9" class="graf graf--figure graf--iframe graf-after--p"><script src="https://gist.github.com/holdenrehg/50733f8f5a07e6f2088bcb1d536ee45c.js"></script></figure><p name="9a5f" id="9a5f" class="graf graf--p graf-after--figure">In this mixin, we have a basic <code class="markup--code markup--p-code">fetch_image_from_url</code> function which will take in a URL pointing to an image and then return the proper string which we can store in the database.</p><h4 name="6351" id="6351" class="graf graf--h4 graf-after--p">Then Add Your Helper To Data Models</h4><p name="9e62" id="9e62" class="graf graf--p graf-after--h4">Use your mixin on your data models where you need access to functions like the <code class="markup--code markup--p-code">fetch_image_from_url</code> function we created above.</p><figure name="427e" id="427e" class="graf graf--figure graf--iframe graf-after--p"><script src="https://gist.github.com/holdenrehg/bd6ae35a3506d2903611a014f91d304f.js"></script></figure><p name="2362" id="2362" class="graf graf--p graf-after--figure">Here we created our own custom model called <code class="markup--code markup--p-code">my.custom.model</code> . You can see that it uses our <code class="markup--code markup--p-code">StoresImages</code> mixin:</p><pre name="787d" id="787d" class="graf graf--pre graf-after--p">class CustomModel(models.Model, StoresImages)</pre><p name="9268" id="9268" class="graf graf--p graf-after--pre">Then we added a field for storing a single URL:</p><pre name="a860" id="a860" class="graf graf--pre graf-after--p">image_url = fields.Char(string=&#39;Image URL&#39;, required=True)</pre><p name="bb32" id="bb32" class="graf graf--p graf-after--pre">Instead of overriding the<code class="markup--code markup--p-code">write</code> function or updating the image with Binary strings to actually display the image, we can create a simple <code class="markup--code markup--p-code">compute</code> field that automatically converts the <code class="markup--code markup--p-code">image_url</code> field when it changes. This compute function can use our mixin/helper to make the code clean:</p><pre name="a684" id="a684" class="graf graf--pre graf-after--p">image = fields.Binary(<br>    string=&#39;Image&#39;,<br>    compute=&#39;_compute_image&#39;,<br>    store=True,<br>    attachment=False<br>)</pre><pre name="576c" id="576c" class="graf graf--pre graf-after--pre">@api.multi<br>@api.depends(&#39;image_url&#39;)<br>def _compute_image(self):<br>    &quot;&quot;&quot;<br>    Computes the image Binary from the `image_url` per database<br>    record automatically.</pre><pre name="b45f" id="b45f" class="graf graf--pre graf-after--pre">    :return: Returns NoneType<br>    &quot;&quot;&quot;<br>    for record in self:<br>        image = None<br>        if record.image_url:<br>            image = self.fetch_image_from_url(record.image_url)<br>        record.update({&#39;image&#39;: image, })</pre><p name="6c87" id="6c87" class="graf graf--p graf-after--pre">Try it out by creating or updating a record:</p><pre name="f909" id="f909" class="graf graf--pre graf-after--p">obj = self.env[&#39;my.custom.model&#39;].create({<br>    &#39;image_url&#39;: &#39;https://...&#39;<br>})</pre><h3 name="1ace" id="1ace" class="graf graf--h3 graf-after--pre">Thanks For Reading</h3><p name="bae7" id="bae7" class="graf graf--p graf-after--h3">That’s it. Hopefully, it helps you work with images a little better. You can use the same mixin above to create import tools for importing images into the system via URLs as well. It’s a huge benefit on older versions of Odoo.</p><p name="3da4" id="3da4" class="graf graf--p graf-after--p">Let me know about some of your images/attachment frustrations or if you love working with images in Odoo.</p><p name="cc31" id="cc31" class="graf graf--p graf-after--p">Thanks,</p><p name="d5df" id="d5df" class="graf graf--p graf-after--p graf--trailing">Holden</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@reedrehg" class="p-author h-card">Holden Rehg</a> on <a href="https://medium.com/p/22178b14bc73"><time class="dt-published" datetime="2019-02-04T14:46:01.200Z">February 4, 2019</time></a>.</p><p><a href="https://medium.com/@reedrehg/odoo-images-and-attachments-load-from-url-22178b14bc73" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on October 31, 2020.</p></footer></article></body></html>

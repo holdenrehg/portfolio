@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Odoo.sh Is Almost Ready</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Odoo.sh Is Almost Ready</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+But not quite.
+</section>
+<section data-field="body" class="e-content">
+<section name="a2e8" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="36d3" id="36d3" class="graf graf--h3 graf--leading graf--title">Odoo.sh Is Almost Ready</h3><p name="3a46" id="3a46" class="graf graf--p graf-after--h3">But not quite.</p><p name="713e" id="713e" class="graf graf--p graf-after--p"><a href="http://odoo.sh" data-href="http://odoo.sh" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Odoo.sh</a> is a cool new tool developed by Odoo which seems to be a wrapper around the runbot tool they have already developed. It’s a free (for now) SAAS product that gives you the ability to link up Github repositories. It’s not a full CI server, but has CI like features, building instances per commit / push to your repository branches.</p><p name="f0d9" id="f0d9" class="graf graf--p graf-after--p">It’s a fantastic idea, especially for Odoo developers or Odoo partners. I was excited when it was released. Unfortuantley after a week or two of getting it setup, I had to switch away from it already:</p><p name="58a5" id="58a5" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">No Community Support</strong></p><p name="55e4" id="55e4" class="graf graf--p graf-after--p">The biggest issue had to be the lack of support for the community versions of Odoo. I understand that Odoo is a for profit business trying to make money through their Enterprise version, but 90% of the platform is built on top of community and even Odoo partners work with clients who depend on the community version of Odoo.</p><figure name="3b72" id="3b72" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="0*qgDJoq97X6XDTzHW." data-width="5472" data-height="3648" src="https://cdn-images-1.medium.com/max/800/0*qgDJoq97X6XDTzHW."><figcaption class="imageCaption">Odoo S.A and Odoo Community Need To Work Together</figcaption></figure><p name="0505" id="0505" class="graf graf--p graf-after--figure"><strong class="markup--strong markup--p-strong">Version Support</strong></p><p name="69c2" id="69c2" class="graf graf--p graf-after--p">9.0 is a little bit old. I get that. But it’s not that old and it would be great to have at least support for 9.0 and above. With those three versions (9, 10, and 11) that would cover every release since Odoo Enterprise began.</p><p name="5eb8" id="5eb8" class="graf graf--p graf-after--p">No reason to include 8.0. Let’s not think about 8.0 and back.</p><p name="7569" id="7569" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Pricing</strong></p><p name="6385" id="6385" class="graf graf--p graf-after--p">It’s not badly priced for a managed service, but the storage space will quickly become an issue for any reasonably sized business. 4GB does not hold a lot of information. For reference, if an 80 employee manufacturing company runs for 3 or 4 years on a system like Odoo, I would estimate them to reach 5GB+ considering attachment storage.</p><p name="173c" id="173c" class="graf graf--p graf-after--p">If you take a platform like Google Cloud or AWS, you can get over 500GB worth of storage for less than $20 if you already have an instance setup.</p><p name="b2bf" id="b2bf" class="graf graf--p graf-after--p"><strong class="markup--strong markup--p-strong">Web hooks and Communication</strong></p><p name="ad2a" id="ad2a" class="graf graf--p graf-after--p">Emails are great, but some sort of web hook system would be even better. With the growth of tools like Slack, being able to integrate and post statuses based on builds within the Odoo.sh system would be a huge plus.</p><figure name="59df" id="59df" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="0*6oTBKOkGShvPs58U." data-width="5184" data-height="3456" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/0*6oTBKOkGShvPs58U."><figcaption class="imageCaption">Photo by <a href="https://unsplash.com/@jasonrosewell?utm_source=medium&amp;utm_medium=referral" data-href="https://unsplash.com/@jasonrosewell?utm_source=medium&amp;utm_medium=referral" class="markup--anchor markup--figure-anchor" rel="photo-creator noopener" target="_blank">Jason Rosewell</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral" data-href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral" class="markup--anchor markup--figure-anchor" rel="photo-source noopener" target="_blank">Unsplash</a></figcaption></figure><p name="5cf3" id="5cf3" class="graf graf--p graf-after--figure"><strong class="markup--strong markup--p-strong">Where is Docker?</strong></p><p name="d24e" id="d24e" class="graf graf--p graf-after--p">No container support? We are on a shared hosting system that auto deploys, but does not allow you to select environments or deploy your own environments via containers. That makes things difficult to test when you might have 100 different Odoo instances running on multiple different architectures.</p><p name="ad98" id="ad98" class="graf graf--p graf-after--p">I have some hope that things will get better. I know it’s a new product that Odoo put out there, but for now I will have to use another solution.</p><p name="7c0a" id="7c0a" class="graf graf--p graf-after--p graf--trailing">Holden</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@reedrehg" class="p-author h-card">Holden Rehg</a> on <a href="https://medium.com/p/f44a6cab9f19"><time class="dt-published" datetime="2018-04-29T14:16:01.433Z">April 29, 2018</time></a>.</p><p><a href="https://medium.com/@reedrehg/odoo-sh-is-almost-ready-f44a6cab9f19" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on October 31, 2020.</p></footer></article></body></html>

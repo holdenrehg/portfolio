@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Odoo Tricks and Tools</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Odoo Tricks and Tools</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Some often overlooked tools from Odoo core
+</section>
+<section data-field="body" class="e-content">
+<section name="b148" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="bcdf" id="bcdf" class="graf graf--h3 graf--leading graf--title">Odoo Tricks and Tools</h3><p name="6288" id="6288" class="graf graf--p graf-after--h3">Some often overlooked tools from Odoo core</p><h3 name="4274" id="4274" class="graf graf--h3 graf-after--p">Intro</h3><p name="0672" id="0672" class="graf graf--p graf-after--h3">There’s a set of built-in <code class="markup--code markup--p-code">tools</code> associated with the Odoo framework that many developers / third-party modules often overlook (found in the Odoo core under <code class="markup--code markup--p-code">odoo/tools</code>).</p><p name="a416" id="a416" class="graf graf--p graf-after--p">I’m going to outline and provide examples for some of the most common functions and variables.</p><h3 name="7e7b" id="7e7b" class="graf graf--h3 graf-after--p">Preface</h3><p name="36cd" id="36cd" class="graf graf--p graf-after--h3">All of the commands run below, I’m running in an Odoo shell instance. It makes it easy to test out all of the different tools available to you. If you aren’t sure how to run an Odoo shell, then <a href="https://medium.com/@reedrehg/run-an-odoo-repl-ipython-prompt-7f10d0d5d824" data-href="https://medium.com/@reedrehg/run-an-odoo-repl-ipython-prompt-7f10d0d5d824" class="markup--anchor markup--p-anchor" target="_blank">see my article on it called Run An Odoo REPL</a>.</p><h3 name="da07" id="da07" class="graf graf--h3 graf-after--p">The tools</h3><h4 name="fef2" id="fef2" class="graf graf--h4 graf-after--h3">config</h4><p name="93e6" id="93e6" class="graf graf--p graf-after--h4">Some helpers related to the odoo.conf configuration file or the configuration parameters passed into the odoo.py executable at start.</p><figure name="6501" id="6501" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*WqgIm1sm65C2Qhr4BlKtZQ.png" data-width="1088" data-height="902" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*WqgIm1sm65C2Qhr4BlKtZQ.png"></figure><h4 name="94d8" id="94d8" class="graf graf--h4 graf-after--figure"><strong class="markup--strong markup--h4-strong">convert</strong></h4><p name="a988" id="a988" class="graf graf--p graf-after--h4">Conversion helpers. These are primarily focused on conversion of data types such as xml and csv specific to Odoo, but one of the simpler function built into <code class="markup--code markup--p-code">convert</code> is <code class="markup--code markup--p-code">str2bool</code> that has many common use cases. Especially if working with APIs and integrations.</p><figure name="61c9" id="61c9" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*WRJ8hOX9Dg9YPMlt5RRLXw.png" data-width="1088" data-height="498" src="https://cdn-images-1.medium.com/max/800/1*WRJ8hOX9Dg9YPMlt5RRLXw.png"></figure><h4 name="b14b" id="b14b" class="graf graf--h4 graf-after--figure">date_utils — getters</h4><p name="af3e" id="af3e" class="graf graf--p graf-after--h4">There are a few built-in functions for getting ranges and references to different time periods. These are specific to certain periods like “month”, “quarter”, “fiscal year”, etc.</p><figure name="af3a" id="af3a" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*TckbIPkhQm_bwMKVCL_CRQ.png" data-width="1586" data-height="938" src="https://cdn-images-1.medium.com/max/800/1*TckbIPkhQm_bwMKVCL_CRQ.png"></figure><h4 name="6e19" id="6e19" class="graf graf--h4 graf-after--figure">date_utils — range helpers</h4><p name="d568" id="d568" class="graf graf--p graf-after--h4">Behind the scenes of the getter functions above, you also have generic range helpers.</p><figure name="2a45" id="2a45" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*4Zd6UjhO6S6JLymvbUCp1Q.png" data-width="1206" data-height="2224" src="https://cdn-images-1.medium.com/max/800/1*4Zd6UjhO6S6JLymvbUCp1Q.png"></figure><h4 name="1b19" id="1b19" class="graf graf--h4 graf-after--figure">date_utils — calculations</h4><p name="1587" id="1587" class="graf graf--p graf-after--h4">Also in the date_utils, there are a couple of abstractions to make simple date calculations easy.</p><figure name="a09e" id="a09e" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*G-UyQLS48Qk4BTcryCzG7Q.png" data-width="1206" data-height="1232" src="https://cdn-images-1.medium.com/max/800/1*G-UyQLS48Qk4BTcryCzG7Q.png"></figure><h4 name="f10e" id="f10e" class="graf graf--h4 graf-after--figure"><strong class="markup--strong markup--h4-strong">float_utils</strong></h4><p name="9c29" id="9c29" class="graf graf--p graf-after--h4">A set of helpers related to floating point numbers.</p><figure name="c86c" id="c86c" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*vhfwR7_PS8yJoD8pWtX3Kg.png" data-width="1206" data-height="1526" src="https://cdn-images-1.medium.com/max/800/1*vhfwR7_PS8yJoD8pWtX3Kg.png"></figure><h4 name="a2f9" id="a2f9" class="graf graf--h4 graf-after--figure">image</h4><p name="3647" id="3647" class="graf graf--p graf-after--h4">Set of tools for manipulating images.</p><figure name="f66c" id="f66c" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*9TrFGfd4-ssTutqLBx6E-A.png" data-width="1206" data-height="462" src="https://cdn-images-1.medium.com/max/800/1*9TrFGfd4-ssTutqLBx6E-A.png"></figure><h4 name="9496" id="9496" class="graf graf--h4 graf-after--figure">mail</h4><p name="5baa" id="5baa" class="graf graf--p graf-after--h4">Different helpers written to help create emails, but generally help with parsing and generating html.</p><figure name="918a" id="918a" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*wimm5NOZ8GEKV_l5IsHi7A.png" data-width="1418" data-height="1232" src="https://cdn-images-1.medium.com/max/800/1*wimm5NOZ8GEKV_l5IsHi7A.png"></figure><h4 name="8f17" id="8f17" class="graf graf--h4 graf-after--figure"><strong class="markup--strong markup--h4-strong">misc</strong></h4><p name="e37b" id="e37b" class="graf graf--p graf-after--h4">Lots of little miscellaneous helpers that come in handy.</p><figure name="c525" id="c525" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*uteErLPJpWX3lR7iFx5Stw.png" data-width="1400" data-height="2370" src="https://cdn-images-1.medium.com/max/800/1*uteErLPJpWX3lR7iFx5Stw.png"></figure><h3 name="c2fc" id="c2fc" class="graf graf--h3 graf-after--figure">The others</h3><p name="410e" id="410e" class="graf graf--p graf-after--h3">Check out some of the other modules that we didn’t cover. All of these are kept in the core repository under <code class="markup--code markup--p-code">odoo/tools</code> . There are tools for interaction with the local filesystem via <code class="markup--code markup--p-code">osutil.py</code> , pdf helpers via <code class="markup--code markup--p-code">pdf.py</code> , profiling and debugging tools under <code class="markup--code markup--p-code">profiler.py</code> or <code class="markup--code markup--p-code">debugger.py</code> , and some data structures built from scratch under <code class="markup--code markup--p-code">graph.py</code> and <code class="markup--code markup--p-code">lru.py</code> .</p><h3 name="ab6f" id="ab6f" class="graf graf--h3 graf-after--p">Thanks for reading</h3><p name="cb9e" id="cb9e" class="graf graf--p graf-after--h3">Let me know if I’m missing any Odoo tool modules that you use all of the time.</p><p name="05f2" id="05f2" class="graf graf--p graf-after--p"><a href="https://twitter.com/reedrehg" data-href="https://twitter.com/reedrehg" class="markup--anchor markup--p-anchor" rel="nofollow noopener noopener" target="_blank">Follow me on Twitter</a> for random thoughts and articles about Odoo. Or <a href="https://medium.com/@reedrehg" data-href="https://medium.com/@reedrehg" class="markup--anchor markup--p-anchor" target="_blank">follow me directly here at Medium</a> to stay up to date on my dev articles.</p><p name="f323" id="f323" class="graf graf--p graf-after--p graf--trailing">Holden</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@reedrehg" class="p-author h-card">Holden Rehg</a> on <a href="https://medium.com/p/3fac51c03cfc"><time class="dt-published" datetime="2019-03-03T19:05:24.937Z">March 3, 2019</time></a>.</p><p><a href="https://medium.com/@reedrehg/odoo-tricks-and-tools-3fac51c03cfc" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on October 31, 2020.</p></footer></article></body></html>

@@ -1,0 +1,5 @@
+wheel
+black
+flask==1.0
+python-dotenv==0.10.2
+sendgrid==6.2.1

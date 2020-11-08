@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Odoo — It Depends</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Odoo — It Depends</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+A Use Case For Odoo Compute Functions and Performance
+</section>
+<section data-field="body" class="e-content">
+<section name="9cfa" class="section section--body section--first section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="2cbc" id="2cbc" class="graf graf--h3 graf--leading graf--title">Odoo — It Depends</h3><h4 name="a733" id="a733" class="graf graf--h4 graf-after--h3 graf--subtitle">A Use Case For Odoo Compute Functions and Performance</h4><figure name="3d8f" id="3d8f" class="graf graf--figure graf-after--h4"><img class="graf-image" data-image-id="1*LqzVnPCT97wPLoSesTCueg.jpeg" data-width="5760" data-height="3840" src="https://cdn-images-1.medium.com/max/800/1*LqzVnPCT97wPLoSesTCueg.jpeg"></figure><p name="2870" id="2870" class="graf graf--p graf-after--figure">When Odoo <a href="http://www.slideshare.net/openobject/odoo-from-v7-to-v8-the-new-api" data-href="http://www.slideshare.net/openobject/odoo-from-v7-to-v8-the-new-api" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">refactored their API</a> and caused forums to be fill with “new api” “old api” talk, I feel that it really increased the ease of use for developers. Many of the powerful features and tools built into Odoo became even simpler to understand. It also became simpler to write poorly performing code.</p><blockquote name="c42f" id="c42f" class="graf graf--pullquote graf-after--p">It also became simpler to write poorly performing code.</blockquote><p name="48ba" id="48ba" class="graf graf--p graf-after--pullquote">In this article I’m going to break down an example specifically for Odoo’s compute functions that show how quickly a dependency chain can get out of hand and affect the entire system. Let’s take a look at defining a simple class.</p><figure name="2313" id="2313" class="graf graf--figure graf--iframe graf-after--p"><script src="https://gist.github.com/holdenrehg/97c9d9ec6bd8924ff6326490e9fc35d3.js"></script></figure><p name="510b" id="510b" class="graf graf--p graf-after--figure">This is a class for defining groups of partners. It has a name for the group and a reference to all the partners in the group. Simple enough. No performance issues yet.</p><p name="a2fd" id="a2fd" class="graf graf--p graf-after--p">Lets add a couple more classes.</p><figure name="7ef2" id="7ef2" class="graf graf--figure graf--iframe graf-after--p"><script src="https://gist.github.com/holdenrehg/ad0ee0253e74bd5d76f35c86e83eba52.js"></script></figure><figure name="c522" id="c522" class="graf graf--figure graf--iframe graf-after--figure"><script src="https://gist.github.com/holdenrehg/54b2fe11f71158b3fa33558246bf8822.js"></script></figure><p name="8c34" id="8c34" class="graf graf--p graf-after--figure">Now we’ve gotten a small system for defining late invoices and for checking if any given partner has a late invoice. There are two compute functions. One on each class and each has a single dependency. We can start mapping out what our dependency chain looks like.</p><pre name="063b" id="063b" class="graf graf--pre graf-after--p">res.partner:has_late_bills =&gt; res.partner:invoice_ids<br>account.invoice:is_late    =&gt; account.invoice:date_invoice</pre><p name="17ea" id="17ea" class="graf graf--p graf-after--pre">Every time an invoice is updated on a partner it computes the partner’s has_late_bills field and every time an invoice’s date_invoice field is updated it recomputes the invoice’s is_late field.</p><p name="b0c3" id="b0c3" class="graf graf--p graf-after--p">Again, this is pretty simple. Still no performance issues yet. Let’s update our partner group class to calculate if an entire group has any late bills.</p><figure name="6261" id="6261" class="graf graf--figure graf--iframe graf-after--p"><script src="https://gist.github.com/holdenrehg/571ceb59d963f2cf7ec4de309d6005c5.js"></script></figure><blockquote name="58fd" id="58fd" class="graf graf--blockquote graf-after--figure">Here’s where it gets interested</blockquote><p name="b008" id="b008" class="graf graf--p graf-after--blockquote">This includes a single mistake that can cause degraded performance and even unnecessary database queries (when using stored=True on compute functions) depending on how many concurrent users are accessing the system, the amount of invoices, the number of partners per partner group, etc.</p><p name="6650" id="6650" class="graf graf--p graf-after--p">The groups has_late_bills depends on both the partners has_late_bills field and the partners invoices ids which is not necessary. Our dependency chain get’s slightly more complicated.</p><pre name="8884" id="8884" class="graf graf--pre graf-after--p">res.partner:has_late_bills       =&gt; invoice_ids<br>account.invoice:is_late          =&gt; date_invoice<br>res.partner.group:has_late_bills =&gt; partner_ids.has_late_bills<br>res.partner.group:has_late_bills =&gt; partner_ids.invoice_ids</pre><p name="6552" id="6552" class="graf graf--p graf-after--pre">By creating a single invoice, it fires the following compute actions:</p><ul class="postList"><li name="69a5" id="69a5" class="graf graf--li graf-after--p">Create invoice</li><li name="4a7b" id="4a7b" class="graf graf--li graf-after--li">Compute account.invoice:is_late because date_invoice updated</li><li name="11c8" id="11c8" class="graf graf--li graf-after--li">Compute res.partner:has_late_bills because the partner has a new invoice</li><li name="366a" id="366a" class="graf graf--li graf-after--li">Compute res.partner.group:has_late_bills if one of the partners has a new has_late_bills value after recomputing it in the line above</li><li name="3a0e" id="3a0e" class="graf graf--li graf-after--li">Compute res.partner.group:has_late_bills because the one of the partners in the group has a new invoice</li></ul><p name="8936" id="8936" class="graf graf--p graf-after--li">The last two actions are duplicates of each other. There is no reason why this needs to fire two times and can be resolved by updating our depends decorator.</p><pre name="b815" id="b815" class="graf graf--pre graf-after--p">@api.depends(‘partner_ids.has_late_bills’)</pre><p name="5fcf" id="5fcf" class="graf graf--p graf-after--pre">This may not be a huge problem in this specific example when updating a single invoice. It performs 4 operations instead of 3, but a 25% increase in computation starts to hurt at scale. Bulk editing 100 invoices turns into 400 operations instead of 300. 5 concurrent users bulk editing 100 invoices turns into 2000 operations instead of 1500.</p><h4 name="824e" id="824e" class="graf graf--h4 graf-after--p">In Conclusion</h4><p name="b910" id="b910" class="graf graf--p graf-after--h4">Think about this example within larger custom modules. This has 3 classes and 3 computed fields. In modules that have dozens or hundred of classes that use unnecessary dependencies on compute functions could severely hurt user experience.</p><blockquote name="0af5" id="0af5" class="graf graf--blockquote graf-after--p">Note: Watch out for stored, computed fields that cause both a computation and database write.</blockquote><p name="13e6" id="13e6" class="graf graf--p graf-after--blockquote">Luckily these are easy to track down! Log statements are your friend, and drawing simple dependency chain diagrams can allow you to cross out paths that already exists.</p><p name="6126" id="6126" class="graf graf--p graf-after--p graf--trailing">Best of luck Odoods!</p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@reedrehg" class="p-author h-card">Holden Rehg</a> on <a href="https://medium.com/p/4b902a57e120"><time class="dt-published" datetime="2016-06-04T16:06:40.466Z">June 4, 2016</time></a>.</p><p><a href="https://medium.com/@reedrehg/odoo-it-depends-4b902a57e120" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on October 31, 2020.</p></footer></article></body></html>
