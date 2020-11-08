@@ -1,7 +1,7 @@
 import React from "react"
 import { Layout, SEO } from "../components"
 
-const PortfolioIndexPage = () => (
+export default () => (
   <Layout>
     <SEO title="Holden Rehg Portfolio" />
     <div className="blog-article px-20 pb-32 bg-gray-100">
@@ -14,5 +14,3 @@ const PortfolioIndexPage = () => (
     </div>
   </Layout>
 )
-
-export default PortfolioIndexPage

@@ -1,3 +1,4 @@
+import React from "react"
 import ChainingContextManagersForMocks from "./chaining-context-managers-for-mocks"
 import DailyOdooTeamRoutine from "./daily-odoo-team-routine"
 import GuideToERP from "./guide-to-erp"
@@ -13,3 +14,8 @@ export const articles = [
   SimpleBusinessManifesto,
   WhatsInPython3dot8,
 ]
+
+// Workaround. Gatsby forces all page files to have a default export.
+export default () => {
+  return (<div></div>)
+}
