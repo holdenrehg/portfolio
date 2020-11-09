@@ -1,5 +1,10 @@
 wheel
 black
+pygments
+sphinx
+sphinx-autobuild
+rstcheck
+
 flask==1.0
 python-dotenv==0.10.2
 sendgrid==6.2.1

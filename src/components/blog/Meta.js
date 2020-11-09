@@ -1,6 +1,4 @@
 import React from "react"
-import { ArticlePreview } from "."
-import { articles } from "../../pages/blog/all"
 
 export class Meta {
 
@@ -66,24 +64,5 @@ export class Meta {
     }
 
     return tags
-  }
-
-  renderRelated() {
-    if(this.related) {
-      const ids = this.related.split(",")
-      const related = articles.filter(article => ids.includes(article.defaultProps.meta.id))
-      let html = []
-
-      for(const article of related) {
-        html.push(
-          <ArticlePreview
-            className="my-4"
-            style={{ flex: "0 31%" }}
-            meta={article.defaultProps.meta}/>
-        )
-      }
-
-      return html
-    }
   }
 }

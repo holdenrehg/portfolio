@@ -1,8 +1,24 @@
 import React from 'react'
 import { prettyDate } from "../../utils/date"
 import { ArticlePreview } from "."
+import { getArticles } from "../../pages/blog/all"
 
 export class Article extends React.Component {
+  state = {
+    relatedArticles: []
+  }
+
+  componentDidMount() {
+    if(this.props.meta.related) {
+      const relatedIds = this.props.meta.related.split(",")
+
+      getArticles().then(articles => {
+        const relatedArticles = articles.filter(article => relatedIds.includes(article.defaultProps.meta.id))
+        this.setState({relatedArticles: relatedArticles})
+      })
+    }
+  }
+
   render() {
     return (
       <div>
@@ -69,7 +85,12 @@ export class Article extends React.Component {
           <div className="mt-40">
             <h3 className="text-3xl font-bold mb-4">Other articles you might like</h3>
             <div className="flex justify-between mb-8">
-              {this.props.meta.renderRelated()}
+              {this.state.relatedArticles.map(article => (
+                <ArticlePreview
+                  className="my-4"
+                  style={{ flex: "0 31%" }}
+                  meta={article.defaultProps.meta}/>
+              ))}
             </div>
           </div>
         </div>

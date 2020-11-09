@@ -1,19 +1,21 @@
 import React from "react"
-import ChainingContextManagersForMocks from "./chaining-context-managers-for-mocks"
-import DailyOdooTeamRoutine from "./daily-odoo-team-routine"
-import GuideToERP from "./guide-to-erp"
-import GuideToNoBullshitBusinessMetrics from "./guide-to-no-bullshit-business-metrics"
-import SimpleBusinessManifesto from "./simple-business-manifesto"
-import WhatsInPython3dot8 from "./whats-in-python3.8"
 
-export const articles = [
-  ChainingContextManagersForMocks,
-  DailyOdooTeamRoutine,
-  GuideToERP,
-  GuideToNoBullshitBusinessMetrics,
-  SimpleBusinessManifesto,
-  WhatsInPython3dot8,
-]
+export const getArticles = () => {
+  let promise = new Promise((resolve, reject) => {
+    Promise.all([
+      import("./chaining-context-managers-for-mocks"),
+      import("./daily-odoo-team-routine"),
+      import("./guide-to-erp"),
+      import("./guide-to-no-bullshit-business-metrics"),
+      import("./simple-business-manifesto"),
+      import("./whats-in-python3.8"),
+    ])
+      .then(function() { resolve(arguments[0].map(_module => _module.default)) })
+      .catch(reject)
+  })
+
+  return promise
+}
 
 // Workaround. Gatsby forces all page files to have a default export.
 export default () => {
