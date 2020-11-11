@@ -1,17 +1,18 @@
+========
 Portfolio
 =========
 
 My personal portfolio website.
 
 Configuring environment
------------------------
+=======================
 
 There are two environment files for the application. The `.flaskenv` file are public
 environment variables used by everyone while the `.env` is ignored and project specific.
 Starting with the sample file will get you going initially:
 
 Getting started with venv
--------------------------
+=========================
 
 **1. Activate the virtual environment:**
 
@@ -27,7 +28,7 @@ Getting started with venv
     $ (venv) python -m pip install -r requirements.txt
 
 Running the project for development
------------------------------------
+===================================
 
 The frontend and backup are run separately.
 
@@ -40,7 +41,10 @@ The frontend and backup are run separately.
     $ (venv) flask run
 
 Deployments
------------
+===========
+
+Server configuration
+--------------------
 
 Here are instructions for configuring a server for this project and the process
 to deploy it out.
@@ -157,3 +161,14 @@ Once you go through the dialogs, restart the nginx service:
 .. code-block:: bash
 
     $ sudo service nginx restart
+
+Running the backend
+-------------------
+
+Before doing this, first setup the python environment following the
+instructions in the section above.
+
+.. code-block:: bash
+
+    $ watress-serve --call 'portfolio:create_app'
+

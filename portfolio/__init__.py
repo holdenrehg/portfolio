@@ -1,12 +1,18 @@
 from os import environ as env
 from typing import Iterable
-from flask import Flask, jsonify, make_response, request
+from flask import Flask, abort, jsonify, make_response, request
 from sendgrid import SendGridAPIClient
 from sendgrid.helpers import mail as sendgrid
 
 
 def create_app():
     app = Flask(__name__)
+
+    @app.before_request
+    def limit_access():
+        allowed = env.get("FRONTEND_URL")
+        if allowed not in request.headers.get("Origin", ""):
+            abort(403)
 
     @app.after_request
     def after_request(response):
@@ -18,7 +24,7 @@ def create_app():
         development feasible.
         """
         allowed = "http://localhost:8000"
-        if request.headers["Origin"] in allowed:
+        if request.headers.get("Origin") in allowed:
             response.headers["Access-Control-Allow-Origin"] = request.headers["Origin"]
             response.headers["Access-Control-Allow-Methods"] = "PUT,GET,POST,DELETE"
             response.headers["Access-Control-Allow-Headers"] = "Content-Type,Authorization"
