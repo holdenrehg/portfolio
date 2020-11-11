@@ -15,7 +15,7 @@ export default class Page extends React.Component {
   render() {
     return (
       <Layout>
-        <SEO title="Blog - Holden Rehg" />
+        <SEO title="Blog" />
         <div className="blog-article px-20 pb-32 bg-gray-100">
           <div className="content-wrapper pt-40">
             <div className="max-w-5xl mx-auto">

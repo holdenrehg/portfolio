@@ -15,7 +15,7 @@ const Section = (props) => {
 
 export default () => (
   <Layout>
-    <SEO title="Holden Rehg Portfolio" />
+    <SEO title="Welcome" />
 
     <div className="relative">
       {/* Welcome Header Section */}
