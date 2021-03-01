@@ -10,10 +10,12 @@ export class Article extends React.Component {
 
   componentDidMount() {
     if(this.props.meta.related) {
-      const relatedIds = this.props.meta.related.split(",")
+      if(typeof this.props.meta.related === "string") {
+        this.props.meta.related = this.props.meta.related.split(",")
+      }
 
       getArticles().then(articles => {
-        const relatedArticles = articles.filter(article => relatedIds.includes(article.defaultProps.meta.id))
+        const relatedArticles = articles.filter(article => this.props.meta.related.includes(article.defaultProps.meta.id))
         this.setState({relatedArticles: relatedArticles})
       })
     }
@@ -29,7 +31,7 @@ export class Article extends React.Component {
               <p>
                 <a href="/blog" className="underline hover:opacity-75">Articles</a>
                 <span className="mx-1">&gt;</span>
-                <span>{this.props.meta.id}</span>
+                <span>{this.props.meta.title}</span>
               </p>
             </div>
             {/* Cover image */}
@@ -65,9 +67,9 @@ export class Article extends React.Component {
                     I appreciate you taking the time to read any of my articles.
                     Take a look at the<a href="/blog">entire catalog of articles
                     I've written</a>. Or feel free to give me a follow on
-                    <a href="https://twitter.com/reedrehg" target="_blank">Twitter</a>,
-                    <a href="https://www.instagram.com/reedrehg/" target="_blank">Instagram</a>,
-                    or<a href="https://www.github.com/holdenrehg/" target="_blank">Github</a>.
+                    <a href="https://twitter.com/reedrehg" rel="noreferrer" target="_blank">Twitter</a>,
+                    <a href="https://www.instagram.com/reedrehg/" rel="noreferrer" target="_blank">Instagram</a>,
+                    or<a href="https://www.github.com/holdenrehg/" rel="noreferrer" target="_blank">Github</a>.
                     Or see my<a href="#site-footer">contact info</a> below.
                   </p>
                 </div>

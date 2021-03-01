@@ -11,7 +11,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import highlight from "highlight.js"
 import "../styles/global.css"
-import "highlight.js/styles/docco.css"
+import "highlight.js/styles/night-owl.css"
 
 const Layout = (props) => {
   const data = useStaticQuery(graphql`

@@ -109,8 +109,9 @@ Once cloned, move into the directory to start configuring
     $ gatsby build
 
     # file permissions
-    $ find ./public -type d -exec chmod g+rx {} \;
-    $ find ./public -type f -exec chmod g+r {} \;
+    $ chmod 600 -R ./portfolio  # set defaults, only user access
+    $ find ./portfolio -type d -exec chmod ug+rx {} \;  # give user/groups read and execute on directories
+    $ find ./portfolio -type f -exec chmod ug+r {} \;  # give user/groups read on files
 
 **5. Configure nginx**
 

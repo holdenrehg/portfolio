@@ -17,17 +17,29 @@ export class ImageGallery extends React.Component {
   componentWillUnmount() {
     if(this.state.timer) {
       clearInterval(this.state.timer)
-      this.state.timer = undefined
+      this.setState({timer: undefined})
     }
   }
 
   render() {
     return (
       <div className="relative w-48 h-48 bg-gray-100 rounded-full overflow-hidden">
-        <img className={ 'absolute ' + (this.state.currentImageIndex !== 0 ? 'hidden' : '') } style={{ bottom: '-20px', filter: 'grayscale(35%)' }} src="/images/self-portrait-1.jpeg" />
-        <img className={ 'absolute ' + (this.state.currentImageIndex !== 1 ? 'hidden' : '') } style={{ bottom: '-20px', filter: 'grayscale(35%)' }} src="/images/self-portrait-2.jpeg" />
-        <img className={ 'absolute ' + (this.state.currentImageIndex !== 2 ? 'hidden' : '') } style={{ bottom: '-20px', filter: 'grayscale(35%)' }} src="/images/self-portrait-3.jpeg" />
-        <img className={ 'absolute ' + (this.state.currentImageIndex !== 3 ? 'hidden' : '') } style={{ bottom: '-20px', filter: 'grayscale(35%)' }} src="/images/self-portrait-4.jpeg" />
+        <img src="/images/self-portrait-1.jpeg"
+          alt=""
+          className={ 'absolute ' + (this.state.currentImageIndex !== 0 ? 'hidden' : '') }
+          style={{ bottom: '-20px', filter: 'grayscale(35%)' }}/>
+        <img src="/images/self-portrait-2.jpeg"
+          alt=""
+          className={ 'absolute ' + (this.state.currentImageIndex !== 1 ? 'hidden' : '') }
+          style={{ bottom: '-20px', filter: 'grayscale(35%)' }}/>
+        <img src="/images/self-portrait-3.jpeg"
+          alt=""
+          className={ 'absolute ' + (this.state.currentImageIndex !== 2 ? 'hidden' : '') }
+          style={{ bottom: '-20px', filter: 'grayscale(35%)' }}/>
+        <img src="/images/self-portrait-4.jpeg"
+          alt=""
+          className={ 'absolute ' + (this.state.currentImageIndex !== 3 ? 'hidden' : '') }
+          style={{ bottom: '-20px', filter: 'grayscale(35%)' }}/>
       </div>
     )
   }

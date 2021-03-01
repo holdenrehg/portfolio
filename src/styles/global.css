@@ -409,12 +409,9 @@
   animation: spin 0.75s linear infinite;
 }
 
-/*! purgecss start ignore */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/*! purgecss end ignore */
-
 
 .text-roboto {
   @apply tracking-wider;
@@ -918,17 +915,39 @@ pre tt:after {
 }
 
 .blog-article .blog-article-content code.console,
-.blog-article .blog-article-content code.python {
+.blog-article .blog-article-content code.python,
+.blog-article .blog-article-content code.dockerfile,
+.blog-article .blog-article-content code.sql,
+.blog-article .blog-article-content code.nginx,
+.blog-article .blog-article-content code.html,
+.blog-article .blog-article-content code.xml,
+.blog-article .blog-article-content code.javascript {
   background: transparent;
 }
 
+/* Styles currently assuming the night-owl theme */
+
 .blog-article .blog-article-content code pre.hljs {
   @apply m-0;
-  background-color: #efefed;
+  /* background-color: #fff;
+  border: 1px solid #ccc; */
   font-size: 15px;
   padding-left: 36px;
   padding-right: 36px;
   line-height: 1.52;
+}
+
+.blog-article .blog-article-content code pre.hljs * {
+  font-style: normal !important;
+}
+
+.blog-article .blog-article-content code pre.hljs .hljs-comment {
+  color: #fff;
+  opacity: 0.66;
+}
+
+.blog-article .blog-article-content code pre.hljs .hljs-literal {
+  color: #c792ea;
 }
 
 /* Images */

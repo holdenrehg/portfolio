@@ -54,56 +54,65 @@ class ContactForm extends React.Component {
     return (
       <form className="w-full" onSubmit={this.handleSubmit}>
         <div className="mb-6">
-          <label className="mb-1 block text-base" htmlFor="name">What is your name? *</label>
-          <input name="name"
-            type="text"
-            value={this.state.name}
-            onChange={this.handleInputChange}
-            placeholder="Dolores Abernathy"
-            className="w-full text-base text-gray-800 placeholder-gray-600 border px-3 py-2 bg-gray-100 border-gray-400"
-            required
-            disabled={this.state.disabled}
-            />
+          <label className="mb-1 block text-base" htmlFor="name">
+            What is your name? *
+            <input name="name"
+              type="text"
+              value={this.state.name}
+              onChange={this.handleInputChange}
+              placeholder="Dolores Abernathy"
+              className="w-full text-base text-gray-800 placeholder-gray-600 border px-3 py-2 bg-gray-100 border-gray-400"
+              required
+              disabled={this.state.disabled}/>
+          </label>
         </div>
         <div className="mb-6">
-          <label className="mb-1 block text-base" htmlFor="email">What is the best email for you? *</label>
-          <input name="email"
-            type="email"
-            value={this.state.email}
-            onChange={this.handleInputChange}
-            placeholder="dolores@gmail.com"
-            className="w-full text-base text-gray-800 placeholder-gray-600 border px-3 py-2 bg-gray-100 border-gray-400"
-            required
-            disabled={this.state.disabled}/>
+          <label className="mb-1 block text-base" htmlFor="email">
+            What is the best email for you? *
+            <input name="email"
+              type="email"
+              value={this.state.email}
+              onChange={this.handleInputChange}
+              placeholder="dolores@gmail.com"
+              className="w-full text-base text-gray-800 placeholder-gray-600 border px-3 py-2 bg-gray-100 border-gray-400"
+              required
+              disabled={this.state.disabled}/>
+          </label>
         </div>
         <div className="mb-6">
-          <label className="mb-1 block text-base" htmlFor="message">Why are you reaching out? *</label>
-          <textarea name="message"
-            rows="8"
-            value={this.state.message}
-            onChange={this.handleInputChange}
-            className="w-full text-base text-gray-800 placeholder-gray-600 border px-3 py-2 bg-gray-100 border-gray-400"
-            placeholder="Hey Holden! I got a super cool project that I'm working on but need some advice..."
-            required
-            disabled={this.state.disabled}></textarea>
+          <label className="mb-1 block text-base" htmlFor="message">
+            Why are you reaching out? *
+            <textarea name="message"
+              rows="8"
+              value={this.state.message}
+              onChange={this.handleInputChange}
+              className="w-full text-base text-gray-800 placeholder-gray-600 border px-3 py-2 bg-gray-100 border-gray-400"
+              placeholder="Hey Holden! I got a super cool project that I'm working on but need some advice..."
+              required
+              disabled={this.state.disabled}></textarea>
+          </label>
         </div>
         <div className="mb-6 display-none opacity-0 hidden">
-          <label className="mb-1 block text-base" htmlFor="message">Phone number</label>
-          <input name="phone"
-            type="text"
-            value={this.state.phone}
-            onChange={this.handleInputChange}
-            placeholder="000-000-0000"
-            className="w-full text-base text-gray-800 placeholder-gray-600 border px-3 py-2 bg-gray-100 border-gray-400"
-            tabIndex="-1"
-            autoComplete="off"/>
+          <label className="mb-1 block text-base" htmlFor="message">
+            Phone number
+            <input name="phone"
+              type="text"
+              value={this.state.phone}
+              onChange={this.handleInputChange}
+              placeholder="000-000-0000"
+              className="w-full text-base text-gray-800 placeholder-gray-600 border px-3 py-2 bg-gray-100 border-gray-400"
+              tabIndex="-1"
+              autoComplete="off"/>
+          </label>
         </div>
         <button type="submit"
           disabled={this.state.disabled}
           className="rounded uppercase text-white text-lg font-bold tracking-wide px-10 py-3 bg-orange-600 cursor-pointer hover:bg-orange-800">
           <span>Send Message</span>
         </button>
-        <img src="/icons/reload.svg" className={(!this.state.sent && this.state.disabled ? "" : "hidden ") + "spinner inline align-middle h-8 ml-3 bg-orange-800 p-2 rounded-full"}/>
+        <img src="/icons/reload.svg"
+          alt=""
+          className={(!this.state.sent && this.state.disabled ? "" : "hidden ") + "spinner inline align-middle h-8 ml-3 bg-orange-800 p-2 rounded-full"}/>
         <div className={(this.state.sent ? "text-green-800" : "text-red-700" ) + " text-lg tracking-wide mt-3"}>{this.state.response}</div>
       </form>
     )
@@ -126,16 +135,29 @@ export const Footer = () => (
           </p>
           <div className="mt-10 text-gray-700">
             <p className="my-3">
-              <img className="inline-block align-middle" width="12px" src="/icons/envelope-closed.svg" />
+              <img src="/icons/envelope-closed.svg"
+                alt=""
+                className="inline-block align-middle"
+                width="12px"/>
               <span className="ml-2"><a href="mailto:holdenrehg@gmail.com" className="hover:underline">holdenrehg@gmail.com</a></span>
             </p>
             <p className="my-3">
-              <img className="inline-block align-middle" width="12px" src="/icons/phone.svg" />
+              <img src="/icons/phone.svg"
+                alt=""
+                className="inline-block align-middle"
+                width="12px"/>
               <span className="ml-2"><a href="tel:+1-618-691-9180" className="hover:underline">+1 (618) 691-9180</a></span>
             </p>
             <p className="my-3">
-              <img className="inline-block align-middle" width="12px" src="/icons/map-marker.svg" />
-              <span className="ml-2"><a href="https://www.google.com/maps/place/St.+Louis,+MO/@38.6530795,-90.313673,12z/data=!3m1!4b1!4m5!3m4!1s0x87d8b4a9faed8ef9:0xbe39eaca22bbe05b!8m2!3d38.6270025!4d-90.1994042" className="hover:underline">St. Louis, MO, USA</a></span>
+              <img src="/icons/map-marker.svg"
+                alt=""
+                className="inline-block align-middle"
+                width="12px"/>
+              <span className="ml-2">
+                <a href="https://www.google.com/maps/place/St.+Louis,+MO/@38.6530795,-90.313673,12z/data=!3m1!4b1!4m5!3m4!1s0x87d8b4a9faed8ef9:0xbe39eaca22bbe05b!8m2!3d38.6270025!4d-90.1994042" className="hover:underline">
+                  St. Louis, MO, USA
+                </a>
+              </span>
             </p>
           </div>
         </div>
@@ -157,7 +179,7 @@ export const Footer = () => (
         {/* <div className="my-1"><a href="/work-with-me" className="text-base cursor-pointer hover:underline">Work With Me</a></div> */}
         <div className="my-1"><a href="/blog" className="text-base cursor-pointer hover:underline">Blog</a></div>
         <Socials />
-        <div className="my-1"><span className="text-sm">Site built with <a href="https://gatsbyjs.com" target="_blank"><u className="cursor-pointer">GatsbyJS</u></a></span></div>
+        <div className="my-1"><span className="text-sm">Site built with <a href="https://gatsbyjs.com" rel="noreferrer" target="_blank"><u className="cursor-pointer">GatsbyJS</u></a></span></div>
       </div>
     </footer>
   </div>

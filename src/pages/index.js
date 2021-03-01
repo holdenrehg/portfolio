@@ -1,6 +1,7 @@
-import React, { useEffect } from "react"
+import React from "react"
+// import { useEffect } from "react"
 import { RecentArticles } from "../components/blog"
-import { UseCase } from "../components/portfolio"
+// import { UseCase } from "../components/portfolio"
 import { ImageGallery, Layout, SEO, Socials } from "../components"
 
 const Section = (props) => {
@@ -39,19 +40,19 @@ export default () => (
             <div className="z-50 absolute mt-4 text-xl xl:relative xl:mt-16">
               <ul className="ml-8 xl:mx-auto xl:w-full">
                 <li>
-                  <img className="inline mr-4 h-4" src="/icons/code.svg"/>
+                  <img className="inline mr-4 h-4" src="/icons/code.svg" alt=""/>
                   <a className="underline cursor-pointer hover:text-black" href="/portfolio">Here for software freelancing and consulting?</a>
                 </li>
                 <li>
-                  <img className="inline mr-4 h-4" src="/icons/paperclip.svg"/>
+                  <img className="inline mr-4 h-4" src="/icons/paperclip.svg" alt=""/>
                   <a className="underline cursor-pointer hover:text-black" href="/blog">Here for my writing?</a>
                 </li>
                 <li>
-                  <img className="inline mr-4 h-4" src="/icons/question-mark.svg"/>
+                  <img className="inline mr-4 h-4" src="/icons/question-mark.svg" alt=""/>
                   <a className="underline cursor-pointer hover:text-black" href="#about-me">Just wondering who the hell I am?</a>
                 </li>
                 <li>
-                  <img className="mt-20 bg-orange-300 rounded-full p-3 blink" width="32" height="32" src="/icons/chevron-bottom.svg" />
+                  <img className="mt-20 bg-orange-300 rounded-full p-3 blink" width="32" height="32" src="/icons/chevron-bottom.svg" alt=""/>
                 </li>
               </ul>
             </div>
@@ -146,14 +147,14 @@ export default () => (
             </p>
             <p className="text-xl mt-4">
               Solving problems like that felt good. At least once you get to the
-              solution. So I stuck with it and <a className="underline" href="http://iastate.edu" target="blank">studied software engineering</a>
+              solution. So I stuck with it and <a className="underline" href="http://iastate.edu" rel="noreferrer" target="_blank">studied software engineering</a>
               &nbsp;in school. Every chance, I worked throughout school. Trying to start,
               and eventually failing at, side projects while working at school IT,
               remote startup gigs, or summer internships.
             </p>
             <p className="text-xl mt-4">
-              All of this led to working at <a className="underline" href="https://bluestingray.com" target="blank">a software firm</a> near
-              my home town in <a className="underline" href="https://goo.gl/maps/ULgf7s3zvintX9fs5" target="blank">St. Louis, MO</a>,
+              All of this led to working at <a className="underline" href="https://bluestingray.com" rel="noreferrer" target="_blank">a software firm</a> near
+              my home town in <a className="underline" href="https://goo.gl/maps/ULgf7s3zvintX9fs5" rel="noreferrer" target="_blank">St. Louis, MO</a>,
               receiving a percentage of the company as part owner and building a
               new team from scratch focusing on ERP systems for small businesses.
             </p>
@@ -180,8 +181,8 @@ export default () => (
             <h3 className="text-3xl font-extrabold">Milestones</h3>
             <ul className="mt-8 text-lg">
               <li><span className="w-12 inline-block">2010</span>Built my first website and wrote my first line of code.</li>
-              <li><span className="w-12 inline-block">2012</span>Enrolled in the Software Engineering program at <a className="underline" href="http://iastate.edu" target="blank">Iowa State University</a>.</li>
-              <li><span className="w-12 inline-block">2015</span>Became a Partner and lead developer at <a className="underline" href="https://bluestingray.com" target="blank">Blue Stingray</a> software development firm.</li>
+              <li><span className="w-12 inline-block">2012</span>Enrolled in the Software Engineering program at <a className="underline" href="http://iastate.edu" rel="noreferrer" target="_blank">Iowa State University</a>.</li>
+              <li><span className="w-12 inline-block">2015</span>Became a Partner and lead developer at <a className="underline" href="https://bluestingray.com" rel="noreferrer" target="_blank">Blue Stingray</a> software development firm.</li>
               <li><span className="w-12 inline-block">2017</span>Started Buster Technologies LLC.</li>
               <li><span className="w-12 inline-block">2019</span>Bought my first rental property.</li>
             </ul>

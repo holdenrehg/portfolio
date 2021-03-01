@@ -26,7 +26,7 @@ export class UseCase extends React.Component {
   imageDiv() {
     if(this.props.src) {
       return <div className="flex-1 pr-10">
-        <img className="w-full opacity-50" src={this.props.src}/>
+        <img src={this.props.src} alt="" className="w-full opacity-50"/>
       </div>
     }
   }
@@ -50,7 +50,11 @@ export class UseCase extends React.Component {
 
           <button className="mt-8 text-base bg-white text-gray-900 rounded px-6 py-3 shadow-md">
             <span>Read more about it</span>
-            <img className="inline ml-4" width="12" height="12" src="/icons/external-link.svg" />
+            <img src="/icons/external-link.svg"
+              alt=""
+              className="inline ml-4"
+              width="12"
+              height="12"/>
           </button>
         </div>
       </div>

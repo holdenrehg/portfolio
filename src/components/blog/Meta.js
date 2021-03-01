@@ -10,8 +10,15 @@ export class Meta {
     "title",
     "description",
     "datePosted",
-    // "related",
   ]
+
+  /**
+   * Default values for the Meta object fields.
+   */
+  static defaults = {
+    backgroundColor: "#292b2b",
+    textDecorationColor: "#a0aec0",
+  }
 
   /**
    * Construct a new Meta object, validating that all required fields were
@@ -27,12 +34,21 @@ export class Meta {
    *     - tags (str): comma separated list of tags to describe the article
    */
   constructor(data) {
-    for(let field of Meta.required) {
-      if(!data[field]) throw `Field ${field} is required for Meta.`
+    // check for required fields...
+    for(const field of Meta.required) {
+      if(!data[field]) throw Error(`Field ${field} is required for Meta.`)
     }
 
-    for(let field of Object.keys(data)) {
+    // set user-defined values on the object
+    for(const field of Object.keys(data)) {
       this[field] = data[field]
+    }
+
+    // set any defaults
+    for (const field of Object.keys(Meta.defaults)) {
+      if(!this.hasOwnProperty(field)) {
+        this[field] = Meta.defaults[field];
+      }
     }
   }
 
@@ -52,13 +68,15 @@ export class Meta {
       size === "xs" ? "text-xs" : "text-sm",
     ]
 
-
     if(this.tags) {
-      for(const tag of this.tags.split(",")) {
-        tags.push(
-          <div className={classes.join(" ")}>
-            {tag}
-          </div>
+      if(typeof this.tags === "string") {
+        this.tags = this.tags.split(",")
+      }
+
+      for(const tag of this.tags) {
+        tags.push( <
+          div className = { classes.join(" ") } > { tag } <
+          /div>
         )
       }
     }
