@@ -84,14 +84,14 @@ const Page = props => (
           <li>Pull Requests (Bitbucket)</li>
       </ul>
 
-      <p name="0828" id="0828" class="graf graf--p graf-after--li">Each system has a different responsibility for our team. Email is primarily an interface between our team and the clients. Slack is our internal communication system to chat with each other. Google Calendar acts as our agenda items. Project Management defines and prioritizes work for each developer on the team. Bitbucket contains all of the source code that we write. We use a Pull Request workflow to move code from development to staging or production environments.</p>
-      <h3 name="c0cd" id="c0cd" class="graf graf--h3 graf-after--p">Team check-in</h3>
-      <p name="d452" id="d452" class="graf graf--p graf-after--h3">We’ve gone back and forth on these sort of meetings for years. We initially tried to do stand up meetings.</p>
-      <p name="bea5" id="bea5" class="graf graf--p graf-after--p">Why?</p>
-      <p name="6674" id="6674" class="graf graf--p graf-after--p">I guess just because that’s the norm. After a while we asked ourselves “what is the point?” and that’s the only answer we could come up with. Eventually, we couldn’t stand behind responses like “it helps bond team members” or “it increases transparency”. All it did for us was waste 15–30 minutes of everyone&#39;s time in the morning.</p>
-      <p name="6735" id="6735" class="graf graf--p graf-after--p">The meeting didn’t only waste the time we spent physically in the meeting. It also lowered productivity. Some people are deep into a project or task by 10 am every day. So it takes time to get a few notes together right before the meeting, it takes time to stand in a circle listening to things that you probably already heard about the day before, and then time to get back into what you were doing before the meeting started.</p>
-      <p name="ced4" id="ced4" class="graf graf--p graf-after--p">Stand up meetings may work for some teams, but we have 5 developers on the team at the moment, we all sit in the same room, we all talk to each other almost every day, we spend time in meetings with each other, so we roughly know what’s going on with each other week to week.</p>
-      <p name="4b30" id="4b30" class="graf graf--p graf-after--p">So we decided on a daily check-in virtually instead of standing up in a circle:</p>
+      <p>Each system has a different responsibility for our team. Email is primarily an interface between our team and the clients. Slack is our internal communication system to chat with each other. Google Calendar acts as our agenda items. Project Management defines and prioritizes work for each developer on the team. Bitbucket contains all of the source code that we write. We use a Pull Request workflow to move code from development to staging or production environments.</p>
+      <h3>Team check-in</h3>
+      <p>We’ve gone back and forth on these sort of meetings for years. We initially tried to do stand up meetings.</p>
+      <p>Why?</p>
+      <p>I guess just because that’s the norm. After a while we asked ourselves “what is the point?” and that’s the only answer we could come up with. Eventually, we couldn’t stand behind responses like “it helps bond team members” or “it increases transparency”. All it did for us was waste 15–30 minutes of everyone&#39;s time in the morning.</p>
+      <p>The meeting didn’t only waste the time we spent physically in the meeting. It also lowered productivity. Some people are deep into a project or task by 10 am every day. So it takes time to get a few notes together right before the meeting, it takes time to stand in a circle listening to things that you probably already heard about the day before, and then time to get back into what you were doing before the meeting started.</p>
+      <p>Stand up meetings may work for some teams, but we have 5 developers on the team at the moment, we all sit in the same room, we all talk to each other almost every day, we spend time in meetings with each other, so we roughly know what’s going on with each other week to week.</p>
+      <p>So we decided on a daily check-in virtually instead of standing up in a circle:</p>
 
       <figure>
         <img src="/blog/daily-odoo-team-routine/slack.jpeg" alt=""/>

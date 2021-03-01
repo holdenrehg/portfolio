@@ -1,4 +1,4 @@
-========
+=========
 Portfolio
 =========
 
@@ -173,3 +173,108 @@ instructions in the section above.
 
     $ watress-serve --call 'portfolio:create_app'
 
+Writing a new article
+=====================
+
+Here are the steps to take to add a new article to the blog.
+
+1. Create the page file in `src/pages/blog/{date}_{article-slug}.js`:
+
+.. code-block:: javascript
+
+    import React from "react"
+    import { Layout } from "../../components"
+    import { Article, Meta, Tags } from "../../components/blog"
+
+    const meta = new Meta({
+        id: "{YYYY}-{MM}-{DD}_{article-slug}",
+        title: "{Ex. Super Cool New Article Title}",
+        subtitle: "{Ex. Details on how super cool this blog is}",
+        datePosted: "{Ex. 2020-03-03}",
+        description: "{Ex. A short little description, usually the first paragram}",
+        tags: [
+            Tags.SuperCool,
+            ...
+        ],
+        related: [
+            "{id-to-related-articles}",
+            "{id-to-related-articles}",
+            "{id-to-related-articles}",
+        ],
+    })
+
+    const Page = props => (
+        <Layout>
+            <Article meta={props.meta}>
+                <p>My super cool new article...</p>
+            </Article>
+        </Layout>
+    )
+
+    Page.defaultProps = {
+        meta: meta
+    }
+
+    export default Page
+
+2. Register the article in `src/pages/blog/all.js`:
+
+.. code-block:: javascript
+
+    const articleFiles = [
+        "{YYYY}-{MM}-{DD}_{article-slug}",  // <-- put the id for the new article at the top of the list
+
+        ...
+    ]
+
+3. Check that your article appears.
+
+Navigate to `/blog` and make sure that your newly registered article actually
+appears in the list and can be clicked on to show the full article. It's a nice
+double check before stating to write.
+
+
+4. That's it. Start writing.
+
+It's registered now. Just write the thing!
+
+Article utilities
+-----------------
+
+There's a handful of general utility classes, elements, etc. that I use to write
+so they generally look consistent:
+
+
+**headers**
+
+The title of the article is registered at an `<h1/>` so all headers in the article
+body are at highest an `<h2/>`.
+
+**first letter**
+
+The first letter of articles is usually bolded and enlarged using a span class:
+
+.. code-block:: html
+
+    <p><span className="first-letter">T<span>he beginning of this article is about...</p>
+
+**body paragraphs**
+
+Just simply use a `<p/>` for paragraph blocks.
+
+**code blocks**
+
+I use `highlight.js` for code highlighting. `rst` doesn't seem to be very
+backtick friendly within code blocks, so below you'll need to replace the phrase `<backtick>` with
+an actual backtick character (`````):
+
+.. code-block:: html
+
+    <code className="javascript">
+        <pre>{<backtick>
+            const l = 5;
+            const x = 6;
+
+            add(l, x)
+        <backtick>}</pre>
+    </code>

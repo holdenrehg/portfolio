@@ -64,13 +64,10 @@ export class Article extends React.Component {
                 <div>
                   <h2>Thanks For Reading</h2>
                   <p>
-                    I appreciate you taking the time to read any of my articles.
-                    Take a look at the<a href="/blog">entire catalog of articles
-                    I've written</a>. Or feel free to give me a follow on
-                    <a href="https://twitter.com/reedrehg" rel="noreferrer" target="_blank">Twitter</a>,
-                    <a href="https://www.instagram.com/reedrehg/" rel="noreferrer" target="_blank">Instagram</a>,
-                    or<a href="https://www.github.com/holdenrehg/" rel="noreferrer" target="_blank">Github</a>.
-                    Or see my<a href="#site-footer">contact info</a> below.
+                    I appreciate you taking the time to read any of my articles. If you're looking for more
+                    ramblings, take a look at the<a href="/blog">entire catalog of articles I've written</a>.
+                    Or feel free to give me a follow on <a href="https://twitter.com/reedrehg" rel="noreferrer" target="_blank">Twitter</a>, <a href="https://www.instagram.com/reedrehg/" rel="noreferrer" target="_blank">Instagram</a>,
+                    or <a href="https://www.github.com/holdenrehg/" rel="noreferrer" target="_blank">Github</a> to see what else I've got going on. Or see my <a href="#site-footer">contact info</a> below if you want to get in touch with me.
                   </p>
                 </div>
                 <div className="mt-16">{this.props.meta.renderTags()}</div>

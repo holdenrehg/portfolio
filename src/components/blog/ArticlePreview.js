@@ -24,7 +24,14 @@ export const ArticlePreview = (props) => {
         <a
             href={`/blog/${props.meta.id}`}
             className={props.className + " block cursor-pointer hover:underline hover:opacity-100"}
-            style={Object.assign(props.style, {backgroundColor: props.meta.backgroundColor, textDecorationColor: props.meta.textDecorationColor})}
+            style={Object.assign(
+                props.style,
+                {
+                    backgroundColor: props.meta.backgroundColor,
+                    textDecorationColor: props.meta.textDecorationColor,
+                    minHeight: "400px",
+                }
+            )}
         >
             <div className="flex flex-col items-center justify-center h-full text-center px-10">
                 <p className="text-gray-400">{prettyDate(props.meta.datePosted)}</p>

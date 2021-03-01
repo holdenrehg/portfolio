@@ -74,10 +74,7 @@ export class Meta {
       }
 
       for(const tag of this.tags) {
-        tags.push( <
-          div className = { classes.join(" ") } > { tag } <
-          /div>
-        )
+        tags.push(<div className = { classes.join(" ") }>{ tag }</div>)
       }
     }
 

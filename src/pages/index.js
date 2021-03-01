@@ -112,10 +112,10 @@ export default () => (
       </Section> */}
 
       <Section name="blog">
-        <h2 className="text-6xl uppercase mb-3">Blog and writing work</h2>
+        <h2 className="text-6xl uppercase mb-3">Most Recent Articles</h2>
         <p className="text-3xl max-w-4xl">
           <mark className="px-1 text-vollkorn bg-purple-200">
-            I like to write and blah blah blah with this and that and the other stuff too...
+            Mostly incoherent thoughts on software, business, and investing.
           </mark>
         </p>
         <RecentArticles />
