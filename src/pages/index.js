@@ -2,7 +2,8 @@ import React from "react"
 // import { useEffect } from "react"
 import { RecentArticles } from "../components/blog"
 // import { UseCase } from "../components/portfolio"
-import { ImageGallery, Layout, SEO, Socials } from "../components"
+import { ImageGallery, Layout, Socials } from "../components"
+import { GatsbySeo } from "gatsby-plugin-next-seo"
 
 const Section = (props) => {
   return <div id={props.name} className="relative py-32 px-20 bg-white border-t" style={{ minHeight: '1000px' }}>
@@ -16,7 +17,9 @@ const Section = (props) => {
 
 export default () => (
   <Layout>
-    <SEO title="Welcome" />
+    <GatsbySeo
+      title="Welcome"
+    />
 
     <div className="relative">
       {/* Welcome Header Section */}

@@ -2,6 +2,7 @@ import React from 'react'
 import { prettyDate } from "../../utils/date"
 import { ArticlePreview } from "."
 import { getArticles } from "../../pages/blog/all"
+import { GatsbySeo } from "gatsby-plugin-next-seo"
 
 export class Article extends React.Component {
   state = {
@@ -24,6 +25,10 @@ export class Article extends React.Component {
   render() {
     return (
       <div>
+        <GatsbySeo
+          title={this.props.meta.title}
+        />
+
         <div className="blog-article px-20 pb-32 bg-white">
           <div className="content-wrapper pt-40">
             {/* Article header */}

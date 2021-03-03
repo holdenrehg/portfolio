@@ -1,12 +1,16 @@
 import React from "react"
-import { Layout, SEO } from "../components"
+import { Layout } from "../components"
+import { GatsbySeo } from "gatsby-plugin-next-seo"
 
 // Inspiration from:
 // https://dribbble.com/shots/7007253-DailyUI-082-Form
 
 export default () => (
   <Layout>
-    <SEO title="Work with me" />
+    <GatsbySeo
+      title="Work with me"
+    />
+
     <div>Coming soon...</div>
   </Layout>
 )

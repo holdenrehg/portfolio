@@ -1,7 +1,8 @@
 import React from "react"
 import { ArticlePreview } from "../../components/blog"
-import { Layout, SEO } from "../../components"
+import { Layout } from "../../components"
 import { getArticles } from "./all"
+import { GatsbySeo } from "gatsby-plugin-next-seo"
 
 export default class Page extends React.Component {
   state = {
@@ -15,7 +16,10 @@ export default class Page extends React.Component {
   render() {
     return (
       <Layout>
-        <SEO title="Blog" />
+        <GatsbySeo
+          title="Blog"
+        />
+
         <div className="blog-article px-20 pb-32 bg-gray-100">
           <div className="content-wrapper pt-40">
             <div className="max-w-5xl mx-auto">
