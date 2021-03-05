@@ -22,12 +22,112 @@ const Page = props => (
 
             <h2>What is OWL?</h2>
             <p>
-                [description of the service]
+                OWL is a frontend development framework created by Odoo. It was
+                a framework they introduced in the latest version of Odoo
+                (version 14) to make the frontend code a bit better.
+            </p>
+            <p>
+                If you're familiar with other frontend frameworks like React, Vue,
+                Angular, Backbone, etc. then you'll understand OWL quickly. It
+                follows many of the same patterns and ideas.
+            </p>
+            <p>
+                If you are not familiar with the idea of frontend frameworks, the most
+                recent frameworks all revolve around the idea of removing the nitty
+                gritty transactional work typically done with the javascript of the
+                past.
+            </p>
+            <p>
+                I'm sure you're familiar with hundreds of lines of javascript that find or
+                manipulate HTML elements. While also doing things like keeping track of
+                event listener binding logic. These frameworks remove pretty much all of that
+                grunt work and tightly couple your HTML and your javascript more closely.
+            </p>
+            <p>
+                Hold on. Don't run away. I know I said "tightly coupled" and I know that's a red flag.
+            </p>
+            <p>
+                But at some point we collectively agreed as frontend developers that coupling HTML and javascript
+                actually makes a ton of sense! They inherently depend on each other. There's very little
+                pure, no side-effects javascript code that you could write and re-use in other projects that doesn't still
+                depend on HTML and browsers. So if we're stuck with these two technologies let's embrace it and
+                focus on usability here instead of modularity.
+            </p>
+            <p>
+                Take a look at one very basic example of how these two ideas compare:
+            </p>
+            <p>
+                Here we have some simple HTML. It's 2 buttons. One button increments a count and displays it. One button
+                clears the count back to 0.
+            </p>
+            <code className="html">
+                <pre>{`
+<button id="countButton">Increment Count</button>
+<button id="clearButton">Clear Count</button>
+
+<div id="results">0</div>
+                `}</pre>
+            </code>
+            <p>
+                The way we used to write javascript will look pretty close to something like this:
+            </p>
+            <code className="javascript">
+                <pre>{`
+// ew, gross
+
+const clicks = 0;
+
+const countButton = document.querySelector("#countButton");
+myButton.addEventListener("click", function() {
+    clicks += 1;
+    const results = document.querySelector("#results");
+    results.innerHTML = clicks;
+});
+
+const clearButton = document.querySelector("#clearButton");
+clearButton.addEventListener("click", function() {
+    clicks = 0;
+    const results = document.querySelector("#results");
+    results.innerHTML = click;
+});
+                `}</pre>
+            </code>
+            <p>
+                We were all used to seeing this type of code for a long time, but this is a small example. It
+                quickly get scary as application grow. Here's what something a modern framework like OWL look like:
+            </p>
+            <code className="html">
+                <pre>{`
+<button id="countButton" t-on-click="state.count++">Increment Count</button>
+<button id="clearButton" t-on-click="state.count = 0">Clear Count</button>
+
+<div id="results" t-esc="state.count"/>
+                `}</pre>
+            </code>
+            <code className="javascript">
+                <pre>{`
+const { Component, useState } = owl;
+
+class ClickComponent extends Component {
+    state = useState({ count: 0 });
+}
+                `}</pre>
+            </code>
+            <p>
+                That's it. We track some data and all of the event listener, DOM manipulation messiness
+                is automatically handled for us. Pretty cool.
             </p>
 
             <h3>Why did Odoo create OWL?</h3>
             <p>
-                [short description, but include links back to their documentation]
+                I don't work for Odoo and didn't have any part in creating OWL, so I'm not going to speak on this too
+                much. In general, I know that they wanted to make their frontend code better and implement a modern
+                framework.
+            </p>
+            <p>
+                If you are wondering why they creating a brand new framework instead of
+                going with an existing one, I'd recommend you
+                <a href="https://github.com/odoo/owl/blob/master/doc/miscellaneous/why_owl.md" rel="noreferrer" target="_blank">read through their write up addressing that exact question.</a>
             </p>
 
             {/* === */}
@@ -41,20 +141,46 @@ const Page = props => (
 
             <h3>Lifecycled components</h3>
             <p>
-                [description]
+                A lot of code I've written in the past in javascript has a ton of boilerplate
+                code to essentially manage the state of the DOM. We constantly need to think about
+                all of the things that can happen to the frontend elements to make sure our code
+                won't break.
+            </p>
+            <p>
+                Having components that have a lifecycle and state baked in is a huge benefit. We know
+                that when a page loads our component boots up and when the page redirects our component
+                is probably going to break down and go away.
+            </p>
+            <p>
+                And we can have hooks for all of those things. No more <code>$(document).ready</code> of the past.
             </p>
 
             <h3>Reactive binding with virtual dom</h3>
             <p>
-                Allows reactive binding for both data and events.
+                If you reference the small example I started with in the introduction, you'll see an example of
+                reactive binding. We just need to think about the data, where the data is going to be displayed, and
+                when the data is going to be manipulated. All of the DOM manipulation code has been abstracted out.
+                Change the data and the frontend automatically updates. That's reactive binding in a nutshell.
             </p>
             <p>
-                [description]
+                Somewhat related, many modern frontend framework provides a virtual DOM. This means that they track the
+                frontend structure within javascript, mostly behind the scenes. This can be hugely helpful to
+                developers for things like debugging. I'll get into that a bit in future articles.
             </p>
 
-            <h3>Asyncronous</h3>
+            <h3>Readability</h3>
             <p>
-                [description]
+                We already have enough to keep track of when writing javascript. Adding the need to manually keep
+                track of things like event listeners and callbacks just to simply update the frontend, can be a mess.
+                But removing that burden allows us to write better code, more readable code, and handle more complex cases.
+            </p>
+            <p>
+                This can seem trivial to developers, but throughout my career in software, successfully producing easy to understand
+                code gives you a leg up on everything else. Code is easier to test. Code is easier to maintain. Code is
+                less buggy. The list goes on and on just by focusing on easy to understand code.
+            </p>
+            <p>
+                PS: If you haven't listened to <a href="https://www.youtube.com/watch?v=9LfmrkyP81M" rel="noreferrer" target="_blank">DHH's talk on software writing I highly recommend it.</a>
             </p>
 
             {/* === */}
@@ -73,7 +199,7 @@ const Page = props => (
             </p>
             <p>
                 As always with Odoo development, we gotta have a new module to
-                work with. Let's setup the simplest possible one we can to try
+                work with. Let's setup the simplest possible one so we can to try
                 out some OWL features.
             </p>
             <code className="console">
@@ -109,9 +235,17 @@ intro_to_owl_part_1/
 
             <h2>Adding our first component</h2>
             <p>
-                OWL works by defining <code>Component</code> classes which essentially
-                work like web components. Each components starts with a template, data
+                OWL works by defining <code>Component</code> classes which can be thought
+                of like web components. Each components starts with a template, data
                 binded to that template, and any subcomponents.
+            </p>
+            <p>
+                In HTML we have all of these tags like <code>header</code>, <code>div</code>,
+                <code>span</code>, <code>textarea</code>, etc. When working with OWL you need
+                to think "if I could create a brand new tag, what would be useful for the project?".
+                So maybe you need a <code>project</code> and <code>task</code> tag that display
+                information for a project management system. Or a <cod>contact</cod> tag to show
+                a user/customer in your software system.
             </p>
             <p>
                 In this article, we want to create a component that displays underneath
@@ -195,7 +329,7 @@ Object.assign(PartnerOrderSummary, {
             </code>
             <p>
                 The <code>template</code> references an XML template name. I like to organize
-                my components within the same folder, so let's add a file add
+                my components within the same folder, so let's add a file at
                 <code>static/src/js/components/PartnerOrderSummary.xml</code> right next to
                 our js class with a basic template:
             </p>
@@ -210,8 +344,8 @@ Object.assign(PartnerOrderSummary, {
                 `}</pre>
             </code>
             <p>
-                And similarly to our js class, now we need to register it with the module. For these
-                templates, we just add it to our <code>qweb</code> config in our <code>__manifest__.py</code>
+                And similarly to our js class we need to register it with the module. For these
+                templates we just add it to our <code>qweb</code> config in our <code>__manifest__.py</code>
                 file.
             </p>
             <code className="python">
@@ -231,14 +365,14 @@ Object.assign(PartnerOrderSummary, {
 
             <h2>Display our component on the sales order</h2>
             <p>
-                So we've got a little module here with a component displays some
+                So we've got a little module here with a component that displays some
                 text for now. But we need that to actually show up on a sales order
                 view form, right?
             </p>
 
             <h3>Update the dependencies</h3>
             <p>
-                First off we need to update the module dependencies:
+                First off we need to update the module dependencies to include the sales modules:
             </p>
             <code className="python">
                 <pre>{`
@@ -252,7 +386,7 @@ Object.assign(PartnerOrderSummary, {
 
             <h3>Override form renderer to mount component to class</h3>
             <p>
-                After updating your module so that Sales is installed, now let's
+                After updating your module so that Sales is installed, let's
                 add that component to the sales order form.
             </p>
             <p>
@@ -262,7 +396,7 @@ Object.assign(PartnerOrderSummary, {
             </p>
             <p>
                 We are going to update our <code>js</code> file to extend the core Odoo
-                client action to look for a certain html class and to automatically mount
+                form renderer to look for a certain html class and to automatically mount
                 our component to that element.
             </p>
             <code className="javascript">
@@ -310,12 +444,12 @@ odoo.define("intro_to_owl_part_1.PartnerOrderSummary", function (require) {
             <p>
                 There's a lot to take in here, especially if you've not done much frontend
                 work in Odoo. I'm not going to dig too deeply into how these things work
-                behind the scenes for this article. The main takeaways here is that there
-                is a way to mount an OWL component to an element with a certain class. In
-                our case here, it's <code>.o_partner_order_summary</code>.
+                behind the scenes for this article. The main takeaway here is that there
+                is a way to mount an OWL component to an element. In
+                our case here, we're mounting to an element with the class <code>o_partner_order_summary</code>.
             </p>
             <p>
-                We have the ability to mount a component to a div pretty simply via:
+                We have the ability to mount a component to any element object pretty simply via:
             </p>
             <code className="javascript">
                 <pre>{`
@@ -372,8 +506,8 @@ odoo.define("intro_to_owl_part_1.PartnerOrderSummary", function (require) {
 
             <h2>Expanding our widget</h2>
             <p>
-                At this point, you should see your cool new module! Even though
-                it's not too cool quite yet. But the hard part is done.
+                At this point you should see your cool new module! Even though
+                it's not too cool quite yet, at least the hard part is done.
             </p>
             <img src="/blog/intro-to-owl-part-1/simple-text-widget.png"/>
 
@@ -423,14 +557,15 @@ odoo.define("intro_to_owl_part_1.PartnerOrderSummary", function (require) {
                 We are obviously using dummy data at this point, but this is how our
                 widget should end up looking after a reload with our updated XML. There
                 is nothing fancy going on with these current changes since it's pretty
-                much just HTML and inline styles.
+                much just HTML and inline styles (I recommend creating a separate stylesheet
+                in Odoo if you know how).
             </p>
             <img src="/blog/intro-to-owl-part-1/widget-mock-no-data.png"/>
 
             <h3>Linking up the data</h3>
             <p>
-                The final step at this point is to actual link up our partner data. OWL tracks all of the
-                data on a component through a <code>state</code> object. So we'll start by adding a
+                The final step at this point is to actually link up our partner data. OWL tracks all of the
+                data on a component through a state object. So we'll start by adding a
                 <code>partner</code> property and allowing a way to set the data on construction.
             </p>
             <code className="javascript">
@@ -440,7 +575,7 @@ const { useState } = owl.hooks;
 class PartnerOrderSummary extends Component {
     partner = useState({});
 
-    constructor(self) {
+    constructor(self, partner) {
         super();
         this.partner = partner;
     }
@@ -477,7 +612,7 @@ FormRenderer.include({
             </code>
             <p>
                 Let's break down what's going on here. First we are looking through the page
-                for elements that have out class <code>o_partner_order_summary</code>. Then we
+                for elements that have our class <code>o_partner_order_summary</code>. Then we
                 make an rpc call to the backend to grab all of the data from the partner linked to
                 the current order. Once that data returns, then we are mounting our component.
             </p>
@@ -528,8 +663,13 @@ FormRenderer.include({
                 `}</pre>
             </code>
             <p>
-                Our new view goes through and replaces all of our dummy data with <code>t-esc</code>
-                statements to pull whatever data we need off of the partner.
+                Our new view goes through and replaces all of our dummy data with <code>t-</code>
+                statements to pull whatever data we need off of the partner. The simplest attribute to use
+                is <code>t-esc</code> which just prints data to a div.
+            </p>
+            <p>
+                To modify an attribute, we can add <code>t-attf-</code> before the attribute name and then
+                access variables within that string.
             </p>
             <p>
                 For example, we can display the image like:
@@ -537,7 +677,7 @@ FormRenderer.include({
             <code className="xml">
                 <pre>{`
 <img
-    t-attf-src="data:image/jpg;base64,{{partner.image_256}}"
+    t-attf-src="data:image/jpg;base64,{{ partner.image_256 }}"
     width="75px"
     height="75px"
     style="background-color: #ccc; border-radius: 50%; margin-bottom: 10px;"/>
@@ -562,8 +702,8 @@ FormRenderer.include({
 
             <h2>In conclusion</h2>
             <p>
-                I've tried to walk you through all of absolute basic of getting an OWL component
-                set up in Odoo, registering all of the files and classes you need, create a simple
+                I've tried to walk you through all of the absolute basics of getting an OWL component
+                set up in Odoo, registering all of the files and classes you need, creating a simple
                 component, linking that component into an existing Odoo view, storing component data,
                 and rendering component data.
             </p>
