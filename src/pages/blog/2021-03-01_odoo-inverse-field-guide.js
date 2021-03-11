@@ -10,7 +10,7 @@ const meta = new Meta({
     description: `
         The concepts of an inverse field in Odoo can be a bit mysterious to a
         lot of developers. I just did a search on the Odoo docs for the phrase
-        "inverse" and found 4 page results. Most of these results are about the
+        'inverse' and found 4 page results. Most of these results are about the
         One2many inverse relationship (which is not what I'm talking about in
         this article).
     `,

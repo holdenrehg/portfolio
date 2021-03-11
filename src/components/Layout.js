@@ -12,6 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import highlight from "highlight.js"
 import "../styles/global.css"
 import "highlight.js/styles/night-owl.css"
+import { Helmet } from "react-helmet"
 
 const Layout = (props) => {
   const data = useStaticQuery(graphql`
@@ -40,6 +41,12 @@ const Layout = (props) => {
 
   return (
     <>
+      <Helmet>
+        <html lang="en"/>
+        <meta charSet="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      </Helmet>
+
       <div className="overflow-x-scroll xl:overflow-x-hidden" style={{minWidth: "1280px"}}>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div className="relative">

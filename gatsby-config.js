@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Holden Rehg`,
+    title: `Holden Rehg Portfolio`,
     description: `The personal website for Holden Rehg, his work, and his blog.`,
     author: `@holdenrehg`,
+    siteUrl: `https://holdenrehg.com`,
   },
   plugins: [
     `gatsby-plugin-postcss`,
