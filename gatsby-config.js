@@ -12,7 +12,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-robots-txt`,
-    `gatsby-plugin-sitemap`,
 
     {
       resolve: `gatsby-source-filesystem`,
@@ -40,6 +39,89 @@ module.exports = {
           "G-ZVW2NCS07K",
         ]
       },
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+          }
+        `,
+
+        /**
+         * Serializes every page on the site into a set of objects with
+         * properties for defining a sitemap.xml.
+         *
+         * The function uses a set of rules where each rule defines a regex and
+         * a set of properties that will override the default sitemap info for
+         * any path that matches the regex. For example, blog articles should
+         * have a monthly changefreq while the contact us page should be yearly.
+         */
+        serialize: ({ site, allSitePage }) => {
+          const isIgnored = (path) => {
+            const ignored = [
+              /^\/blog\/all[\/]?$/,
+              /^\/errors(.*)/,
+            ]
+
+            for(const regex of ignored) {
+              if(path.match(regex)) {
+                return true
+              }
+            }
+
+            return false
+          }
+
+          const override = (path) => {
+            const overrideRules = [
+              {
+                regex: /^\/blog[\/]?$/,
+                options: {
+                  changefreq: "daily",
+                }
+              },
+              {
+                regex: /^\/blog\/(.*)/,
+                options: {
+                  changefreq: "monthly",
+                }
+              },
+            ]
+
+            for(const rule of overrideRules) {
+              if(path.match(rule.regex)) {
+                return rule.options
+              }
+            }
+
+            return {}
+          }
+
+          return allSitePage.nodes
+            .filter(node => !isIgnored(node.path))
+            .map(node => {
+              return Object.assign({
+                  url: `${site.siteMetadata.siteUrl}${node.path}`,
+                  changefreq: `yearly`,
+                  priority: 0.7,
+                },
+                override(node.path)
+              )
+            })
+        }
+      }
     },
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
