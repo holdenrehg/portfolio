@@ -895,10 +895,32 @@ pre tt:after {
 }
 
 /* Lists */
+.blog-article .blog-article-content .table-of-contents a {
+  @apply no-underline;
+}
+
+.blog-article .blog-article-content .table-of-contents {
+  @apply pl-3;
+}
+
+.blog-article .blog-article-content .table-of-contents li {
+  list-style: none;
+}
+
+.blog-article .blog-article-content .table-of-contents li::before {
+  content: '';
+
+  @apply bg-orange-400 mr-2 align-middle;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+}
+
 .blog-article .blog-article-content ul,
 .blog-article .blog-article-content ol {
   @apply pl-12;
 }
+
 
 .blog-article .blog-article-content ul {
   @apply list-disc;
