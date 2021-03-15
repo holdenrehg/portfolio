@@ -1,6 +1,7 @@
 import React from "react"
 import { Layout } from "../../components"
 import { Article, Meta, Tags } from "../../components/blog"
+import { GatsbySeo } from "gatsby-plugin-next-seo"
 
 const meta = new Meta({
     id: "2021_dd_mm_odoo-orm-basics",
@@ -16,6 +17,11 @@ const meta = new Meta({
 const Page = props => (
     <Layout>
         <Article meta={props.meta}>
+            <GatsbySeo
+                nofollow={true}
+                noindex={true}
+            />
+
             <ul className="table-of-contents">
                 <li><strong><a href="#introduction">Introduction</a></strong>
                     <ul>
