@@ -103,14 +103,14 @@ const Article = (props) => {
           </div>
           <hr className="bg-gray-200 mt-12 mb-16"/>
           {/* Article contents */}
-          <div className="blog-article-content w-2/3 mx-auto">
-            <div className="relative text-helvetica text-article tracking-article">
+          <div className="blog-article-content text-helvetica w-2/3 mx-auto">
+            <div className="relative text-article tracking-article">
               {props.children}
             </div>
             {/* Article footer */}
-            <div>
+            <div className="border-t border-gray-400 mt-16">
               <div>
-                <h2>Thanks For Reading</h2>
+                <h3><strong>Thanks For Reading</strong></h3>
                 <p>
                   I appreciate you taking the time to read any of my articles. If you're looking for more
                   ramblings, take a look at the<a href="/blog">entire catalog of articles I've written</a>.
