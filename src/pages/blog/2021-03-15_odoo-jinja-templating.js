@@ -7,7 +7,7 @@ const meta = new Meta({
     title: "Odoo + Jinja Templating",
     subtitle: "A simpler alternative for displaying static information",
     coverImage: "/blog/odoo-jinja-templating/cover.jpg",
-    datePosted: "2021-03-05",
+    datePosted: "2021-03-15",
     description: `
         Odoo has a built in templating engine called qweb
         which is use on report templates and through the frontend javascript framework. But
@@ -32,17 +32,37 @@ const meta = new Meta({
 const Page = props => (
     <Layout>
         <Article meta={props.meta}>
-            <p>
+            <ul className="table-of-contents">
+                <li><strong><a href="#introduction">Introduction</a></strong></li>
+                <li><strong><a href="#how-to-show-content">How can I show context in the view?</a></strong>
+                    <ul>
+                        <li><a href="#views-without-models">Views can't live without their models</a></li>
+                        <li><a href="#fields-for-everything">Fields for everything</a></li>
+                    </ul>
+                </li>
+                <li><strong><a href="#another-way">Another way With jinja2</a></strong>
+                    <ul>
+                        <li><a href="#bringing-it-together">Bringing it together with the view</a></li>
+                        <li><a href="#adding-the-context">Adding the context</a></li>
+                    </ul>
+                </li>
+                <li><strong><a href="#refactor-out-a-mixin">Refactor out a mixin</a></strong></li>
+                <li><strong><a href="#other-directives">What about other directives?</a></strong></li>
+                <li><strong><a href="#possibilities">Possibilities</a></strong></li>
+            </ul>
+
+            <p id="introduction">
                 <span className="first-letter">O</span>doo has a built in templating
                 engine called <a href="https://www.odoo.com/documentation/14.0/reference/qweb.html" rel="noreferrer" target="_blank"><code>qweb</code></a>
-                which is use on report templates and through the frontend javascript framework. But
+                which is used for report templates and the frontend javascript framework. But
                 as many Odoo developers know, there are different view types built into Odoo that
-                do not use the qweb engine. This means that the qweb directive are not
-                available on form views, tree views, kanban views, etc.
+                do not use the qweb engine. This means that the qweb directives are not
+                available on form views, tree views, kanban views, etc. (The most common types of
+                views.)
             </p>
 
             <p>
-                This can drive us all crazy when we need to figure out how to display or loop
+                This can drive us crazy when we need to figure out how to display or loop
                 through some basic information in the common views.
             </p>
             <p>
@@ -53,10 +73,10 @@ const Page = props => (
 
             {/* === */}
 
-            <h2>How can I show context in the view?</h2>
+            <h2 id="how-to-show-content">How can I show context in the view?</h2>
             <p>
                 One of the common use cases that I've seen pop up for Odoo developers is being able to
-                display some simple information like the context in the view. So let's
+                display some simple information like the context variable in the view. So let's
                 take a look at a sample view for a <code>sale.order</code> object where we might
                 want to do that.
             </p>
@@ -83,13 +103,13 @@ const Page = props => (
             </code>
             <img src="/blog/odoo-jinja-templating/notebook-tab.png"/>
 
-            <h3>Views can't live without their models</h3>
+            <h3 id="views-without-models">Views can't live without their models</h3>
             <p>
                 Odoo views are some shallow, old, rich men who only date models.
             </p>
             <p>
-                They related directly to some data model in the system. This generally
-                makes things much simpler when developing, because there's magic behind the
+                They are related directly to a data model in the system. This generally
+                makes things much simpler when developing because there's magic behind the
                 scenes that automatically loads all of the data and renders the view. The major
                 pitfall though is that when you aren't operating within the expected use cases of
                 the system, then you have to start introducing workarounds.
@@ -114,17 +134,18 @@ template.render(title="My Title")
             </code>
 
             <p>
-                But Odoo automatically injects the model and fields into the view, giving you access
+                It's a little bit of work, but very clear to us what's happening. But Odoo
+                automatically injects the model and fields into the view giving you access
                 to that information but nothing else.
             </p>
 
-            <h3>Fields for everything</h3>
+            <h3 id="fields-for-everything">Fields for everything</h3>
             <p>
-                So essentially any piece of information that you want to display on a view, which is
-                not a static string written directly into the XML, must be in a field.
+                Essentially any piece of information that you want to display on a view, which is
+                not a static string written directly into the XML, must be in a field on the model.
             </p>
             <p>
-                Looking back at our context example then, we obviously must create a new field.
+                Looking back at our context example we obviously must create a new field.
             </p>
             <code className="python">
                 <pre>{`
@@ -151,15 +172,17 @@ class Order(models.Model):
             <p>
                 And this does work. It's how we Odoo developers have operated, but it just
                 feels wrong to be honest. When you start building out fairly complicated views
-                that you just keep bloating your model more and more. Models in my mind are
+                then you continue to bloat your model more and more. Models in my mind are
                 meant to represent some specific data structure that is stored in the system.
                 It's easy to wrap my head around the fact that the system needs orders, so we
-                have an <code>Order</code> model.
+                have an <code>Order</code> model. The fields on that model should only track the
+                must-have data for an order.
             </p>
             <p>
-                But as more and more fields are added only for view rendering, then it gets
+                But as more and more fields are added for view rendering, then it gets
                 complicated keeping things straight. What do we actually need for order data in
-                the business logic and what do we need to show on the order view?
+                the business logic and what do we need to show on the order view? Should the order
+                model really be responsible for storing or computing context?
             </p>
             <p>
                 It feels like there needs to be more separation there.
@@ -167,7 +190,7 @@ class Order(models.Model):
 
             {/* === */}
 
-            <h2>Another way with <code>jinja2</code></h2>
+            <h2 id="another-way">Another way with <code>jinja2</code></h2>
             <p>
                 <code>jinja2</code> is an open source templating engine that is actually already
                 a requirement of the Odoo source. It's used within the core.
@@ -175,7 +198,8 @@ class Order(models.Model):
             <p>
                 I wanted to take advantage of it as a developer to pass some simple data into a
                 view for rendering, which does not have anything directly to do with our model
-                data structure.
+                data structure. We are still bound to using the model class, but we can at least
+                escape from using <code>fields</code>.
             </p>
             <p>
                 Here's what that started to look like:
@@ -236,7 +260,7 @@ def fields_view_get(self, *args, **kwargs):
                 You can think of the <code>jinja2.Environment</code> class just like a
                 configuration object. We just need to to set our open and end tags. I changed
                 these to use triple brackets to avoid any conflict with core Odoo code. There
-                are not occurences of triple brackets anywhere in the Odoo repository.
+                are no occurences of triple brackets anywhere in the Odoo repository.
             </p>
             <code className="python">
                 <pre>{`
@@ -261,7 +285,7 @@ template = templater.from_string(res["arch"])
 
             <p><strong>4. Finally render is back out</strong></p>
             <p>
-                Now we have a template object, creating from the form view. We just call the
+                Now we have a template object, created from the form xml. We just call the
                 <code>render</code> function, inject whatever data we want, and put it back
                 where it was before returning.
             </p>
@@ -273,9 +297,9 @@ res["arch"] = template.render(
                 `}</pre>
             </code>
 
-            <h3>Bringing it together with the view</h3>
+            <h3 id="bringing-it-together">Bringing it together with the view</h3>
             <p>
-                At this point, we can use the <code>message</code> data that we inject anywhere
+                At this point, we can use the <code>message</code> data that we injected anywhere
                 in our form view.
             </p>
             <code className="xml">
@@ -304,11 +328,11 @@ res["arch"] = template.render(
             <img src="/blog/odoo-jinja-templating/notebook-tab-message.png"/>
 
             <p>
-                Pretty damn cool to see this work in a few lines of code. It let's us pass in
+                Pretty damn cool to see this work in a few lines of code. It lets us pass in
                 any static data that we want.
             </p>
 
-            <h3>Adding the context</h3>
+            <h3 id="adding-the-context">Adding the context</h3>
             <p>
                 Back to our original use case, let's add the context. We need to update the data
                 that we are injecting in and update the view. I'm just going to use the entire
@@ -342,7 +366,7 @@ res["arch"] = template.render(
 
             {/* === */}
 
-            <h2>Refactor out a mixin</h2>
+            <h2 id="refactor-out-a-mixin">Refactor out a mixin</h2>
             <p>
                 This is a cool option for developers, but it's really not reusable in its
                 current state. Am I going to override the <code>fields_view_get</code> on
@@ -379,11 +403,11 @@ class JinjaMixin(models.AbstractModel):
                 `}</pre>
             </code>
             <p>
-                The mixin let's us update our model and have a single hook for injecting
+                The mixin lets us update our model and have a single hook for injecting
                 data. You can see it's following the same logic as shown above (condensed a bit
                 for simplicity sake) and instead of directly passing a <code>dict</code> to our
                 <code>render</code> method, we are using the <code>view_data</code> method which
-                can be easily overwritten.
+                can be easily overwritten by models inheriting the mixin.
             </p>
             <p>
                 So this is what our order model can look like now:
@@ -402,16 +426,16 @@ class Order(models.Model):
                 `}</pre>
             </code>
             <p>
-                Pretty simple now, right?
+                Pretty simple, right? You can easily use it across any model now.
             </p>
 
             {/* === */}
 
-            <h2>What about other directives?</h2>
+            <h2 id="other-directives">What about other directives?</h2>
             <p>
                 <code>jinja2</code> has <a href="https://jinja.palletsprojects.com/en/2.11.x/" rel="noreferrer" target="_blank">a lot of features</a> built
-                into it. Above we are doing the simples possible thing, but of course you have
-                full access to the features. For example it's possible to iterate over objects:
+                into it. Above we are doing the simplest possible thing of rendering a variable, but of course you have
+                full access to the features of the package. For example it's possible to iterate over objects:
             </p>
             <code className="python">
                 <pre>{`
@@ -446,17 +470,17 @@ class Order(models.Model):
 
             {/* === */}
 
-            <h2>Possibilities</h2>
+            <h2 id="possibilities">Possibilities</h2>
             <p>
                 This might not be the perfect solution, but I really think it's a viable
                 one for developers who just need to display simple data. We do not have the
-                option to use qweb directives in the most commong views like form views and
+                option to use qweb directives in the most common types of views like form views and
                 tree views. The work it would take to extend the core system to use qweb for
-                those would not be worth it.
+                those would not be worth it. It's a big rewrite project.
             </p>
             <p>
-                This is a nice workaround. A single mixin that's about 20 lines of code opens
-                up a simple hook called <code>view_data</code> that inject whatever you want
+                But this is a nice little workaround. A single mixin that's about 20 lines of code opens
+                up a simple hook called <code>view_data</code> that injects whatever you want
                 to render via <code>jinja2</code>.
             </p>
             <p>
