@@ -39,7 +39,22 @@ const Article = (props) => {
   return (
     <div>
       <GatsbySeo
-        title={props.meta.title}
+        title={`Holden Rehg | ${props.meta.title}`}
+        description={props.meta.description.replace(/\n/g, ' ').replace(/\s+/g, ' ').trim()}
+        openGraph={{
+          site_name: data.site.siteMetadata.title,
+          url: `${data.site.siteMetadata.siteUrl}/blog/${props.meta.id}`,
+          title: props.meta.title,
+          description: props.meta.description.replace(/\n/g, ' ').replace(/\s+/g, ' ').trim(),
+          images: !props.meta.coverImage ? [] : [{
+            url: `${data.site.siteMetadata.siteUrl}${props.meta.coverImage}`,
+          }]
+        }}
+        twitter={{
+          site: "@holdenrehg",
+          handle: "@holdenrehg",
+          cardType: props.meta.coverImage ? "summary_large_image" : "summary"
+        }}
       />
 
       <Helmet>

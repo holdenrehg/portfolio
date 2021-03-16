@@ -7,7 +7,7 @@ import React from "react"
 // ]
 
 const articleFiles = [
-  "2021-03-15_odoo-jinja-templating",
+  "2021-03-16_odoo-jinja-templating",
   "2021-03-01_odoo-inverse-field-guide",
   "2020-03-29_daily-odoo-team-routine",
   "2020-01-29_chaining-context-managers-for-mocks",

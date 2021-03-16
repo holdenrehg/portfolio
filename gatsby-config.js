@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Holden Rehg Portfolio`,
-    description: `The personal website for Holden Rehg, his work, and his blog.`,
-    author: `@holdenrehg`,
+    title: `Holden Rehg's Portfolio`,
+    description: `The place where I write about my life and my work.`,
+    author: `@reedrehg`,
     siteUrl: `https://holdenrehg.com`,
   },
   plugins: [

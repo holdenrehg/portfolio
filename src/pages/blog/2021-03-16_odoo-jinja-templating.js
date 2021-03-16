@@ -3,11 +3,11 @@ import { Layout } from "../../components"
 import { Article, Meta, Tags } from "../../components/blog"
 
 const meta = new Meta({
-    id: "2021-03-15_odoo-jinja-templating",
+    id: "2021-03-16_odoo-jinja-templating",
     title: "Odoo + Jinja Templating",
     subtitle: "A simpler alternative for displaying static information",
     coverImage: "/blog/odoo-jinja-templating/cover.jpg",
-    datePosted: "2021-03-15",
+    datePosted: "2021-03-16",
     description: `
         Odoo has a built in templating engine called qweb
         which is use on report templates and through the frontend javascript framework. But
