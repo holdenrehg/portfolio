@@ -6,7 +6,12 @@ import { GatsbySeo } from "gatsby-plugin-next-seo"
 export default () => (
   <Layout>
     <GatsbySeo
-      title="My Work and Portfolio"
+      title="10+ Years of Experience in Software, Python, and Odoo"
+      description="I'm Trying to Build Simpler Software and Help Companies Build Software With Python and Odoo"
+      openGraph={{
+        title: "10+ Years of Experience in Software, Python, and Odoo",
+        description: "I'm Trying to Build Simpler Software and Help Companies Build Software With Python and Odoo",
+      }}
     />
 
     <div className="blog-article px-20 pb-32 bg-gray-100">

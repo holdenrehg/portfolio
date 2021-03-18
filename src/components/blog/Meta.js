@@ -52,6 +52,18 @@ export class Meta {
     }
   }
 
+  facebookDescription() {
+    //
+  }
+
+  twitterDescription() {
+    //
+  }
+
+  linkedinDescription() {
+    //
+  }
+
   renderTags(color, text, size) {
     const tags = []
     const classes = [

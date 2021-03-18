@@ -17,7 +17,12 @@ export default class Page extends React.Component {
     return (
       <Layout>
         <GatsbySeo
-          title="Blog"
+          title="Software, Business, and Investing Articles from Holden Rehg"
+          description="I'm writing for readers who are trying to learn more about software development, python, odoo, small business practices, or investing."
+          openGraph={{
+            title: "Software, Business, and Investing Articles from Holden Rehg",
+            description: "I'm writing for readers who are trying to learn more about software development, python, odoo, small business practices, or investing.",
+          }}
         />
 
         <div className="blog-article px-20 pb-32 bg-gray-100">

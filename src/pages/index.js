@@ -18,7 +18,12 @@ const Section = (props) => {
 export default () => (
   <Layout>
     <GatsbySeo
-      title="Welcome"
+      title="Holden Rehg: I'm a Blogger, Python/Odoo Freelancer, Landlord"
+      description="Building Simpler Software, Helping Companies Build Software With Python and Odoo, and Blogging About It"
+      openGraph={{
+        title: "Holden Rehg: I'm a Blogger, Python/Odoo Freelancer, Landlord",
+        description: "Building Simpler Software, Helping Companies Build Software With Python and Odoo, and Blogging About It",
+      }}
     />
 
     <div className="relative">

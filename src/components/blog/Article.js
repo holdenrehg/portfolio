@@ -39,7 +39,7 @@ const Article = (props) => {
   return (
     <div>
       <GatsbySeo
-        title={`Holden Rehg | ${props.meta.title}`}
+        title={props.meta.title}
         description={props.meta.description.replace(/\n/g, ' ').replace(/\s+/g, ' ').trim()}
         openGraph={{
           site_name: data.site.siteMetadata.title,

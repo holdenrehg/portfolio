@@ -105,7 +105,7 @@ Once cloned, move into the directory to start configuring
 
 .. code-block:: bash
 
-    $ npm update --force
+    $ npm ci
     $ gatsby build
 
     # file permissions
@@ -171,7 +171,7 @@ instructions in the section above.
 
 .. code-block:: bash
 
-    $ watress-serve --call 'portfolio:create_app'
+    $ waitress-serve --call 'portfolio:create_app'
 
 Writing a new article
 =====================

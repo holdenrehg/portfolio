@@ -14,6 +14,8 @@ import "../styles/global.css"
 import "highlight.js/styles/night-owl.css"
 import { Helmet } from "react-helmet"
 
+import favicon from "../images/favicon.jpg"
+
 const Layout = (props) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -41,7 +43,11 @@ const Layout = (props) => {
 
   return (
     <>
-      <Helmet>
+      <Helmet
+        link={[
+          {rel: "shortcut icon", type: "image/jpg", href: `${favicon}`}
+        ]}
+      >
         <html lang="en"/>
         <meta charSet="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
