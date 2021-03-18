@@ -134,6 +134,35 @@ const Article = (props) => {
                 </p>
               </div>
               <div className="mt-16">{props.meta.renderTags()}</div>
+              <div className="mt-8">
+                <span className="pr-5 text-xl align-middle"><strong>Share:</strong></span>
+                <span className="pr-5">
+                  <a
+                    href={`https://www.linkedin.com/shareArticle?url=${data.site.siteMetadata.siteUrl}/blog/${props.meta.id}&mini=true&title=Holden Rehg's Blog&summary=${encodeURIComponent(props.meta.title)}&source=https://holdenrehg.com`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      src={`/icons/social/linkedin.svg`}
+                      className="bg-blue-500 p-1 cursor-pointer inline-block align-middle"
+                      width="32px"
+                    />
+                  </a>
+                </span>
+                <span className="pr-5">
+                  <a
+                    href={`https://twitter.com/intent/tweet?url=${data.site.siteMetadata.siteUrl}/blog/${props.meta.id}&text=${encodeURIComponent(props.meta.title)} by @reedrehg`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      src={`/icons/social/twitter.svg`}
+                      className="bg-blue-300 p-1 cursor-pointer inline-block align-middle"
+                      width="32px"
+                    />
+                  </a>
+                </span>
+              </div>
             </div>
           </div>
         </div>
