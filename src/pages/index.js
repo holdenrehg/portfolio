@@ -4,6 +4,7 @@ import { RecentArticles } from "../components/blog"
 // import { UseCase } from "../components/portfolio"
 import { ImageGallery, Layout, Socials } from "../components"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
+import { useStaticQuery, graphql } from "gatsby"
 
 const Section = (props) => {
   return <div id={props.name} className="relative py-32 px-20 bg-white border-t" style={{ minHeight: '1000px' }}>
@@ -15,14 +16,34 @@ const Section = (props) => {
   </div>
 }
 
-export default () => (
-  <Layout>
+export default () => {
+  const data = useStaticQuery(graphql`
+    query IndexSiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+          siteUrl
+        }
+      }
+    }
+  `)
+
+  return <Layout>
     <GatsbySeo
       title="Holden Rehg: I'm a Blogger, Python/Odoo Freelancer, Landlord"
       description="Building Simpler Software, Helping Companies Build Software With Python and Odoo, and Blogging About It"
       openGraph={{
+        url: data.site.siteMetadata.siteUrl,
         title: "Holden Rehg: I'm a Blogger, Python/Odoo Freelancer, Landlord",
         description: "Building Simpler Software, Helping Companies Build Software With Python and Odoo, and Blogging About It",
+        images: [{
+          url: `${data.site.siteMetadata.siteUrl}/images/self-portrait-1.jpeg`,
+        }]
+      }}
+      twitter={{
+        site: "@holdenrehg",
+        handle: "@holdenrehg",
+        cardType: "summary",
       }}
     />
 
@@ -215,4 +236,4 @@ export default () => (
       </div>
     </div>
   </Layout>
-)
+}
