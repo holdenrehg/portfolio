@@ -6,9 +6,9 @@ export const ArticlePreview = (props) => {
     if(props.meta.coverImage) {
         return (
             <a href={`/blog/${props.meta.id}`} className={props.className + " block opacity-90 cursor-pointer hover:underline hover:opacity-100"} style={props.style}>
-                <div className="h-64 w-full mb-4 bg-gray-200 overflow-hidden">
+                <div className="w-full mb-4 bg-gray-200 overflow-hidden" style={{maxHeight: "16rem"}}>
                     <img
-                        className="w-full"
+                        className="w-full my-auto mx-auto"
                         src={props.meta.coverImage}
                         loading="lazy"
                     />
