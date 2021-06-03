@@ -26,7 +26,7 @@ class RecentArticles extends React.Component {
 
   render() {
     return (
-      <div className="mt-6 flex flex-wrap justify-between">
+      <div className="mt-6 md:flex md:flex-wrap justify-between">
         {this.state.recentArticles.map(article => (
           <ArticlePreview
               className="my-4"

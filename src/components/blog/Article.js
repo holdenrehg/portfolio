@@ -87,22 +87,23 @@ const Article = (props) => {
         `}</script>
       </Helmet>
 
-      <div className="blog-article px-20 pb-32 bg-white">
+      <div className="blog-article px-8 md:px-20 pb-32 bg-white">
         <div className="content-wrapper pt-40">
           {/* Article header */}
-          <div className="w-2/3 mx-auto text-lg">
+          <div className="md:w-2/3 md:mx-auto text-lg">
             <p>
               <a href="/blog" className="underline hover:opacity-75">Articles</a>
               <span className="mx-1">&gt;</span>
               <span>{props.meta.title}</span>
             </p>
           </div>
-          {/* Cover image */}
+          {/* Cover image (for desktop) */}
           <div
             style={{backgroundImage: `url(${props.meta.coverImage})`}}
-            className={(!props.meta.coverImage ? "hidden " : "") + "bg-cover bg-center w-full h-104 my-10"}></div>
+            className={(!props.meta.coverImage ? "hidden" : "hidden md:block") + " bg-cover bg-center w-full h-104 my-10"}
+          ></div>
           {/* Meta data about the article */}
-          <div className="w-2/3 mx-auto">
+          <div className="md:w-2/3 md:mx-auto">
             <h1 id="blog-article-title" className="text-4xl font-extrabold mb-0">{props.meta.title}</h1>
             <h2 id="blog-article-subtitle" className={(!props.meta.subtitle ? "hidden ": "") + "text-xl mt-0"}>{props.meta.subtitle}</h2>
             <div className="mt-8">
@@ -117,8 +118,13 @@ const Article = (props) => {
             </div>
           </div>
           <hr className="bg-gray-200 mt-12 mb-16"/>
+          {/* Cover image (for mobile) */}
+          <div
+            style={{backgroundImage: `url(${props.meta.coverImage})`}}
+            className={(!props.meta.coverImage ? "hidden" : "md:hidden") + " bg-cover bg-center w-full h-104 my-10"}
+          ></div>
           {/* Article contents */}
-          <div className="blog-article-content text-helvetica w-2/3 mx-auto">
+          <div className="blog-article-content text-helvetica md:w-2/3 md:mx-auto">
             <div className="relative text-article tracking-article">
               {props.children}
             </div>
@@ -167,15 +173,15 @@ const Article = (props) => {
           </div>
         </div>
       </div>
-      <div className="relative text-center py-16 px-20 bg-gray-200">
+      <div className="relative text-center py-16 px-8 md:px-20 bg-gray-200">
         <div className="absolute w-full left-0" style={{top: "-40px"}}>
           <div className="mx-auto rounded-full bg-cover bg-center border-4 border-gray-400" style={{backgroundImage: "url(/images/self-portrait-1.jpeg)", width: "80px", height: "80px"}}/>
           <p className="mx-auto mt-6 text-lg text-gray-900 font-bold">Holden Rehg, Author</p>
           <p className="mx-auto text-lg text-gray-800">Posted {prettyDate(props.meta.datePosted)}</p>
         </div>
-        <div className="mt-40">
+        <div className="mt-32 md:mt-40">
           <h3 className="text-3xl font-bold mb-4">Other articles you might like</h3>
-          <div className="flex justify-between mb-8">
+          <div className="content-wrapper md:flex md:justify-between mb-8">
             {state.relatedArticles.map(article => (
               <ArticlePreview
                 className="my-4"

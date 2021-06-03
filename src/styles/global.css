@@ -393,16 +393,33 @@
 }
 
 @-moz-keyframes spin {
-  from { -moz-transform: rotate(0deg); }
-  to { -moz-transform: rotate(360deg); }
+  from {
+    -moz-transform: rotate(0deg);
+  }
+
+  to {
+    -moz-transform: rotate(360deg);
+  }
 }
+
 @-webkit-keyframes spin {
-  from { -webkit-transform: rotate(0deg); }
-  to { -webkit-transform: rotate(360deg); }
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+  }
 }
+
 @keyframes spin {
-  from {transform:rotate(0deg);}
-  to {transform:rotate(360deg);}
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .spinner {
@@ -432,10 +449,10 @@
 
 .content-wrapper {
   @apply w-full;
-  max-width: 1300px;
+  max-width: 1200px;
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1200px) {
   .content-wrapper {
     margin-left: auto !important;
     margin-right: auto !important;
@@ -486,6 +503,7 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
+  min-width: 320px !important;
 }
 
 article,
@@ -854,23 +872,63 @@ pre tt:after {
 
 /*
  ===============================================================================
+ Index Page Styles
+ ===============================================================================
+ */
+
+.min-h-400 {
+  min-height: 400px;
+}
+
+.min-h-950 {
+  min-height: 950px;
+}
+
+.max-h-26r {
+  max-height: 26rem;
+}
+
+/*
+ ===============================================================================
  Blog Article Styles
  ===============================================================================
  */
 
 .blog-article .blog-article-content p,
 .blog-article .blog-article-content blockquote {
-  @apply my-6;
-  font-size: 18px;
+  @apply my-6 text-base;
   line-height: 1.75;
+
+}
+
+@screen md {
+
+  .blog-article .blog-article-content p,
+  .blog-article .blog-article-content blockquote {
+    @apply text-lg;
+  }
 }
 
 /* Headers */
 .blog-article .blog-article-content h2 {
-  @apply text-4xl font-extrabold mt-16;
-}
-.blog-article .blog-article-content h3 {
   @apply text-2xl font-extrabold mt-16;
+}
+
+@screen md {
+  .blog-article .blog-article-content h2 {
+    @apply text-4xl;
+  }
+}
+
+.blog-article .blog-article-content h3 {
+  @apply text-xl font-extrabold mt-16;
+
+}
+
+@screen md {
+  .blog-article .blog-article-content h3 {
+    @apply text-2xl;
+  }
 }
 
 /* First letter of article */
@@ -885,6 +943,7 @@ pre tt:after {
 .blog-article .blog-article-content a {
   @apply mx-1 underline;
 }
+
 .blog-article .blog-article-content a:hover {
   @apply opacity-75;
 }
@@ -895,12 +954,18 @@ pre tt:after {
 }
 
 /* Lists */
-.blog-article .blog-article-content .table-of-contents a {
-  @apply no-underline;
+.blog-article .blog-article-content .table-of-contents {
+  @apply pl-3 pb-5 text-base;
 }
 
-.blog-article .blog-article-content .table-of-contents {
-  @apply pl-3;
+@screen md {
+  .blog-article .blog-article-content .table-of-contents {
+    @apply text-xl;
+  }
+}
+
+.blog-article .blog-article-content .table-of-contents a {
+  @apply no-underline;
 }
 
 .blog-article .blog-article-content .table-of-contents li {
@@ -918,9 +983,17 @@ pre tt:after {
 
 .blog-article .blog-article-content ul,
 .blog-article .blog-article-content ol {
-  @apply pl-12;
+  @apply pl-3;
+
 }
 
+@screen md {
+
+  .blog-article .blog-article-content ul,
+  .blog-article .blog-article-content ol {
+    @apply pl-12;
+  }
+}
 
 .blog-article .blog-article-content ul {
   @apply list-disc;
@@ -951,12 +1024,20 @@ pre tt:after {
 
 .blog-article .blog-article-content code pre.hljs {
   @apply m-0;
-  /* background-color: #fff;
-  border: 1px solid #ccc; */
-  font-size: 15px;
-  padding-left: 36px;
-  padding-right: 36px;
+
+  font-size: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
   line-height: 1.52;
+}
+
+@screen md {
+  .blog-article .blog-article-content code pre.hljs {
+    font-size: 15px;
+    padding-left: 36px;
+    padding-right: 36px;
+    line-height: 1.52;
+  }
 }
 
 .blog-article .blog-article-content code pre.hljs * {
@@ -976,6 +1057,7 @@ pre tt:after {
 .blog-article .blog-article-content figure {
   @apply my-16 mx-0 px-0;
 }
+
 .blog-article .blog-article-content figcaption {
   @apply text-sm text-gray-700 mt-3;
 }

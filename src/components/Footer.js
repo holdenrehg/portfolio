@@ -107,7 +107,7 @@ class ContactForm extends React.Component {
         </div>
         <button type="submit"
           disabled={this.state.disabled}
-          className="rounded uppercase text-white text-lg font-bold tracking-wide px-10 py-3 bg-orange-600 cursor-pointer hover:bg-orange-800">
+          className="rounded uppercase text-white text-lg font-bold tracking-wide px-10 py-3 bg-orange-800 cursor-pointer hover:bg-orange-900">
           <span>Send Message</span>
         </button>
         <img src="/icons/reload.svg"
@@ -122,10 +122,10 @@ class ContactForm extends React.Component {
 export const Footer = () => (
   <div id="site-footer" className="z-40 w-full">
     {/* Contact Me Section */}
-    <div className="bg-white px-20 py-20 border-t border-gray-400" style={{ maxHeight: '26rem' }}>
-      <div className="content-wrapper flex justify-between">
-        <div className="w-1/2">
-          <p className="text-gray-900 text-3xl font-bold uppercase tracking-wider">Message me and say hi</p>
+    <div className="bg-white px-8 md:px-20 py-20 border-t border-gray-400 lg:max-h-26r">
+      <div className="content-wrapper lg:flex justify-between">
+        <div className="lg:w-1/2">
+          <p className="text-3xl text-gray-900 font-bold uppercase tracking-wider">Message me and say hi</p>
           <p className="mt-2 text-base text-vollkorn">
             Shoot me a message and let me know what you're thinking. I'm usually happy to talk with passionate people or anyone who genuinely needs helps.
             {/* TODO: Add once work-with-me form implemented */}
@@ -161,8 +161,8 @@ export const Footer = () => (
             </p>
           </div>
         </div>
-        <div className="w-1/2 pl-16">
-          <div className="bg-white shadow-2xl p-12 border border-gray-200">
+        <div className="mt-12 lg:w-1/2 lg:pl-16 lg:mt-0">
+          <div className="md:bg-white md:shadow-2xl md:p-12 md:border md:border-gray-200">
             <ContactForm />
           </div>
         </div>
@@ -170,7 +170,7 @@ export const Footer = () => (
     </div>
 
     {/* Main Footer Section */}
-    <footer className="w-full min-h-64 px-20 py-10 bg-orange-800 text-orange-100 text-vollkorn">
+    <footer className="w-full min-h-64 px-8 md:px-20 py-10 bg-orange-800 text-orange-100 text-vollkorn">
       <div className="content-wrapper text-left">
         <div className="pb-3"><span className="text-3xl font-bold uppercase tracking-wider text-roboto">Holden Rehg</span></div>
         <div className="my-1"><a href="/#about-me" className="text-base cursor-pointer hover:underline">About Me</a></div>

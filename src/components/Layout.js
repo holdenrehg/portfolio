@@ -53,7 +53,7 @@ const Layout = (props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Helmet>
 
-      <div className="overflow-x-scroll xl:overflow-x-hidden" style={{minWidth: "1280px"}}>
+      <div className="overflow-x-scroll md:overflow-x-hidden">
         <Header siteTitle={data.site.siteMetadata.title} />
         <div className="relative">
           <main>
