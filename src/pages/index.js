@@ -57,7 +57,7 @@ export default () => {
               <div className="block text-gray-900 text-5xl sm:text-6xl md:text-7xl font-bold uppercase tracking-wider">I'm Holden Rehg</div>
               <div className="mt-3 text-3xl sm:text-4xl text-gray-800 md:-mt-2">A Software Developer, Investor, and Hobby Writer</div>
             </div>
-            <div className="hidden inline-block ml-20 align-middle">
+            <div className="hidden md:inline-block md:ml-20 align-middle md:block">
               <ImageGallery />
             </div>
           </div>
