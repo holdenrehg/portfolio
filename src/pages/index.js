@@ -54,8 +54,8 @@ export default () => {
           <div className="flex justify-between">
             <div className="inline-block align-middle">
               <div className="text-md sm:text-lg text-orange-900 uppercase tracking-widest">Welcome to my portfolio</div>
-              <div className="block text-gray-900 text-5xl sm:text-6xl md:text-7xl font-bold uppercase tracking-wider">I'm Holden Rehg</div>
-              <div className="mt-3 text-3xl sm:text-4xl text-gray-800 md:-mt-2">A Software Developer, Investor, and Hobby Writer</div>
+              <div className="block text-gray-900 text-5xl sm:text-6xl md:text-7xl font-bold uppercase tracking-wider leading-tight">I'm Holden Rehg</div>
+              <div className="mt-3 text-3xl sm:text-4xl text-gray-800 md:mt-2 lg:-mt-2">A Software Developer, Investor, and Hobby Writer</div>
             </div>
             <div className="hidden md:inline-block md:ml-20 align-middle md:block">
               <ImageGallery />
