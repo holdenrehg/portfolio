@@ -931,6 +931,11 @@ pre tt:after {
   }
 }
 
+.blog-article .blog-article-content h4 {
+  @apply text-xl text-gray-800 font-extrabold mt-16 mb-2;
+
+}
+
 /* First letter of article */
 .blog-article .blog-article-content .first-letter {
   @apply inline-block text-6xl font-extrabold -mt-6 pr-2 h-16 float-left;
