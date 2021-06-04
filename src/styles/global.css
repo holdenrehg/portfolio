@@ -1066,3 +1066,7 @@ pre tt:after {
 .blog-article .blog-article-content figcaption {
   @apply text-sm text-gray-700 mt-3;
 }
+
+iframe[src*="ads-iframe"] {
+  display: none !important
+}

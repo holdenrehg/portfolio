@@ -5,6 +5,7 @@ import { getArticles } from "../../pages/blog/all"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { Disqus } from "gatsby-plugin-disqus";
 
 const Article = (props) => {
   const [state, setState] = useState({relatedArticles: []});
@@ -33,6 +34,21 @@ const Article = (props) => {
           )
         })
       })
+    }
+  }, [])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      for(let iframe of document.querySelectorAll("iframe")) {
+        let src = iframe.getAttribute("src")
+        if(src && src.match(/(ads-*)|(disqusads)gi/)) {
+          iframe.remove()
+        }
+      }
+    }, 500)
+
+    return () => {
+      clearInterval(interval)
     }
   }, [])
 
@@ -168,6 +184,15 @@ const Article = (props) => {
                     />
                   </a>
                 </span>
+              </div>
+              <div className="mt-24">
+                <Disqus
+                  config={{
+                    url: `${data.site.siteMetadata.siteUrl}/blog/${props.meta.id}`,
+                    identifier: props.meta.id,
+                    title: props.meta.title,
+                  }}
+                />
               </div>
             </div>
           </div>

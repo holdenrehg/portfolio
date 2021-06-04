@@ -12,7 +12,12 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-robots-txt`,
-
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `holdenrehg`
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

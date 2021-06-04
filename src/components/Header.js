@@ -4,10 +4,10 @@ export const Header = () => {
   const [state, setState] = useState({menuOpen: false})
 
   return (
-    <div class="relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div className="relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Desktop Menu */}
-        <div class="hidden content-wrapper bg-transparent absolute z-50 pt-10 px-20 pb-6 md:flex md:justify-between md:items-center lg:px-56">
+        <div className="hidden content-wrapper bg-transparent absolute z-50 pt-10 px-20 pb-6 md:flex md:justify-between md:items-center lg:px-56">
           <div className="flex justify-start cursor-pointer opacity-75 hover:opacity-100 text-gray-800 text-lg uppercase">
             <a href="/#site-footer">Work with me</a>
           </div>
@@ -34,7 +34,7 @@ export const Header = () => {
                   <div>
                     <a href="/" className="cursor-pointer opacity-75 hover:opacity-100 text-knewave text-3xl">
                       <img src="/images/cartoon.jpg" className="inline pr-3 h-10 align-middle"/>
-                      <span class="align-middle">HR</span>
+                      <span className="align-middle">HR</span>
                     </a>
                   </div>
                 </div>
