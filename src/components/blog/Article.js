@@ -39,11 +39,9 @@ const Article = (props) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      for(let iframe of document.querySelectorAll("iframe")) {
-        let src = iframe.getAttribute("src")
-        if(src && src.match(/(ads-*)|(disqusads)gi/)) {
-          iframe.remove()
-        }
+      let iframes = document.querySelectorAll("#disqus_thread iframe")
+      if(iframes.length >= 2) {
+        iframes[0].style.display = "none"
       }
     }, 500)
 
