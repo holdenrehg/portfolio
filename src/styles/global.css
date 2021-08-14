@@ -1,3 +1,6 @@
+/* $white: #fafaf8; */
+/* $black: #3c366b; */
+
 /* roboto-condensed-300 - latin */
 @font-face {
   font-family: 'Roboto Condensed';
@@ -447,6 +450,10 @@
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
+.phone-number:before {
+  content: attr(title);
+}
+
 .content-wrapper {
   @apply w-full;
   max-width: 1200px;
@@ -461,12 +468,13 @@
   }
 }
 
-.bg-main {
-  background: linear-gradient(to bottom, #ffffff, #efefef);
-}
-
 .blink {
   animation: blink 2.2s linear infinite;
+}
+
+html,
+body {
+  background: #fafaf8;
 }
 
 html {

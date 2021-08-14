@@ -5,25 +5,55 @@ export const Header = () => {
 
   return (
     <div className="relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="mx-auto">
+
         {/* Desktop Menu */}
-        <div className="hidden content-wrapper bg-transparent absolute z-50 pt-10 px-20 pb-6 md:flex md:justify-between md:items-center lg:px-56">
-          <div className="flex justify-start cursor-pointer opacity-75 hover:opacity-100 text-gray-800 text-lg uppercase">
-            <a href="/#site-footer">Work with me</a>
+        <div
+          className="hidden md:flex justify-between items-center px-8 md:px-20 py-8 text-helvetica text-indigo-900 font-semibold mx-auto"
+          style={{fontSize: "0.96rem"}}
+        >
+          {/* Left */}
+          <div className="flex flex-col gap-1">
+            <div><a className="cursor-pointer hover:underline" href="/portfolio">Portfolio</a></div>
+            <div><a className="cursor-pointer hover:underline" href="/blog">Blog</a></div>
+            <div><a className="cursor-pointer hover:underline" href="/#about-me">About me</a></div>
+            <div><a className="cursor-pointer hover:underline" href="mailto:holdenrehg@gmail.com">Email me</a></div>
           </div>
-          <div className="flex justify-start cursor-pointer opacity-75 hover:opacity-100 text-gray-800 text-lg uppercase">
-            <a href="/blog">Blog</a>
+
+          {/* Center */}
+          <div className="uppercase absolute left-0 right-0 mx-auto flex flex-col text-center items-center text-indigo-900" style={{width: "200px"}}>
+            <a href="/">
+              <span className="block text-knewave text-3xl">HR</span>
+              <span className="block text-sm tracking-normal font-bold">Holden Rehg</span>
+            </a>
           </div>
-          <div className="flex justify-start cursor-pointer opacity-75 hover:opacity-100 text-knewave text-3xl">
-            <a href="/">HR</a>
-          </div>
-          <div className="flex justify-start cursor-pointer opacity-75 hover:opacity-100 text-gray-800 text-lg uppercase">
-            <a href="/portfolio"><span>Portfolio</span></a>
-          </div>
-          <div className="flex justify-start cursor-pointer opacity-75 hover:opacity-100 text-gray-800 text-lg uppercase">
-            <a href="/#about-me"><span>My story</span></a>
+
+          {/* Right */}
+          <div className="flex gap-5">
+            <a href="https://linkedin.com/in/holdenrehg"
+              rel="noreferrer"
+              target="_blank">
+              <img src={`/icons/social/linkedin-indigo-900.svg`} alt="" className="cursor-pointer" width="18px"/>
+            </a>
+            <a href="https://twitter.com/reedrehg"
+              rel="noreferrer"
+              target="_blank">
+              <img src={`/icons/social/twitter-indigo-900.svg`} alt="" className="cursor-pointer" width="18px"/>
+            </a>
+            <a href="/blog"
+              rel="noreferrer"
+              target="_blank">
+              <img src={`/icons/social/rss-indigo-900.svg`} alt="" className="cursor-pointer" width="14px"/>
+            </a>
+            <a href="https://github.com/holdenrehg"
+              rel="noreferrer"
+              target="_blank">
+              <img src={`/icons/social/github-indigo-900.svg`} alt="" className="cursor-pointer" width="18px"/>
+            </a>
           </div>
         </div>
+
+        <hr className="px-20 mx-auto mt-5 bg-indigo-900" style={{opacity: "12%"}}/>
 
         {/* Mobile Menu */}
         <div className="fixed top-0 inset-x-0 transition transform origin-top-right z-50 border-b md:hidden">
@@ -65,10 +95,10 @@ export const Header = () => {
               </div>
               <div className={'mt-8 ' + (state.menuOpen ? '' : 'hidden')}>
                 <nav className="grid gap-y-8">
-                  <a href="/#site-footer" className="-m-3 p-3 text-lg flex items-center rounded-sm hover:bg-gray-50">Work with me</a>
-                  <a href="/blog" className="-m-3 p-3 text-lg flex items-center rounded-sm hover:bg-gray-50">Blog</a>
                   <a href="/portfolio" className="-m-3 p-3 text-lg flex items-center rounded-sm hover:bg-gray-50">Portfolio</a>
+                  <a href="/blog" className="-m-3 p-3 text-lg flex items-center rounded-sm hover:bg-gray-50">Blog</a>
                   <a href="/#about-me" className="-m-3 p-3 text-lg flex items-center rounded-sm hover:bg-gray-50">My story</a>
+                  <a href="mailto:holdenrehg@gmail.com" className="-m-3 p-3 text-lg flex items-center rounded-sm hover:bg-gray-50">Email me</a>
                 </nav>
               </div>
             </div>

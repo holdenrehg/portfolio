@@ -85,12 +85,14 @@ export default class Page extends React.Component {
           }}
         />
 
-        <div className="blog-article px-8 md:px-20 pb-32 bg-gray-100">
-          <div className="content-wrapper pt-40">
-            <div className="max-w-5xl mx-auto">
-              <h1 className="block text-gray-900 text-4xl sm:text-6xl md:text-7xl font-bold uppercase tracking-wider p-0 m-0">The blog</h1>
-              <h2 className="text-xl sm:text-2xl md:text-3xl text-gray-800 -mt-2">Writings on software, business, investing, and random incoherent thoughts</h2>
-              <div className="mt-8 mb-8 w-1/3 h-2 bg-purple-400"></div>
+        <div className="blog-article px-8 pt-10 md:px-20 pb-32 bg-gray-100">
+          <div className="content-wrapper pt-8">
+            <div className="mx-auto">
+              <h2 className="md:w-1/2 mx-auto text-center mb-10 text-4xl text-indigo-900 text-vollkorn tracking-tighter">
+                <mark className="bg-indigo-100 hover:opacity-90">
+                  Writings on software, business, investing, and random incoherent thoughts.
+                </mark>
+              </h2>
               <form>
                 <div class="w-full relative">
                   <label for="articleSearch" class="sr-only">Search</label>

@@ -101,8 +101,8 @@ const Article = (props) => {
         `}</script>
       </Helmet>
 
-      <div className="blog-article px-8 md:px-20 pb-32 bg-white">
-        <div className="content-wrapper pt-40">
+      <div className="blog-article px-8 pt-16 md:px-20 pb-32 bg-white">
+        <div className="content-wrapper pt-8">
           {/* Article header */}
           <div className="md:w-2/3 md:mx-auto text-lg">
             <p>
@@ -118,7 +118,11 @@ const Article = (props) => {
           ></div>
           {/* Meta data about the article */}
           <div className="md:w-2/3 md:mx-auto">
-            <h1 id="blog-article-title" className="text-4xl font-extrabold mb-0">{props.meta.title}</h1>
+            <h1 id="blog-article-title" className="text-4xl font-extrabold mb-0">
+              <mark className="bg-indigo-100 hover:opacity-90">
+                {props.meta.title}
+              </mark>
+            </h1>
             <h2 id="blog-article-subtitle" className={(!props.meta.subtitle ? "hidden ": "") + "text-xl mt-0"}>{props.meta.subtitle}</h2>
             <div className="mt-8">
               <div className="inline-block mr-10">

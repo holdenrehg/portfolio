@@ -53,10 +53,13 @@ const Layout = (props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Helmet>
 
-      <div className="overflow-x-scroll md:overflow-x-hidden">
-        <Header siteTitle={data.site.siteMetadata.title} />
+      <div className="overflow-x-scroll md:overflow-x-hidden mx-auto">
+        <div className="max-w-screen-xl mx-auto">
+          <Header siteTitle={data.site.siteMetadata.title} />
+          <div class="md:hidden w-full h-20"></div>
+        </div>
         <div className="relative">
-          <main>
+          <main className="max-w-screen-xl mx-auto">
             {props.children}
             <div className="clear-both"/>
           </main>

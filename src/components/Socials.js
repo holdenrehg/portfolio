@@ -27,12 +27,6 @@ export class Socials extends React.Component {
           className="pr-6">
           <img src={`/icons/social/rss${this.props.color}.svg`} alt="" className="cursor-pointer" width="22px"/>
         </a>
-        <a href="https://instagram.com/reedrehg"
-          rel="noreferrer"
-          target="_blank"
-          className="pr-6">
-          <img src={`/icons/social/instagram${this.props.color}.svg`} alt="" className="cursor-pointer" width="24px"/>
-        </a>
         <a href="https://github.com/holdenrehg"
           rel="noreferrer"
           target="_blank"
