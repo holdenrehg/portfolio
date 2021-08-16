@@ -7,6 +7,7 @@ import React from "react"
 // ]
 
 const articleFiles = [
+  "2021-08-16_odoo-patterns-humble-object",
   "2021-06-03_odoo-docker-quickstart",
   "2021-03-16_odoo-jinja-templating",
   "2021-03-01_odoo-inverse-field-guide",

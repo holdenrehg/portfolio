@@ -973,7 +973,7 @@ pre tt:after {
 
 @screen md {
   .blog-article .blog-article-content .table-of-contents {
-    @apply text-xl;
+    @apply text-lg;
   }
 }
 
