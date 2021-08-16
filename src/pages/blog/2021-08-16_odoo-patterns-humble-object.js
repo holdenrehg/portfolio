@@ -14,7 +14,11 @@ const meta = new Meta({
         Tags.OpenSource,
         Tags.Python,
     ],
-    related: [],
+    related: [
+        "2021-06-03_odoo-docker-quickstart",
+        "2019-03-09_odoo-down-for-maintenance",
+        "2019-02-16_run-an-odoo-repl",
+    ],
 })
 
 const Page = props => (
