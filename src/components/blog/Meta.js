@@ -7,6 +7,7 @@ export class Meta {
     "id",
     "title",
     "description",
+    "contentSnippet",
     "datePosted",
   ]
 

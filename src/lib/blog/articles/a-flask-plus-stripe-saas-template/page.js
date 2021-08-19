@@ -21,8 +21,7 @@ const Page = props => (
       <p>
         After going through a few frameworks, experimenting with different
         architecture patterns, and thinking about ways to organize projects I
-        <a href="https://bustererp.com" rel="noreferrer" target="_blank">ended up
-        building a small application called Buster</a> with Flask.
+        ended up building a small application called Buster with Flask.
       </p>
       <p>
         It’s more like Flask + friends because of the libraries, but you’ll see

@@ -77,11 +77,7 @@ export default () => {
               className="relative mx-auto md:mt-12 md:w-1/2"
             >
               <div
-                className="relative mx-auto bg-transparent"
-                style={{
-                  width: "26rem",
-                  height: "26rem",
-                }}
+                className="center-gallery relative mx-auto bg-transparent"
               >
                 <div className="mx-auto text-center pt-12">
                   <ImageGallery/>

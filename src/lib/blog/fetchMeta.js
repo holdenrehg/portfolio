@@ -59,5 +59,5 @@ export function getMetas() {
     Meta27,
     Meta28,
     Meta29,
-    ]
+  ].sort((metaA, metaB) => new Date(metaB.datePosted) - new Date(metaA.datePosted))
 }

@@ -136,6 +136,9 @@ module.exports = {
           {
             output: "/rss.xml",
             title: "Holden Rehg's Blog",
+            feed_url: "https://holdenrehg.com/rss.xml",
+            site_url: "https://holdenrehg.com",
+            language: "en",
             query: `
               {
                 site {
@@ -159,7 +162,14 @@ module.exports = {
                   date: meta.datePosted,
                   url: `${site.siteMetadata.siteUrl}/blog/${meta.id}`,
                   guid: `${site.siteMetadata.siteUrl}/blog/${meta.id}`,
-                  custom_elements: [],
+                  custom_elements: [{
+                    "content:encoded": `
+                      ${meta.contentSnippet}<br/>
+                      <p>
+                        Continue reading the full post at <a rel="nofollow" href="${site.siteMetadata.siteUrl}/blog/${meta.id}">holdenrehg.com</a>.
+                      </p>
+                    `
+                  }],
                 }
               })
             }

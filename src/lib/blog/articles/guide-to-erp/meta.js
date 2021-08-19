@@ -6,11 +6,30 @@ export default new Meta({
   title: "A guide to ERP (infographic)",
   datePosted: "2019-09-04",
   coverImage: "/blog/guide-to-erp/cover.jpg",
-  description: `
-      The simplest possible definition of an ERP system generally would be a
-      program that business leaders use to organize and run the majority of their
-      business operations.
-    `,
+  description: "A short history of ERP systems and a prediction for the future.",
+  contentSnippet: `
+    <p>
+      The simplest possible definition
+      of an ERP system generally would be a program that business leaders use
+      to organize and run the majority of their business.
+    </p>
+    <p>
+      That’s how I would describe an ERP system today, but they have a long
+      history and different meanings to different businesses.
+    </p>
+    <p>
+      The complete journey of ERP is an interesting story. It was created out
+      of a need when early mainframe computers came into existence and
+      businesses required better organizational tools. At the rise of every
+      major technological innovation, ERP has always been forced to adapt and
+      evolve. Even if a little bit behind the curve, it has done that up to
+      today.
+    </p>
+    <p>
+      I’m going to explain the evolution of ERP at each of those major points
+      throughout its journey to become...
+    </p>
+  `,
   tags: [
       Tags.Erp,
       Tags.CloudComputing,

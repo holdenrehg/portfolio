@@ -511,7 +511,7 @@ body {
   -ms-font-feature-settings: "kern", "liga", "clig", "calt";
   -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
   font-feature-settings: "kern", "liga", "clig", "calt";
-  min-width: 320px !important;
+  min-width: 260px !important;
 }
 
 article,
@@ -894,6 +894,17 @@ pre tt:after {
 
 .max-h-26r {
   max-height: 26rem;
+}
+
+.center-gallery {
+  /*  */
+}
+
+@screen md {
+  .center-gallery {
+    width: 26rem;
+    height: 26rem;
+  }
 }
 
 /*

@@ -49,6 +49,7 @@ const Layout = (props) => {
         ]}
       >
         <html lang="en"/>
+        <link rel="alternate" type="application/rss+xml" title="Holden Rehg's Blog RSS 2.0 Feed" href="https://holdenrehg.com/rss.xml"></link>
         <meta charSet="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
       </Helmet>

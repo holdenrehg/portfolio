@@ -8,11 +8,26 @@ export default new Meta({
   datePosted: "2019-02-16",
   coverImage: "/blog/run-an-odoo-repl/cover.png",
   description: `
-      In Odoo, you have the ability to run Odoo as a web server and access it via
-      a GUI, but you can also run a python REPL with all of the Odoo modules
-      loaded in as globals. This is extremely helpful for debugging and for
-      learning.
-    `,
+    In Odoo, you have the ability to run Odoo as a web server and access it via
+    a GUI, but you can also run a python REPL with all of the Odoo modules
+    loaded in as globals. This is extremely helpful for debugging and for
+    learning.
+  `,
+  contentSnippet: `
+    <p>In Odoo, you have the ability to run Odoo as a web server and access it via a GUI, but you can also run a python REPL with all of the Odoo modules loaded in as globals. This is extremely helpful for debugging and for learning.</p>
+    <p>For example, you could start up the shell, query for information via env/search/browse commands, run individual functions, access variables and properties associated with core classes, load in new functions if needed for testing, etc.</p>
+    <h2>How to run an Odoo shell</h2>
+    <p>Let’s break down the command:</p>
+    <code>
+      $ ./odoo-bin shell \\
+        -c /etc/odoo.conf \\
+        --xmlrpc-port=8888 \\
+        --longpolling-port=8899 \\
+        -d odoo
+    </code>
+    <h3><strong>./odoo-bin shell</strong></h3>
+    <p><code>odoo-bin</code> is the executable in the root directory of the core Odoo project. This is how you run an Odoo instance...</p>
+  `,
   tags: [
       Tags.OpenSource,
       Tags.Odoo,

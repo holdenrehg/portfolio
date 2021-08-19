@@ -7,12 +7,31 @@ export default new Meta({
   subtitle: "Bootstrapped template for Flask and Stripe integration",
   datePosted: "2019-03-24",
   coverImage: "/blog/a-flask-plus-stripe-saas-template/cover.jpg",
-  description: `
-      Recently I’ve been working on side projects, away from the large,
+  description: "Lessons learned while integrating Flask and Stripe together, with examples.",
+  contentSnippet: `
+    <p>
+      Recently I’ve been working on
+      side projects, away from the large,
       “enterprisey” code bases that I typically deal with at work. I tried out
       quite a few different setups since it’s so easy to get caught in a loop,
-      using the same tools
-    `,
+      using the same tools, patterns, and ideas over and over within a single
+      project/system you work on. It’s nice to break out of that every once in
+      a while and see other ideas.
+    </p>
+    <p>
+      After going through a few frameworks, experimenting with different
+      architecture patterns, and thinking about ways to organize projects I
+      ended up building a small application called Buster with Flask.
+    </p>
+    <p>
+      It’s more like Flask + friends because of the libraries, but you’ll see
+      more about that as you get into this guide.
+    </p>
+    <p>
+      After I deciding I was going to use Flask, I search around for some
+      direction on basic things like...
+    </p>
+  `,
   tags: [
       Tags.Docker,
       Tags.Flask,

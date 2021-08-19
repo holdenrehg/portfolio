@@ -6,11 +6,17 @@ export default new Meta({
   title: "Upgrade Odoo apps from command line",
   subtitle: "Luckily, not as difficult as it seems",
   datePosted: "2016-10-23",
-  description: `
-      Every once in a while, you will run into an issue during Odoo development
-      that causes an internal server error in one of your Odoo databases. This
-      could be caused by some different issues
-    `,
+  description: "Just like the title says. I walk through the process of upgrading an Odoo app from the command line.",
+  contentSnippet: `
+    <p>Every once in a while, you will run into an issue during Odoo development that causes an internal server error in one of your Odoo databases. This could be caused by some different issues:</p>
+    <ul>
+        <li>Pulling down code updates without restarting the odoo processes, preventing python files from generating the proper .pyc files.</li>
+        <li>Not properly updating the applications that were affecting from pulling down code changes.</li>
+        <li>Not updating across all databases that have the effected applications installed.</li>
+    </ul>
+
+    <p>Let’s assume we have one Odoo instance currently running. I can view the processes by running a ps aux and greping for the script name...</p>
+  `,
   tags: [
       Tags.Odoo,
       Tags.WebDevelopment,

@@ -59,5 +59,5 @@ export function getArticles() {
     Page27,
     Page28,
     Page29,
-  ]
+  ].sort((pageA, pageB) => new Date(pageB.defaultProps.meta.datePosted) - new Date(pageA.defaultProps.meta.datePosted))
 }

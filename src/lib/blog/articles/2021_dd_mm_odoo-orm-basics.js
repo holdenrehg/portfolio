@@ -9,6 +9,7 @@ const meta = new Meta({
     subtitle: "Primer to get started with the Odoo ORM",
     datePosted: "2021-03-09",
     description: "{Ex. A short little description, usually the first paragram}",
+    contentSnippet: "todo",
     coverImage: "/blog/odoo-orm-basics/cover.png",
     tags: [],
     related: [],
