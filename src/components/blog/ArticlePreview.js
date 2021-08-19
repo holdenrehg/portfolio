@@ -1,6 +1,7 @@
 import React from "react"
 import { prettyDate } from "../../utils/date"
 import { ellipsis } from "../../utils/text"
+import { renderTags } from "../../lib/blog/renderer"
 
 export const ArticlePreview = (props) => {
     if(props.meta.coverImage) {
@@ -16,7 +17,7 @@ export const ArticlePreview = (props) => {
                 <p className="text-xs md:text-base text-gray-600">{prettyDate(props.meta.datePosted)}</p>
                 <p className="text-lg md:text-xl font-bold">{props.meta.title}</p>
                 <p className="md:text-lg mt-3 text-gray-600">{ellipsis(props.meta.description, 210)}</p>
-                <div className="mt-4">{props.meta.renderTags("bg-gray-300", "text-gray-600", "xs")}</div>
+                <div className="mt-4">{renderTags(props.meta.tags, "bg-gray-300", "text-gray-600", "xs")}</div>
             </a>
         )
     }
@@ -39,7 +40,7 @@ export const ArticlePreview = (props) => {
                 <p className="text-xs md:text-base text-gray-400">{prettyDate(props.meta.datePosted)}</p>
                 <p className="text-lg md:text-xl font-bold text-gray-100">{props.meta.title}</p>
                 <p className="mt-3 text-gray-500 md:text-lg">{ellipsis(props.meta.description, 210)}</p>
-                <div className="mt-6 md:mt-12">{props.meta.renderTags("bg-gray-200", "text-gray-800", "xs")}</div>
+                <div className="mt-6 md:mt-12">{renderTags(props.meta.tags, "bg-gray-200", "text-gray-800", "xs")}</div>
             </div>
         </a>
     )

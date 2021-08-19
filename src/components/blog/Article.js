@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react"
 import { prettyDate } from "../../utils/date"
 import { ArticlePreview } from "."
-import { getArticles } from "../../pages/blog/all"
+import { getArticles } from "../../lib/blog/fetchPages"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import { Disqus } from "gatsby-plugin-disqus";
+import { renderTags } from "../../lib/blog/renderer"
 
 const Article = (props) => {
   const [state, setState] = useState({relatedArticles: []});
@@ -27,26 +27,12 @@ const Article = (props) => {
         props.meta.related = props.meta.related.split(",")
       }
 
-      getArticles().then(articles => {
-        setState({
-          relatedArticles: articles.filter(
-            article => props.meta.related.includes(article.defaultProps.meta.id)
-          )
-        })
+      const articles = getArticles()
+      setState({
+        relatedArticles: articles.filter(
+          article => props.meta.related.includes(article.defaultProps.meta.id)
+        )
       })
-    }
-  }, [])
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      let iframes = document.querySelectorAll("#disqus_thread iframe")
-      if(iframes.length >= 2) {
-        iframes[0].style.display = "none"
-      }
-    }, 500)
-
-    return () => {
-      clearInterval(interval)
     }
   }, [])
 
@@ -157,7 +143,7 @@ const Article = (props) => {
                   or <a href="https://www.github.com/holdenrehg/" rel="noreferrer" target="_blank">Github</a> to see what else I've got going on. Or see my <a href="#site-footer">contact info</a> below if you want to get in touch with me.
                 </p>
               </div>
-              <div className="mt-16">{props.meta.renderTags()}</div>
+              <div className="mt-16">{renderTags(props.meta.tags)}</div>
               <div className="mt-8">
                 <span className="pr-5 text-xl align-middle"><strong>Share:</strong></span>
                 <span className="pr-5">
@@ -188,13 +174,7 @@ const Article = (props) => {
                 </span>
               </div>
               <div className="mt-24">
-                <Disqus
-                  config={{
-                    url: `${data.site.siteMetadata.siteUrl}/blog/${props.meta.id}`,
-                    identifier: props.meta.id,
-                    title: props.meta.title,
-                  }}
-                />
+                {/* TODO: new comments section */}
               </div>
             </div>
           </div>

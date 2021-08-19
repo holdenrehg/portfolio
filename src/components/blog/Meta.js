@@ -1,5 +1,3 @@
-import React from "react"
-
 export class Meta {
 
   /**
@@ -62,34 +60,5 @@ export class Meta {
 
   linkedinDescription() {
     //
-  }
-
-  renderTags(color, text, size) {
-    const tags = []
-    const classes = [
-      "mr-2",
-      "my-1",
-      "inline-block",
-      "uppercase",
-      "tracking-wider",
-      "font-bold",
-      text ? text : "text-white",
-      color ? color : "bg-purple-800",
-      size === "xs" ? "px-2" : "px-3",
-      size === "xs" ? "py-1" : "py-2",
-      size === "xs" ? "text-xs" : "text-sm",
-    ]
-
-    if(this.tags) {
-      if(typeof this.tags === "string") {
-        this.tags = this.tags.split(",")
-      }
-
-      for(const tag of this.tags) {
-        tags.push(<div className = { classes.join(" ") }>{ tag }</div>)
-      }
-    }
-
-    return tags
   }
 }

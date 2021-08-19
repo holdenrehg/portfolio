@@ -40,7 +40,7 @@ export const Header = () => {
               target="_blank">
               <img src={`/icons/social/twitter-indigo-900.svg`} alt="" className="cursor-pointer" width="18px"/>
             </a>
-            <a href="/blog"
+            <a href="/rss.xml"
               rel="noreferrer"
               target="_blank">
               <img src={`/icons/social/rss-indigo-900.svg`} alt="" className="cursor-pointer" width="14px"/>

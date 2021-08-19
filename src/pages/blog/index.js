@@ -1,7 +1,7 @@
 import React from "react"
 import { ArticlePreview } from "../../components/blog"
 import { Layout } from "../../components"
-import { getArticles } from "./all"
+import { getArticles } from "../../lib/blog/fetchPages"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import debounce from "debounce"
 
@@ -14,15 +14,12 @@ export default class Page extends React.Component {
   }
 
   componentDidMount() {
-    getArticles().then(
-      articles => {
-        this.setState({
-          allArticles: articles,
-          currentArticles: articles,
-          tags: [...new Set([].concat(...articles.map(article => article.defaultProps.meta.tags)))]
-        })
-      }
-    )
+    const articles = getArticles()
+    this.setState({
+      allArticles: articles,
+      currentArticles: articles,
+      tags: [...new Set([].concat(...articles.map(article => article.defaultProps.meta.tags)))]
+    })
   }
 
   /**

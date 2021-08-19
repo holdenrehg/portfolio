@@ -1,6 +1,6 @@
 import React from "react"
 import { ArticlePreview } from "."
-import { getArticles } from "../../pages/blog/all"
+import { getArticles } from "../../lib/blog/fetchPages"
 
 /**
  * Sort comparison function to get most recent articles.
@@ -17,11 +17,10 @@ class RecentArticles extends React.Component {
   }
 
   componentDidMount() {
-    getArticles().then(articles => {
-      articles = articles.sort(sorter)
-      articles = articles.splice(0, this.props.numberOfArticles)
-      this.setState({recentArticles: articles})
-    })
+    let articles = getArticles()
+    articles = articles.sort(sorter)
+    articles = articles.splice(0, this.props.numberOfArticles)
+    this.setState({recentArticles: articles})
   }
 
   render() {

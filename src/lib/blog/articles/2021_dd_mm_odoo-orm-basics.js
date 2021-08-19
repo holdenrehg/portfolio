@@ -1,6 +1,6 @@
 import React from "react"
-import { Layout } from "../../components"
-import { Article, Meta, Tags } from "../../components/blog"
+import { Layout } from "../../../../components"
+import { Article, Meta } from "../../components/blog"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
 const meta = new Meta({

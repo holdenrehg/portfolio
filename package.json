@@ -6,10 +6,12 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "debounce": "^1.2.1",
+    "esm": "^3.2.25",
     "express": "^4.17.1",
     "gatsby": "^2.32.9",
     "gatsby-image": "^2.11.0",
     "gatsby-plugin-disqus": "^1.2.2",
+    "gatsby-plugin-feed": "^2.13.1",
     "gatsby-plugin-google-gtag": "^2.8.0",
     "gatsby-plugin-manifest": "^2.12.1",
     "gatsby-plugin-next-seo": "^1.7.0",
@@ -37,11 +39,12 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "start":   "NODE_OPTIONS='-r esm --experimental-top-level-await --harmony-top-level-await' npm run develop",
+    "build":   "NODE_OPTIONS='-r esm --experimental-top-level-await --harmony-top-level-await' gatsby build",
+    "serve":   "NODE_OPTIONS='-r esm --experimental-top-level-await --harmony-top-level-await' gatsby serve",
+    "develop": "NODE_OPTIONS='-r esm --experimental-top-level-await --harmony-top-level-await' gatsby develop",
+
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
