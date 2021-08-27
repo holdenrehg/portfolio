@@ -27,6 +27,7 @@ import Meta26 from "./articles/odoo-sh-is-almost-ready/meta"
 import Meta27 from "./articles/upgrade-odoo-apps-from-command-line/meta"
 import Meta28 from "./articles/odoo-it-depends/meta"
 import Meta29 from "./articles/managing-multiple-odoo-instances/meta"
+import Meta30 from "./articles/risk-of-invulnerable-software-teams/meta"
 
 export function getMetas() {
   return [
@@ -59,5 +60,6 @@ export function getMetas() {
     Meta27,
     Meta28,
     Meta29,
+    Meta30,
   ].sort((metaA, metaB) => new Date(metaB.datePosted) - new Date(metaA.datePosted))
 }

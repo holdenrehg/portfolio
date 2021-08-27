@@ -1,3 +1,5 @@
+const hasTime = dateStr => dateStr.includes(":")
+
 /**
  * Formats a "YYYY-MM-DD" string type object into a "pretty" formatted date.
  *
@@ -5,13 +7,19 @@
  *
  * @param {string} date
  */
-export const prettyDate = (date) => {
-    date = date.split("-")
+export const prettyDate = (dateStr) => {
+    let formatterOptions = {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+    }
 
-    const dateFormat = new Intl.DateTimeFormat("en-us", { "dateStyle": "long" })
-    const year = date[0]
-    const month = date[1] - 1 // Date uses 0 indexed months
-    const day = date[2]
+    if(hasTime(dateStr)) {
+        formatterOptions = Object.assign(formatterOptions, {
+            hour: "numeric",
+            minute: "numeric",
+        })
+    }
 
-    return dateFormat.format(new Date(year, month, day))
+    return (new Intl.DateTimeFormat("en-us", formatterOptions)).format(Date.parse(dateStr))
 }

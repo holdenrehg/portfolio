@@ -27,6 +27,7 @@ import Page26 from "./articles/odoo-sh-is-almost-ready/page"
 import Page27 from "./articles/upgrade-odoo-apps-from-command-line/page"
 import Page28 from "./articles/odoo-it-depends/page"
 import Page29 from "./articles/managing-multiple-odoo-instances/page"
+import Page30 from "./articles/risk-of-invulnerable-software-teams/page"
 
 export function getArticles() {
   return [
@@ -59,5 +60,6 @@ export function getArticles() {
     Page27,
     Page28,
     Page29,
+    Page30,
   ].sort((pageA, pageB) => new Date(pageB.defaultProps.meta.datePosted) - new Date(pageA.defaultProps.meta.datePosted))
 }
