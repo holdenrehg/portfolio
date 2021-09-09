@@ -1035,6 +1035,7 @@ pre tt:after {
 
 .blog-article .blog-article-content code.console,
 .blog-article .blog-article-content code.python,
+.blog-article .blog-article-content code.yaml,
 .blog-article .blog-article-content code.dockerfile,
 .blog-article .blog-article-content code.sql,
 .blog-article .blog-article-content code.nginx,

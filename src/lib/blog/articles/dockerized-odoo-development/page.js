@@ -6,6 +6,15 @@ import meta from "./meta"
 const Page = props => (
   <Layout>
     <Article meta={props.meta}>
+      <h2>Update — Sep 9th, 2021</h2>
+      <p>
+        I've worked on documenting my processes for local Odoo development recently.
+        Take a look at <a href="/blog/2021-09-09_how-i-manage-local-development-odoo-projects">How I manage hundreds of local development Odoo projects</a> if
+        you are looking for more local development management techniques. — Holden
+      </p>
+      <hr/>
+
+      {/* === */}
       <p><span className="first-letter">T</span>his is a follow up to something I wrote about a couple of years ago when I was trying to go through the process of running dozens of applications on the same server. Looking back I wish I would have jumped into Docker sooner, but hindsight is 20/20.</p>
 
       {/* === */}
