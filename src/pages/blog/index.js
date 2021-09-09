@@ -82,7 +82,7 @@ export default class Page extends React.Component {
           }}
         />
 
-        <div className="blog-article px-8 pt-10 md:px-20 pb-32 bg-gray-100">
+        <div className="blog-article px-8 pt-10 md:px-20 pb-32">
           <div className="content-wrapper pt-8">
             <div className="mx-auto">
               <h2 className="md:w-1/2 mx-auto text-center mb-10 text-4xl text-indigo-900 text-vollkorn tracking-tighter">
