@@ -151,7 +151,7 @@ export default () => (
           <a style={{width: "calc(50% - 1.5rem)"}}>
             <div className="md:my-0 mt-20 md:mt-24 bg-gray-200 p-8">
               <span className="-mt-20 block text-gray-700 leading-none pb-2 text-5xl font-extrabold">
-                Odoo continuous integration team worflow.
+                Odoo continuous integration team workflow.
               </span>
               <p class="pt-3 pl-10 text-gray-700 leading-6">
                 2018

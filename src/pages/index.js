@@ -116,6 +116,7 @@ export default () => {
                   <span className="block">Custom Software Development.</span>
                   <span className="block">Project Planning.</span>
                   <span className="block">Quality Control.</span>
+                  <span className="block">Training.</span>
                 </p>
               </div>
             </div>
