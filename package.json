@@ -39,11 +39,10 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "start":   "NODE_OPTIONS='-r esm --experimental-top-level-await --harmony-top-level-await' npm run develop",
-    "build":   "NODE_OPTIONS='-r esm --experimental-top-level-await --harmony-top-level-await' gatsby build",
-    "serve":   "NODE_OPTIONS='-r esm --experimental-top-level-await --harmony-top-level-await' gatsby serve",
+    "start": "NODE_OPTIONS='-r esm --experimental-top-level-await --harmony-top-level-await' npm run develop",
+    "build": "NODE_OPTIONS='-r esm --experimental-top-level-await --harmony-top-level-await' gatsby build",
+    "serve": "NODE_OPTIONS='-r esm --experimental-top-level-await --harmony-top-level-await' gatsby serve",
     "develop": "NODE_OPTIONS='-r esm --experimental-top-level-await --harmony-top-level-await' gatsby develop",
-
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"

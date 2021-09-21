@@ -14,10 +14,62 @@ export const Header = () => {
         >
           {/* Left */}
           <div className="flex flex-col gap-1">
-            <div><a className="cursor-pointer hover:underline" href="/portfolio">Portfolio</a></div>
-            <div><a className="cursor-pointer hover:underline" href="/blog">Blog</a></div>
-            <div><a className="cursor-pointer hover:underline" href="/#about-me">About me</a></div>
-            <div><a className="cursor-pointer hover:underline" href="mailto:holdenrehg@gmail.com">Email me</a></div>
+            <div>
+              <a className="cursor-pointer hover:underline" href="/portfolio">
+                <svg xmlns="http://www.w3.org/2000/svg" class="inline mr-2 w-6 h-6 icon icon-tabler icon-tabler-notebook" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M6 4h11a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-11a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1m3 0v18" />
+                  <line x1="13" y1="8" x2="15" y2="8" />
+                  <line x1="13" y1="12" x2="15" y2="12" />
+                </svg>
+                <span>Portfolio</span>
+              </a>
+            </div>
+            <div>
+              <a className="cursor-pointer hover:underline" href="/blog">
+                <svg xmlns="http://www.w3.org/2000/svg" class="inline mr-2 w-6 h-6 icon icon-tabler icon-tabler-news" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M16 6h3a1 1 0 0 1 1 1v11a2 2 0 0 1 -4 0v-13a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1v12a3 3 0 0 0 3 3h11" />
+                  <line x1="8" y1="8" x2="12" y2="8" />
+                  <line x1="8" y1="12" x2="12" y2="12" />
+                  <line x1="8" y1="16" x2="12" y2="16" />
+                </svg>
+                <span>Blog</span>
+              </a>
+            </div>
+            <div>
+              <a className="cursor-pointer hover:underline" href="/books">
+                <svg xmlns="http://www.w3.org/2000/svg" class="inline mr-2 w-6 h-6 icon icon-tabler icon-tabler-book" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+                  <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+                  <line x1="3" y1="6" x2="3" y2="19" />
+                  <line x1="12" y1="6" x2="12" y2="19" />
+                  <line x1="21" y1="6" x2="21" y2="19" />
+                </svg>
+                <span>Books</span>
+              </a>
+            </div>
+            <div>
+              <a className="cursor-pointer hover:underline" href="/#about-me">
+                <svg xmlns="http://www.w3.org/2000/svg" class="inline mr-2 w-6 h-6 icon icon-tabler icon-tabler-user" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <circle cx="12" cy="7" r="4" />
+                  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+                </svg>
+                <span>About me</span>
+              </a>
+            </div>
+            <div>
+              <a className="cursor-pointer hover:underline" href="mailto:holdenrehg@gmail.com">
+                <svg xmlns="http://www.w3.org/2000/svg" class="inline mr-2 w-5 h-5 icon icon-tabler icon-tabler-send" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                  <path d="M21 3l-6.5 18a0.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a0.55 .55 0 0 1 0 -1l18 -6.5" />
+                </svg>
+                <span>Email me</span>
+              </a>
+            </div>
           </div>
 
           {/* Center */}
@@ -97,6 +149,7 @@ export const Header = () => {
                 <nav className="grid gap-y-8">
                   <a href="/portfolio" className="-m-3 p-3 text-lg flex items-center rounded-sm hover:bg-gray-50">Portfolio</a>
                   <a href="/blog" className="-m-3 p-3 text-lg flex items-center rounded-sm hover:bg-gray-50">Blog</a>
+                  <a href="/books" className="-m-3 p-3 text-lg flex items-center rounded-sm hover:bg-gray-50">Books</a>
                   <a href="/#about-me" className="-m-3 p-3 text-lg flex items-center rounded-sm hover:bg-gray-50">My story</a>
                   <a href="mailto:holdenrehg@gmail.com" className="-m-3 p-3 text-lg flex items-center rounded-sm hover:bg-gray-50">Email me</a>
                 </nav>

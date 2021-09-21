@@ -8,6 +8,7 @@ export const Footer = () => (
         <div className="pb-3"><span className="text-3xl font-bold uppercase tracking-wider text-roboto">Holden Rehg</span></div>
         <div className="my-1"><a href="/portfolio" className="text-base cursor-pointer hover:underline">Portfolio</a></div>
         <div className="my-1"><a href="/blog" className="text-base cursor-pointer hover:underline">Blog</a></div>
+        <div className="my-1"><a href="/books" className="text-base cursor-pointer hover:underline">Books</a></div>
         <div className="my-1"><a href="/#about-me" className="text-base cursor-pointer hover:underline">About Me</a></div>
         <div className="my-1"><a href="mailto:holdenrehg@gmail.com" className="text-base cursor-pointer hover:underline">Email me</a></div>
         <Socials />

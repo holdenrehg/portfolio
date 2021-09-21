@@ -42,16 +42,16 @@ export default () => (
         {/* Welcome Header Section */}
         <div class="pb-16 text-center">
           <h2 className="mb-12 md:mb-0 text-4xl text-vollkorn tracking-tighter" style={{lineHeight: "3.8rem"}}>
-            <mark className="text-gray-800 bg-orange-200 hover:opacity-90">
-              Holden Rehg's Portfolio<br/>
+            <mark className="text-gray-800 bg-orange-200">
+              My Portfolio and Work<br/>
             </mark>
           </h2>
-          <p className="text-lg mt-8">
+          <p className="text-xl mt-8">
             Hello! In this section I wanted to outline my favorite projects I've worked on recently. Much
             of my recent work involves <a href="https://odoo.com" className="underline" target="_blank">Odoo</a> development
             and implementation, but I will try to show a range of experiences. That coudld be team building, dev ops, server management, custom
             software development, API integrations, etc. This will also be living documentation that I will update over
-            time. If you have questions or want to talk please <a href="mailto:holdenrehg@gmail.com" className="underline">email me!</a>.
+            time. If you have questions or want to talk then <a href="mailto:holdenrehg@gmail.com" className="underline">email me.</a>.
           </p>
         </div>
 

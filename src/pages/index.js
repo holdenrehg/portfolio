@@ -1,6 +1,6 @@
 import React from "react"
 import { RecentArticlesLinks } from "../components/blog"
-import { ImageGallery, Layout, Socials } from "../components"
+import { ImageGallery, Layout } from "../components"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -81,6 +81,18 @@ export default () => {
               >
                 <div className="mx-auto text-center pt-12">
                   <ImageGallery/>
+                </div>
+                <div className="mt-5 mb-20 mx-auto" style={{width: '200px'}}>
+                  <a href="mailto:holdenrehg@gmail.com" className="underline">
+                    <mark className="text-vollkorn bg-purple-100 hover:opacity-90">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="inline pr-2 w-8 h-8 icon icon-tabler icon-tabler-send" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                        <path d="M21 3l-6.5 18a0.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a0.55 .55 0 0 1 0 -1l18 -6.5" />
+                      </svg>
+                      <span>Email me to see how we can work together.</span>
+                    </mark>
+                  </a>
                 </div>
               </div>
             </div>
@@ -187,6 +199,7 @@ export default () => {
                 <li><span className="w-12 inline-block font-bold">2015</span>Became a Partner and lead developer at the <a className="underline" href="https://bluestingray.com" rel="noreferrer" target="_blank">Blue Stingray</a> software development firm.</li>
                 <li><span className="w-12 inline-block font-bold">2017</span>Started Buster Technologies LLC to create business software solutions and provide software contracting/consulting.</li>
                 <li><span className="w-12 inline-block font-bold">2019</span>Bought my first rental property.</li>
+                <li><span className="w-12 inline-block font-bold">2020</span>Left my job and became a fully independent business owner.</li>
               </ul>
             </div>
           </div>
