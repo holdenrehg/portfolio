@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { Layout } from "../components"
 import { GatsbySeo } from "gatsby-plugin-next-seo"
 
@@ -9,8 +9,6 @@ const mailChimpScripts = `
 `
 
 export default () => {
-  const [state, setState] = useState({submitted: false})
-
   return <Layout>
     <GatsbySeo
       title="Books written by Holden Rehg"
@@ -66,7 +64,7 @@ export default () => {
               flow of data throughout programs.
             </p>
             <hr className="my-10 bg-gray-400"/>
-            <div id="mc_embed_signup" className={state.submitted ? 'hidden' : ''}>
+            <div id="mc_embed_signup">
               <p className="mb-3 text-lg leading-8">
                 <span className="block">Sign up below to follow the project.</span>
                 <span className="block">I'll email you when the book is officially released and some sample chapters along the way.</span>
@@ -79,7 +77,6 @@ export default () => {
                 className="validate"
                 target="_blank"
                 novalidate
-                onSubmit={() => {setState({submitted: true})}}
               >
                 <div id="mc_embed_signup_scroll">
                   <div className="mc-field-group">
@@ -98,9 +95,6 @@ export default () => {
                   </div>
                 </div>
               </form>
-            </div>
-            <div className={state.submitted ? '' : 'hidden'}>
-              <p className="text-lg text-green-900">Thanks for subscribing! I'll keep you up to date.</p>
             </div>
           </div>
         </div>
