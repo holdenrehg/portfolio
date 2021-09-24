@@ -8,10 +8,6 @@ $ ./odoo-bin shell \\
         `}</pre>
 </code>
 
-<figure>
-    <img src="/images/articles/run-an-odoo-repl" alt="" />
-</figure>
-
 <p>
     <span class="first-letter">I</span>n Odoo, you have the ability to run Odoo as a web server and access it
     via a GUI, but you can also run a python REPL with all of the Odoo modules loaded in as globals. This is
