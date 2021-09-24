@@ -1,7 +1,7 @@
 import { siteData } from '$lib/siteData';
 import { findArticles } from '$lib/blog';
 
-function sitemap(routes) {
+function sitemapXml(routes) {
     return `<?xml version="1.0" encoding="UTF-8" ?>
         <urlset
             xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -22,7 +22,7 @@ function sitemap(routes) {
     `;
 }
 
-export async function get({ query }) {
+export async function get() {
     const staticRoutes = ['', 'books', 'work-with-me', 'portfolio', 'blog'];
     const articles = await findArticles({ withContent: false });
 
@@ -31,7 +31,7 @@ export async function get({ query }) {
             'Cache-Control': 'max-age=0, s-maxage=3600',
             'Content-Type': 'application/xml',
         },
-        body: sitemap([
+        body: sitemapXml([
             ...staticRoutes.map((route) => {
                 return { name: route, frequency: 'yearly' };
             }),
