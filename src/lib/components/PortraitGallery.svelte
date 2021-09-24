@@ -4,10 +4,10 @@
     const speed = 1000;
     export let currentIndex = 0;
     export const portraitPaths = [
-        '/images/portraits/self-portrait-1.jpeg',
-        '/images/portraits/self-portrait-2.jpeg',
-        '/images/portraits/self-portrait-3.jpeg',
-        '/images/portraits/self-portrait-4.jpeg',
+        '/images/portraits/self-portrait-1.jpg',
+        '/images/portraits/self-portrait-2.jpg',
+        '/images/portraits/self-portrait-3.jpg',
+        '/images/portraits/self-portrait-4.jpg',
     ];
 
     /**

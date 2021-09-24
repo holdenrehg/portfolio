@@ -5,7 +5,7 @@
 <SEO
     title="Reach Out, Tell Me About Your Project, Let's Work Together"
     description="Consulting and Freelancing with Companies using Python and Odoo"
-    image="https://holdenrehg.com/images/portraits/self-portrait-1.jpeg"
+    image="https://holdenrehg.com/images/portraits/self-portrait-1.jpg"
     useTwitter={true}
     useOpenGraph={true}
 />

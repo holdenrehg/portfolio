@@ -7,7 +7,7 @@
 <SEO
     title="Holden Rehg: I'm a Software Developer, Freelancer, and Blogger"
     description="Building Simpler Software, Helping Companies Build Software With Python and Odoo, and Blogging About It"
-    image="https://holdenrehg.com/images/portraits/self-portrait-1.jpeg"
+    image="https://holdenrehg.com/images/portraits/self-portrait-1.jpg"
     useTwitter={true}
     useOpenGraph={true}
 />

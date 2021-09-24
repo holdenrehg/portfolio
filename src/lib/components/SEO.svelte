@@ -27,6 +27,13 @@
 
     let schema;
 
+    /**
+     * Generates the <script/> tag for SEO schema.
+     *
+     * This is done this way because adding a <script/> tag to the body of the
+     * layout will error out (svelte tries to process it) and I don't see a
+     * way to easily espace it.
+     */
     function generateSchemaOrg() {
         const tag = 'script';
         const data = JSON.stringify({
@@ -53,7 +60,7 @@
                 name: `"${ogTitle || title}"`,
                 logo: {
                     '@type': 'ImageObject',
-                    url: 'https://holdenrehg.com/images/portraits/self-portrait-1.jpeg',
+                    url: 'https://holdenrehg.com/images/portraits/self-portrait-1.jpg',
                 },
             },
         });

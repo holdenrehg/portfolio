@@ -4,7 +4,7 @@
 
 <SEO
     title="Books written by Holden Rehg"
-    image="https://holdenrehg.com/images/portraits/self-portrait-1.jpeg"
+    image="https://holdenrehg.com/images/portraits/self-portrait-1.jpg"
     useTwitter={true}
     useOpenGraph={true}
 />

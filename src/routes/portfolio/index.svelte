@@ -29,7 +29,7 @@
 <SEO
     title="10+ Years of Experience in Software, Python, and Odoo"
     description="I'm Trying to Build Simpler Software and Help Companies Build Software With Python and Odoo"
-    image="https://holdenrehg.com/images/portraits/self-portrait-1.jpeg"
+    image="https://holdenrehg.com/images/portraits/self-portrait-1.jpg"
     useTwitter={true}
     useOpenGraph={true}
 />

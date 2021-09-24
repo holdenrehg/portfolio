@@ -70,7 +70,7 @@
 <SEO
     title="Software, Business, and Investing Articles from Holden Rehg"
     description="I'm writing for readers who are trying to learn more about software development, python, odoo, small business practices, or investing."
-    image="https://holdenrehg.com/images/portraits/self-portrait-1.jpeg"
+    image="https://holdenrehg.com/images/portraits/self-portrait-1.jpg"
     useTwitter={true}
     useOpenGraph={true}
 />

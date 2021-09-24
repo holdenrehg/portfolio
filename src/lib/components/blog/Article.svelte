@@ -47,7 +47,7 @@
         description={(meta.description || '').replace(/\n/g, ' ').replace(/\s+/g, ' ').trim()}
         image={meta.coverImage
             ? `https://holdenrehg.com${meta.coverImage}`
-            : 'https://holdenrehg.com/images/portraits/self-portrait-1.jpeg'}
+            : 'https://holdenrehg.com/images/portraits/self-portrait-1.jpg'}
         useTwitter={true}
         twitterCardType={meta.coverImage ? 'summary_large_image' : 'summary'}
         useOpenGraph={true}
@@ -198,7 +198,7 @@
         <div class="w-full">
             <div
                 class="mx-auto rounded-full bg-cover bg-center border-4 border-gray-400"
-                style="background-image: url(/images/portraits/self-portrait-1.jpeg); width: 80px; height: 80px;"
+                style="background-image: url(/images/portraits/self-portrait-1.jpg); width: 80px; height: 80px;"
             />
             <p class="mx-auto mt-6 text-xl text-gray-900">Holden Rehg, Author</p>
             {#if meta.datePosted}
