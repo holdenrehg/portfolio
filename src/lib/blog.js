@@ -48,7 +48,7 @@ export async function fetchArticle(slug, { withContent = true } = {}) {
 }
 
 /**
- * Fetch all article information from the blog.
+ * Fetch all article information from the blog via the /blog/all.raw endpoint.
  *
  *     fetchArticles()
  *         [
@@ -62,6 +62,22 @@ export async function fetchArticles({ withContent = true } = {}) {
     const body = await res.json();
 
     return body.articles;
+}
+
+/**
+ * Finds articles on the filesystem and pulls information from them.
+ *
+ * This depends on the filesystem and node, so cannot be used from the frontend.
+ */
+export async function findArticles({ withContent = true } = {}) {
+    const fs = await import('fs');
+    const path = await import('path');
+
+    const articlesPath = 'src/lib/articles';
+    const isDir = (src) => fs.lstatSync(src).isDirectory();
+    const slugs = fs.readdirSync(articlesPath).filter((fileName) => isDir(path.join(articlesPath, fileName)));
+
+    return await Promise.all(slugs.map((slug) => fetchArticle(slug, { withContent: withContent })));
 }
 
 /**
