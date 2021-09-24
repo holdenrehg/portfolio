@@ -1,0 +1,6 @@
+*.js filter=spabs
+*.cjs filter=spabs
+*.html filter=spabs
+*.css filter=spabs
+*.json filter=spabs
+*.svelte filter=spabs

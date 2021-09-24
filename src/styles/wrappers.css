@@ -1,0 +1,27 @@
+/* containers and wrappers */
+
+.content-wrapper {
+    @apply w-full;
+    max-width: 1200px;
+}
+
+@media (min-width: 1200px) {
+    .content-wrapper {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        left: 0 !important;
+        right: 0 !important;
+    }
+}
+
+.min-h-400 {
+    min-height: 400px;
+}
+
+.min-h-950 {
+    min-height: 950px;
+}
+
+.max-h-26r {
+    max-height: 26rem;
+}

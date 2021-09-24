@@ -1,0 +1,49 @@
+code {
+    @apply px-1 mx-1;
+    background-color: #efefed;
+}
+
+code.console,
+code.python,
+code.yaml,
+code.dockerfile,
+code.sql,
+code.nginx,
+code.html,
+code.xml,
+code.javascript {
+    background: transparent;
+}
+
+/* Styles currently assuming the night-owl theme */
+
+code pre.hljs {
+    @apply ml-0 pt-8;
+
+    font-size: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+    line-height: 1.52;
+}
+
+@screen md {
+    code pre.hljs {
+        font-size: 15px;
+        padding-left: 36px;
+        padding-right: 36px;
+        line-height: 1.52;
+    }
+}
+
+code pre.hljs * {
+    font-style: normal !important;
+}
+
+code pre.hljs .hljs-comment {
+    color: #fff;
+    opacity: 0.66;
+}
+
+code pre.hljs .hljs-literal {
+    color: #c792ea;
+}
