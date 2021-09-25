@@ -17,7 +17,7 @@
                     My Books<br />
                 </mark>
             </h2>
-            <p class="mt-8 text-lg md:text-xl leading-8 md:leading-10">
+            <p class="mt-8 text-lg text-left md:text-center md:text-xl leading-8 md:leading-10">
                 I wrote my <a class="underline" href="/blog/2016-03-03_managing-multiple-odoo-instances/"
                     >first article</a
                 >
@@ -30,8 +30,8 @@
                 going to put published and upcoming books.
             </p>
 
-            <div class="text-left mt-20 py-40 px-16 bg-gray-200">
-                <h2 class="text-4xl font-bold flex items-center">
+            <div class="text-left mt-10 py-10 px-8 md:mt-20 md:py-40 md:px-16 bg-gray-200">
+                <h2 class="text-xl md:text-4xl font-bold flex items-center">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         class="inline w-12 h-12 mr-2 icon icon-tabler icon-tabler-code"
@@ -51,11 +51,14 @@
                     </svg>
                     <span>Thinking Like A Programmer</span>
                 </h2>
-                <h3 class="text-2xl">A Beginner's Guide To Problem Solving In Computer Programming</h3>
+                <h3 class="mt-5 text-lg md:text-2xl">
+                    A Beginner's Guide To Problem Solving In Computer Programming
+                </h3>
                 <div class="mt-2">
-                    <mark class="text-xl text-purple-900 bg-purple-200">Coming soon. 2022.</mark>
+                    <mark class="text-lg md:text-xl text-purple-900 bg-purple-200">Coming soon in 2022.</mark>
                 </div>
-                <p class="mt-10 text-xl">
+                <hr class="my-10 md:my-6 bg-gray-300" />
+                <p class="mt-10 text-base md:text-xl md:leading-8">
                     I'm writing the book that I wish I had when first starting a computer science program in
                     college or before I started my first professional software development job. There's an
                     endless number of languages, technologies, tools, and methodologies. There's also plenty
@@ -63,7 +66,7 @@
                     find a "How to Program In Ruby" book or tutorial for example. Finding a book that teaches
                     you the skills to adapt to any software development environment are harder to find.
                 </p>
-                <p class="mt-6 text-xl">
+                <p class="mt-6 text-base md:text-xl md:leading-8">
                     Over the years, I've learned ways to think about problem solving with code. That way of
                     thinking can be applied to any programming language or stack. I want to teach people who
                     are brand new to programming how to think about approaching programming at a high level.
@@ -71,11 +74,11 @@
                     problems with code, the basic constructs and mechanisms used in nearly every language, and
                     the flow of data throughout programs.
                 </p>
-                <hr class="my-10 bg-gray-400" />
+                <hr class="my-10 md:my-6 bg-gray-400" />
                 <div id="mc_embed_signup">
                     <p class="mb-3 text-lg leading-8">
                         <span class="block">Sign up below to follow the project.</span>
-                        <span class="block"
+                        <span class="block mt-5 md:mt-1"
                             >I'll email you when the book is officially released and some sample chapters
                             along the way.</span
                         >
@@ -85,7 +88,7 @@
                         method="post"
                         id="mc-embedded-subscribe-form"
                         name="mc-embedded-subscribe-form"
-                        class="validate"
+                        class="validate mt-10 md:mt-0"
                         target="_blank"
                         novalidate
                     >

@@ -4,6 +4,7 @@ code {
 }
 
 code.console,
+code.bash,
 code.python,
 code.yaml,
 code.dockerfile,

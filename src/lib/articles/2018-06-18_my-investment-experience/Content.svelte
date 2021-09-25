@@ -94,7 +94,6 @@
     After a little over 8 months worth of research, and practical experience investing, here’s where I’ve
     ended up.
 </p>
-<img src="/images/articles/my-investment-experience" />
 <p>
     There has been a lot of sells and buys to get to this specific place, so I’ve started keeping track of my
     own personal rules. I tried to create a set of guidelines so I’m not all over the place deciding what to

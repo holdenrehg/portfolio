@@ -58,7 +58,7 @@
 
         <div class="md:flex md:flex-wrap pb-24" style="row-gap: 2rem; column-gap: 1.5rem;">
             <!-- Oocademy tutorials -->
-            <div style="width: calc(50% - 1.5rem)">
+            <section>
                 <div class="my-8 md:my-0 bg-white px-12 py-16">
                     <div class="h-full w-full flex flex-col justify-center">
                         <span class="block text-sm tracking-article pb-1">2020 - Current</span>
@@ -109,10 +109,10 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Battery Handling Case Study -->
-            <div style="width: calc(50% - 1.5rem)">
+            <section>
                 <div class="my-8 md:my-0 mt-0 md:mt-10 bg-orange-100 px-8 py-10 border-4 border-orange-200">
                     <div class="lg:flex lg:flex-row-reverse">
                         <div class="lg:w-1/2 lg:pl-6 lg:pr-12 text-gray-900">
@@ -136,10 +136,10 @@
                         </p>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Silkworm Case Study -->
-            <div style="width: calc(50% - 1.5rem)">
+            <section>
                 <div class="my-8 md:my-0 bg-indigo-900 px-12 py-24">
                     <div class="h-full w-full flex flex-col justify-center">
                         <span class="block text-indigo-200 text-sm tracking-article pb-1">2017 - 2020</span>
@@ -158,10 +158,10 @@
                         </p>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Continuous Integray Workflow -->
-            <div style="width: calc(50% - 1.5rem)">
+            <section>
                 <div class="md:my-0 mt-20 md:mt-24 bg-gray-200 p-8">
                     <span class="-mt-20 block text-gray-700 leading-none pb-2 text-5xl font-extrabold">
                         Odoo continuous integration team workflow.
@@ -183,10 +183,10 @@
                         feedback loop for each developer as they individually worked on their features.
                     </p>
                 </div>
-            </div>
+            </section>
 
             <!-- Building A Team -->
-            <div style="width: calc(50% - 1.5rem)">
+            <section>
                 <div class="my-8 md:my-0 bg-gray-200 px-8 py-10">
                     <div class="lg:flex">
                         <div class="lg:w-1/2 lg:pl-6 lg:pr-12 text-gray-700">
@@ -226,10 +226,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Buster ERP -->
-            <div style="width: calc(50% - 1.5rem)">
+            <section>
                 <div class="my-8 md:my-0 mt-0 md:mt-8 bg-gray-800 p-8 text-center">
                     <span class="mx-auto block lg:pb-2">
                         <mark class="bg-gray-500 text-gray-800 px-3 leading-none text-5xl font-extrabold">
@@ -283,10 +283,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Client-Service Cloud Server Workflows -->
-            <div style="width: calc(50% - 1.5rem)">
+            <section>
                 <div class="my-8 md:my-0 bg-white border-8 border-indigo-100 px-6 lg:px-16 py-10 text-center">
                     <span class="block text-indigo-900 leading-10 pb-2 text-3xl font-extrabold">
                         Client-Service Google Cloud server management.
@@ -315,10 +315,10 @@
                         monitoring.
                     </p>
                 </div>
-            </div>
+            </section>
 
             <!-- SMB Software Discovery Process -->
-            <div style="width: calc(50% - 1.5rem)">
+            <section>
                 <div class="my-8 md:my-0 bg-white border border-gray-300 py-8 px-12">
                     <span class="block leading-10 pb-2 text-5xl"> SMB Software Discovery Process. </span>
                     <span class="block mt-1 tracking-article pb-1"> 2017 - 2019 </span>
@@ -337,10 +337,10 @@
                         projects where we bake in an expectation change.
                     </p>
                 </div>
-            </div>
+            </section>
 
             <!-- Job Queue API Magento Integration -->
-            <div style="width: calc(50% - 1.5rem)">
+            <section>
                 <div class="my-8 md:my-0 mt-0 md:mt-48 bg-orange-100 px-12 py-12">
                     <div class="h-full w-full flex flex-col justify-center">
                         <span class="block text-orange-800 text-sm tracking-article pb-1">2018</span>
@@ -365,10 +365,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- MRP Process and BOM Visualizations -->
-            <div style="width: calc(50% - 1.5rem)">
+            <section>
                 <div class="my-8 md:my-0 bg-gray-200 px-6 lg:px-16 py-10 text-center">
                     <span class="block text-indigo-900 leading-10 pb-2 text-3xl font-extrabold">
                         Manufacturing Process and Bill of Material Visualizations.
@@ -398,10 +398,10 @@
                         <img src="/images/portfolio/mrp-bom-visuals/bom-view.jpg" alt="" />
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Flask Stripe Integration -->
-            <div style="width: calc(50% - 1.5rem)">
+            <section>
                 <div class="my-8 md:my-0 bg-indigo-900 px-8 py-12">
                     <div class="lg:flex">
                         <div class="lg:w-1/2 lg:pl-6 lg:pr-12 text-indigo-200">
@@ -441,10 +441,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Pygrid Scrolling Isometric Prototype -->
-            <div style="width: calc(50% - 1.5rem)">
+            <section>
                 <div class="my-8 md:my-0 mt-0 md:mt-16 bg-gray-200 border border-gray-300 py-8 px-12">
                     <span class="block text-gray-600 leading-10 pb-2 text-5xl">
                         Pygrid isometric scrolling prototype.
@@ -490,7 +490,19 @@
                         />
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
     </div>
 </div>
+
+<style>
+    section {
+        width: 100%;
+    }
+
+    @media (min-width: 1000px) {
+        section {
+            width: calc(50% - 1.5rem);
+        }
+    }
+</style>

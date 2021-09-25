@@ -18,7 +18,7 @@
 
 @screen md {
     .blog-article .blog-article-content h2 {
-        @apply text-4xl;
+        @apply text-4xl leading-12;
     }
 }
 
@@ -105,6 +105,11 @@
 
 .blog-article .blog-article-content ol {
     @apply list-decimal;
+}
+
+.blog-article .blog-article-content ul li,
+.blog-article .blog-article-content ol li {
+    @apply my-2;
 }
 
 /* Images */
