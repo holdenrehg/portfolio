@@ -1,0 +1,126 @@
+.blog-article .blog-article-content p,
+.blog-article .blog-article-content blockquote {
+    @apply my-6 text-base;
+    line-height: 1.75;
+}
+
+@screen md {
+    .blog-article .blog-article-content p,
+    .blog-article .blog-article-content blockquote {
+        @apply text-lg;
+    }
+}
+
+/* Headers */
+.blog-article .blog-article-content h2 {
+    @apply text-2xl font-extrabold mt-16;
+}
+
+@screen md {
+    .blog-article .blog-article-content h2 {
+        @apply text-4xl leading-12;
+    }
+}
+
+.blog-article .blog-article-content h3 {
+    @apply text-xl font-extrabold mt-16;
+}
+
+@screen md {
+    .blog-article .blog-article-content h3 {
+        @apply text-2xl;
+    }
+}
+
+.blog-article .blog-article-content h4 {
+    @apply text-xl text-gray-800 font-extrabold mt-16 mb-2;
+}
+
+/* First letter of article */
+.blog-article .blog-article-content .first-letter {
+    @apply inline-block text-6xl font-extrabold -mt-6 pr-2 h-16 float-left;
+}
+
+/* Standard paragraphs */
+.blog-article .blog-article-content p {
+}
+
+/* Links */
+.blog-article .blog-article-content a {
+    @apply mx-1 underline;
+}
+
+.blog-article .blog-article-content a:hover {
+    @apply opacity-75;
+}
+
+/* Quotes */
+.blog-article .blog-article-content blockquote {
+    @apply italic pl-6 border-l-2 border-gray-600;
+}
+
+/* Lists */
+.blog-article .blog-article-content .table-of-contents {
+    @apply pl-3 pb-5 text-base;
+}
+
+@screen md {
+    .blog-article .blog-article-content .table-of-contents {
+        @apply text-lg;
+    }
+}
+
+.blog-article .blog-article-content .table-of-contents a {
+    @apply no-underline;
+}
+
+.blog-article .blog-article-content .table-of-contents li {
+    list-style: none;
+}
+
+.blog-article .blog-article-content .table-of-contents li::before {
+    content: '';
+
+    @apply bg-orange-400 mr-2 align-middle;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+}
+
+.blog-article .blog-article-content ul,
+.blog-article .blog-article-content ol {
+    @apply pl-3;
+}
+
+@screen md {
+    .blog-article .blog-article-content ul,
+    .blog-article .blog-article-content ol {
+        @apply pl-12;
+    }
+}
+
+.blog-article .blog-article-content ul {
+    @apply list-disc;
+}
+
+.blog-article .blog-article-content ol {
+    @apply list-decimal;
+}
+
+.blog-article .blog-article-content ul li,
+.blog-article .blog-article-content ol li {
+    @apply my-2;
+}
+
+/* Images */
+.blog-article .blog-article-content figure {
+    @apply my-16 mx-0 px-0;
+}
+
+.blog-article .blog-article-content figcaption {
+    @apply text-sm text-gray-700 mt-3;
+}
+
+iframe[src*='ads-iframe'] {
+    display: none !important;
+}

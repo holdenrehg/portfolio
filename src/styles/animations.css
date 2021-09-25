@@ -1,0 +1,59 @@
+/*******************************************************************************
+ * Blink
+ ******************************************************************************/
+
+@keyframes blink {
+    25% {
+        opacity: 0.25;
+    }
+
+    55% {
+        opacity: 0.55;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.blink {
+    animation: blink 2.2s linear infinite;
+}
+
+/*******************************************************************************
+ * Spin
+ ******************************************************************************/
+
+@-moz-keyframes spin {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    animation: spin 0.75s linear infinite;
+}

@@ -1,6 +1,0 @@
-export { Footer } from "./Footer"
-export { Header } from "./Header"
-export { Image } from "./Image"
-export { ImageGallery } from "./ImageGallery"
-export { Layout } from "./Layout"
-export { Socials } from "./Socials"

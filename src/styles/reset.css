@@ -1,0 +1,32 @@
+html {
+    @apply tracking-normal leading-7 text-base;
+    font-family: 'Roboto Condensed', sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background: #fafaf8;
+}
+
+.text-lg,
+.text-xl {
+    @apply leading-9;
+}
+
+.text-2xl,
+.text-3xl,
+.text-4xl,
+.text-5xl,
+.text-6xl,
+.text-7xl,
+.text-8xl,
+.text-9xl {
+    @apply leading-14;
+}
+
+.phone-number:before {
+    content: attr(title);
+}
