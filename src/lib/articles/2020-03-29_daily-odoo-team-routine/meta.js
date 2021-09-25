@@ -6,6 +6,8 @@ export default new Meta({
     subtitle: 'How my team and I work together day to day',
     datePosted: '2020-03-29',
     description: 'A schedule of events based on how my Odoo team and I work every day together.',
+    backgroundColor: '#312E81',
+    textDecorationColor: '#ffffff',
     contentSnippet: `
     <p>
       There are tons of these type of
@@ -53,5 +55,4 @@ export default new Meta({
         '2019-09-17_simple-business-manifesto',
         '2019-09-04_guide-to-erp',
     ],
-    backgroundColor: '#1a1636',
 });

@@ -36,12 +36,12 @@
         sveltekit:prefetch
         href={`/blog/${meta.id}`}
         class="block py-16 cursor-pointer hover:underline hover:opacity-100 md:min-height-400"
-        style={`background-color: ${meta.backgroundColor}; text-decoration-color: ${meta.textDecorationColor}`}
+        style={`background-color: ${meta.backgroundColor}; color: ${meta.textDecorationColor}`}
     >
         <div class="flex flex-col items-center justify-center h-full text-center py-6 px-3 md:px-10">
-            <p class="text-xs md:text-base text-gray-400">{prettyDate(meta.datePosted)}</p>
-            <p class="text-lg md:text-xl font-bold text-gray-100">{meta.title}</p>
-            <p class="mt-3 text-gray-500 md:text-lg">{ellipsis(meta.description, 210)}</p>
+            <p class="text-xs opacity-70 md:text-base">{prettyDate(meta.datePosted)}</p>
+            <p class="text-lg md:text-xl font-bold">{meta.title}</p>
+            <p class="mt-3 opacity-70 md:text-lg">{ellipsis(meta.description, 210)}</p>
             <div class="mt-6 md:mt-12">
                 {#if meta.tags}
                     {#each meta.tags as tag}

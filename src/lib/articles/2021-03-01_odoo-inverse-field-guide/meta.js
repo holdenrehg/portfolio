@@ -6,6 +6,8 @@ export default new Meta({
     subtitle: 'Explanation on how to use and understand inverse functions.',
     datePosted: '2021-03-01',
     description: 'Explanation on how to use and understand inverse functions.',
+    backgroundColor: '#111827',
+    textDecorationColor: '#ffffff',
     contentSnippet: `
     <p>
       The concepts of an inverse field

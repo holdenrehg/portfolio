@@ -4,6 +4,8 @@ export default new Meta({
     id: '2018-09-22_write-better-code-outside-in',
     title: 'Write better code — Outside in',
     datePosted: '2018-09-22',
+    backgroundColor: '#230806',
+    textDecorationColor: '#ffffff',
     description: "A strategy I've been trying to use when writing code, to write better code.",
     contentSnippet: `
     <blockquote>“Software is a great combination between artistry and engineering.” — Bill Gates</blockquote>
@@ -23,5 +25,4 @@ export default new Meta({
         '2020-01-29_chaining-context-managers-for-mocks',
         '2019-09-04_guide-to-erp',
     ],
-    backgroundColor: '#230806',
 });

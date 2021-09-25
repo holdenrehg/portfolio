@@ -5,6 +5,8 @@ export default new Meta({
     title: 'Odoo images and attachments — Explaining and regenerating assets',
     subtitle: 'How do assets and bundles actually work',
     datePosted: '2019-03-09',
+    backgroundColor: '#111827',
+    textDecorationColor: '#ffffff',
     description: `
         If you have ever manually moved a filestore from one site to another, or
         migrated a database without the filestore, then you’ve probably had to deal
@@ -28,5 +30,4 @@ export default new Meta({
         '2019-03-27_odoo-field-guide',
         '2019-03-09_odoo-down-for-maintenance',
     ],
-    backgroundColor: '#132929',
 });

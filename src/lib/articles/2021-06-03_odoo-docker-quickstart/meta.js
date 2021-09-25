@@ -6,6 +6,8 @@ export default new Meta({
     datePosted: '2021-06-03',
     subtitle: 'Practical quickstart steps for running Odoo within a Docker environment.',
     description: 'Practical quickstart steps for running Odoo within a Docker environment.',
+    backgroundColor: '#047857',
+    textDecorationColor: '#ffffff',
     contentSnippet: `
     <p>
       I've been asked a handful of times about
@@ -35,5 +37,4 @@ export default new Meta({
         '2019-03-09_odoo-down-for-maintenance',
         '2019-02-16_run-an-odoo-repl',
     ],
-    backgroundColor: '#134244',
 });
