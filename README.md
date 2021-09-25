@@ -2,6 +2,6 @@
 
 Welcome. :wave:
 
-This is where I keep the code for my personal website at [holdenrehg.com](https://holdenrehg.com).
+This is where I keep the code for my personal website at [holdenrehg.com](https://holdenrehg.com). It's built using [SvelteKit](https://kit.svelte.dev/) and [tailwindcss](https://tailwindcss.com/).
 
-Documentation [here](https://github.com/holdenrehg/portfolio/blob/sveltekit-migration/docs/index.md).
+Documentation [here](https://github.com/holdenrehg/portfolio/blob/master/docs/index.md).
