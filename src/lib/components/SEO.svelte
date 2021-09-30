@@ -113,12 +113,12 @@
         <meta property="og:title" content={ogTitle || title} />
         <meta property="og:description" content={ogDescription || description} />
         <meta propety="og:url" content={ogUrl} />
+        {#if ogImage || image}
+            <meta property="og:image" content={ogImage || image} />
+        {/if}
         {#if ogType === 'article'}
             {#if ogTags.length}
                 <meta property="article:tag" content={ogTags.split(',')} />
-            {/if}
-            {#if ogImage || image}
-                <meta property="og:image" content={ogImage || image} />
             {/if}
             {#if ogPublishTime}
                 <meta property="article:published_time" content={ogPublishTime.toISOString()} />
