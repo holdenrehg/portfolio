@@ -8,7 +8,7 @@
 
  -->
 <script>
-    import { onMount, beforeUpdate } from 'svelte';
+    import { onMount } from 'svelte';
     import { prettyDate } from '$lib/utils/date';
     import { highlightAll } from '$lib/highlight';
     import { siteData } from '$lib/siteData';
@@ -16,10 +16,9 @@
     import ArticlePreview from './ArticlePreview.svelte';
     import SEO from '$lib/components/SEO.svelte';
 
-    export let article;
+    export let meta;
+    export let content;
 
-    let meta = {};
-    let content = {};
     let relatedArticles;
 
     async function fetchRelated(slugs) {
@@ -27,35 +26,26 @@
     }
 
     async function init() {
-        meta = article.meta;
-        content = article.content;
-        relatedArticles = await fetchRelated(article.meta.related);
+        relatedArticles = await fetchRelated(meta.related);
         highlightAll('code pre');
     }
 
     onMount(init);
-    beforeUpdate(() => {
-        if (article.meta.id !== meta.id) {
-            init();
-        }
-    });
 </script>
 
-{#if Object.keys(meta).length}
-    <SEO
-        title={meta.title}
-        description={(meta.description || '').replace(/\n/g, ' ').replace(/\s+/g, ' ').trim()}
-        image={meta.coverImage
-            ? `https://holdenrehg.com${meta.coverImage}`
-            : 'https://holdenrehg.com/images/portraits/self-portrait-1.jpg'}
-        useTwitter={true}
-        twitterCardType={meta.coverImage ? 'summary_large_image' : 'summary'}
-        useOpenGraph={true}
-        ogType="article"
-        ogPublishTime={new Date(meta.datePosted)}
-        ogModifyTime={new Date(meta.dateModified || meta.datePosted)}
-    />
-{/if}
+<SEO
+    title={meta.title}
+    description={(meta.description || '').replace(/\n/g, ' ').replace(/\s+/g, ' ').trim()}
+    image={meta.coverImage
+        ? `https://holdenrehg.com${meta.coverImage}`
+        : 'https://holdenrehg.com/images/portraits/self-portrait-1.jpg'}
+    useTwitter={true}
+    twitterCardType={meta.coverImage ? 'summary_large_image' : 'summary'}
+    useOpenGraph={true}
+    ogType="article"
+    ogPublishTime={new Date(meta.datePosted)}
+    ogModifyTime={new Date(meta.dateModified || meta.datePosted)}
+/>
 
 <div class={Object.keys(meta).length && Object.keys(content).length ? '' : 'invisible'}>
     <div class="blog-article px-8 pt-16 md:px-20 pb-32 bg-white">
@@ -114,7 +104,7 @@
             <!-- Main Article Content -->
             <div class="blog-article-content text-helvetica md:w-2/3 md:mx-auto">
                 <div class="relative text-article tracking-article">
-                    {@html $$props.article.content.html}
+                    {@html $$props.content.html}
                 </div>
 
                 <!-- Article Footer -->

@@ -19,4 +19,4 @@
     export let article;
 </script>
 
-<Article {article} />
+<Article meta={article.meta} content={article.content} />
