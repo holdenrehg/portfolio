@@ -1,12 +1,14 @@
 .blog-article .blog-article-content p,
-.blog-article .blog-article-content blockquote {
+.blog-article .blog-article-content blockquote,
+.blog-article .blog-article-content li {
     @apply my-6 text-base;
     line-height: 1.75;
 }
 
 @screen md {
     .blog-article .blog-article-content p,
-    .blog-article .blog-article-content blockquote {
+    .blog-article .blog-article-content blockquote,
+    .blog-article .blog-article-content li {
         @apply text-lg;
     }
 }
@@ -18,7 +20,7 @@
 
 @screen md {
     .blog-article .blog-article-content h2 {
-        @apply text-4xl leading-12;
+        @apply text-3xl leading-10;
     }
 }
 
@@ -39,10 +41,6 @@
 /* First letter of article */
 .blog-article .blog-article-content .first-letter {
     @apply inline-block text-6xl font-extrabold -mt-6 pr-2 h-16 float-left;
-}
-
-/* Standard paragraphs */
-.blog-article .blog-article-content p {
 }
 
 /* Links */
