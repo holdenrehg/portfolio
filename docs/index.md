@@ -6,6 +6,7 @@ Install npm dependencies:
 
 ```console
 $ npm install
+$ npx playwright install
 ```
 
 ### Developing
@@ -30,6 +31,21 @@ To preview it locally:
 ```console
 $ npm run preview
 ```
+
+### Testing
+
+```console
+$ npm run test --slient
+```
+
+There are two sets of tests. One for testing endpoints (integration) and another for unit testing. They can be run individually:
+
+```console
+$ npm run test:endpoint --silent
+$ npm run test:unit --silent
+```
+
+[Playwright](https://playwright.dev/) is used for the endpoint tests and [uvu](https://github.com/lukeed/uvu/) is used for the unit tests.
 
 ### Endpoints
 
