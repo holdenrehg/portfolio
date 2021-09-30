@@ -122,19 +122,12 @@
                     <div>
                         <h3><strong>Thanks For Reading</strong></h3>
                         <p>
-                            I appreciate you taking the time to read any of my articles. If you're looking for
-                            more ramblings, take a look at the<a href="/blog"
-                                >entire catalog of articles I've written</a
-                            >. Or feel free to give me a follow on
-                            <a href="https://twitter.com/reedrehg" rel="noreferrer" target="_blank">Twitter</a>,
-                            <a href="https://www.instagram.com/reedrehg/" rel="noreferrer" target="_blank"
-                                >Instagram</a
-                            >, or
-                            <a href="https://www.github.com/holdenrehg/" rel="noreferrer" target="_blank"
-                                >Github</a
-                            >
-                            to see what else I've got going on. Or see my
-                            <a href="#site-footer">contact info</a> below if you want to get in touch with me.
+                            I appreciate you taking the time to read any of my articles. I hope it has helped you out
+                            in some way. If you're looking for more ramblings, take a look at the<a href="/blog">entire catalog of
+                            articles I've written</a>. Give me a follow on
+                            <a href="https://twitter.com/reedrehg" rel="noreferrer" target="_blank">Twitter</a> or
+                            <a href="https://www.github.com/holdenrehg/" rel="noreferrer" target="_blank">Github</a> to
+                            see what else I've got going on. Feel free to reach out if you want to talk!
                         </p>
                     </div>
 
