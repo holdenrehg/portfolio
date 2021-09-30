@@ -5,7 +5,9 @@ import sveltePreprocess from 'svelte-preprocess';
 const config = {
     kit: {
         target: '#svelte',
-        adapter: adapter(),
+        adapter: adapter({
+            precompress: true,
+        }),
     },
 
     preprocess: [
@@ -14,6 +16,13 @@ const config = {
             postcss: true,
         }),
     ],
+
+    prerender: {
+        enabled: true,
+        crawl: true,
+        force: true,
+        pages: ['*'],
+    },
 };
 
 export default config;

@@ -2,6 +2,8 @@ const devices = require('@playwright/test');
 
 module.exports = {
     testMatch: 'tests/endpoint/**/*.test.js',
+    workers: process.env.CI ? 2 : undefined,
+    globalSetup: require.resolve('./tests/endpoint/setup'),
     use: {
         headless: true,
         ignoreHTTPSErrors: true,
