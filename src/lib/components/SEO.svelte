@@ -105,6 +105,7 @@
         <meta name="twitter:description" content={twitterDescription || description} />
         {#if twitterImage || image}
             <meta property="twitter:image" content={twitterImage || image} />
+            <meta property="twitter:image:src" content={twitterImage || image} />
         {/if}
     {/if}
 

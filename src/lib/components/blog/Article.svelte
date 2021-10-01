@@ -49,7 +49,6 @@
             ? `https://holdenrehg.com${meta.coverImage}`
             : 'https://holdenrehg.com/images/portraits/self-portrait-1.jpg'}
         useTwitter={true}
-        twitterCardType={meta.coverImage ? 'summary_large_image' : 'summary'}
         useOpenGraph={true}
         ogType="article"
         ogPublishTime={new Date(meta.datePosted)}
