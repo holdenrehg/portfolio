@@ -205,7 +205,7 @@ web.assets_backend.1.css  | 97/9733c7a9a67906f8ded8d8607155351d8d2881d1
 <p>These are automatically generated, lazily, on page load.</p>
 <code class="xml">
     <pre>{`
-<template id="web.webclient_bootstrap">
+<${'template'} id="web.webclient_bootstrap">
     <t t-call="web.layout">
         <t t-set="head_web">
             <t t-call-assets="web.assets_common" t-js="false"/>
