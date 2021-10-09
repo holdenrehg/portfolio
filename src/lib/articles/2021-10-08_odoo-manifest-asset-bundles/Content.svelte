@@ -12,8 +12,8 @@
     >.
 </p>
 <p>
-    But this year specifically I have less to complain about at least. Out of 30+ modules migrated, across a
-    big spectrum of features, there were very few changes between 14 and 15. I&#39;m really hoping that other
+    But this year specifically, I have less to complain about at least. Out of 30+ modules migrated, across a
+    spectrum of modules/domains, there were very few changes between 14 and 15. I&#39;m really hoping that other
     developers have the same experience as they go through this process.
 </p>
 <h3>The two biggest changes I&#39;ve seen</h3>
@@ -31,15 +31,15 @@
 <p>
     Odoo creates &quot;asset bundles&quot; that get loaded into the frontend of the application. Each bundle
     contains different sets of assets. The assets are either JavaScript or CSS. As developers, we need a way
-    to hook into this bundles and say &quot;put my custom JS or CSS code into a bundle&quot;.
+    to hook into these bundles and say &quot;put my custom JS or CSS code into that bundle&quot;.
 </p>
 <h5><strong>Useful bundles</strong></h5>
-<p>There are a set of common bundles. The majority of custom code written will fit into these bundles:</p>
+<p>There is a set of common bundles to inherit. The majority of custom code written will fit into these bundles:</p>
 <ul>
     <li><code>web.assets_common</code>: Loaded everywhere (frontend, backend, point of sale).</li>
     <li>
         <code>web.assets_backend</code>: Only loaded into the &quot;backend&quot; of the application. By
-        backend, I mean where you login as a user as <code>/web/login</code>. This bundle is excluded from the
+        backend, I'm talking about where you login as a backend user at <code>/web/login</code>. This bundle is excluded from the
         frontend website.
     </li>
     <li>
@@ -53,9 +53,9 @@
     <li><code>web._assets_primary_variables</code>: Used to load custom scss variables for styles.</li>
 </ul>
 <p>
-    There are of course other bundles spread out throughout Odoo core. Some of used as helpers or aliases,
-    while others are specific to certain modules (non-<code>web</code> modules). I wouldn&#39;t worry about these
-    too much unless you are working on a specific or more obscure use case.
+    There are of course other bundles spread out throughout Odoo core. Some are used as helpers or aliases,
+    while others are specific to certain modules (non-<code>web</code> modules). I wouldn&#39;t worry about the
+    other bundles too much unless you are working on a specific or more obscure use case.
 </p>
 <h5><strong>The old way</strong></h5>
 <p>
@@ -100,8 +100,8 @@
     Now, it&#39;s all done in the <code>__manifest__.py</code> files. For example, if we create a JS file that
     we want to load into our module then we can add it to a bundle by defining an <code>assets</code> key in
     our <code>__manifest__.py</code> dictionary. Within <code>assets</code> we will add the name of the bundle
-    that we want to load into, and then a list of file paths starting with
-    <code>{'{module_name}'}/path/to/script.js</code>:
+    that we want to load into, and then a list of file paths starting your module name. For example, a custom
+    script path may look like <code>{'{module_name}'}/path/to/script.js</code>:
 </p>
 
 <code class="javascript">
@@ -131,8 +131,8 @@ export function hello() {
 <p>It&#39;s one less step than the old way of doing things.</p>
 <h5><strong>A note on flexibility</strong></h5>
 <p>
-    This new system is slightly less flexible at first glance. Before, we could control exact where we were
-    inserting assets based on an <code>xpath</code>. Now, by default it&#39;s always going to append the
+    This new system is slightly less flexible at first glance. Before, we could control exactly where we were
+    inserting assets based on an <code>xpath</code>. Now, by default it&#39;s going to append the
     assets to the very end of the bundle.
 </p>
 <p>
@@ -207,10 +207,11 @@ export function hello() {
 </code>
 <p><strong>include,remove,replace</strong></p>
 <p>
-    There are more operation options that a little less common day to day when writing custom modules. The <a
+    There are additional, less common operation options. The <a
         href="https://www.odoo.com/documentation/15.0/developer/reference/javascript/javascript_reference.html?highlight=asset%20bundle#"
         >official documentation</a
-    > has more, detailed information about these if you need them. I&#39;d recommend reading through it.
+    > has more, detailed information about these if you need them. I&#39;d recommend reading through it just in
+    case you run into a scenario where you need more fine grained control of asset bundling.
 </p>
 <h3>Final thoughts</h3>
 <p>
@@ -219,17 +220,17 @@ export function hello() {
 </p>
 <p>
     At the same time, it feels like another &quot;system&quot; that we need to understand. There&#39;s
-    implicit &quot;magic&quot; happening in the manifest files now with this <code>assets</code> options that
+    implicit &quot;magic&quot; happening in the manifest files with the new <code>assets</code> option. It
     isn&#39;t entirely obvious to new developers. As Odoo developers, we have to learn QWeb no matter what. So
-    before, we learned QWeb and then it was clear what was happening when inheriting the
+    before, after learning QWeb, it was clear what was happening when inheriting the
     <code>web.assets_backend</code>
-    template. We inherited it, wrote an <code>xpath</code> which we knew looked to the parent template,
-    inserted some line of code for <code>script</code> or <code>link</code> into the parent template, and then
-    we knew that it funneled it&#39;s way into the <code>&lt;head/&gt;</code> of the final HTML as some point.
+    template. We inherited it, wrote an <code>xpath</code> looking to the parent template,
+    inserted some line of code for <code>script</code> or <code>link</code> which was explicit, and then
+    we knew that it funneled its way into the <code>&lt;head/&gt;</code> of the final HTML at some point.
 </p>
 <p>
-    Now there is just one additional layer to understand. One additional conceptual barrier to understanding
-    how the underlying system works. Personally for me, and for other developers who have spent a lot of time
-    with Odoo this honestly an improvement. From the perspective of a brand new developer, I think it&#39;s
+    Now there is one additional layer to understand. One additional conceptual barrier to understanding
+    how the underlying system works. For developers who have spent a lot of time
+    with Odoo like myself, this is a benefit, but from the perspective of a brand new developer, I think it&#39;s
     one more thing that needs to be understood in an already large, complex system.
 </p>
