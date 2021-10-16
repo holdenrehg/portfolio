@@ -76,15 +76,50 @@
 />
 
 <div class="blog-article px-8 pt-10 md:px-20 pb-32">
-    <div class="content-wrapper pt-8">
+    <div class="content-wrapper pt-12">
         <div class="mx-auto">
-            <h2
-                class="md:w-1/2 mx-auto text-center mb-10 text-4xl text-indigo-900 text-vollkorn tracking-tighter"
-            >
-                <mark class="bg-indigo-100 hover:opacity-90">
-                    Writings on software, business, investing, and random incoherent thoughts.
-                </mark>
-            </h2>
+            <div class="md:w-2/3 mx-auto text-center">
+                <h2
+                    class="text-4xl text-indigo-900 text-vollkorn tracking-tighter"
+                >
+                    <mark class="bg-indigo-100 hover:opacity-90">
+                        Sharing my experiences to help programmers, managers, and business owners.
+                    </mark>
+                </h2>
+                <div class="md:w-3/5 mx-auto flex items-center mt-8 gap-6">
+                    <img
+                        src="/images/portraits/self-portrait-1.jpg"
+                        alt="Portrait of Holden Rehg"
+                        class="rounded-full"
+                        style="filter: grayscale(35%);"
+                        width="80px"
+                    />
+                    <p class="mt-3 text-base">
+                        Subscribe to my newsletter and I'll do what I can to help you build better software.
+                    </p>
+                </div>
+                <div id="revue-embed" class="mt-10">
+                    <form action="https://www.getrevue.co/profile/reedrehg/add_subscriber" method="post" id="revue-form" name="revue-form"  target="_blank">
+                        <div class="flex items-center justify-center">
+                            <input
+                                class="revue-form-field w-full text-lg py-1 px-3 border border-gray-500"
+                                placeholder="Your email address..."
+                                type="email"
+                                name="member[email]"
+                                id="member_email"
+                            />
+                            <input
+                                class="px-3 py-1 bg-purple-600 border border-purple-600 text-purple-100 text-lg font-bold"
+                                type="submit"
+                                value="Subscribe"
+                                name="member[subscribe]"
+                                id="member_submit"
+                            />
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="lg:my-20 w-full my-12 bg-gray-300"/>
             <form on:submit={(event) => event.preventDefault()}>
                 <div class="w-full relative">
                     <label for="articleSearch" class="sr-only">Search</label>

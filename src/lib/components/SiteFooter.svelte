@@ -21,6 +21,9 @@
                 <a href="/#about-me" class="hover:underline">
                     <span>About Me</span>
                 </a>
+                <a href="https://www.getrevue.co/profile/reedrehg/" target="_blank" class="hover:underline">
+                    <span>My newsletter</span>
+                </a>
                 <a href="mailto:holdenrehg@gmail.com" class="hover:underline">
                     <span>Email me</span>
                 </a>
