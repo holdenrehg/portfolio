@@ -808,7 +808,7 @@ def welcome():
     <link rel="stylesheet" href="/static/css/app.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <script src="https://js.stripe.com/v3/" ✂prettier:content✂="" ✂prettier:content✂="e30=" ✂prettier:content✂="e30=">{}</script>
+    <script src="https://js.stripe.com/v3/"></script>
 
     {% block head %}{% endblock %}
 </head>

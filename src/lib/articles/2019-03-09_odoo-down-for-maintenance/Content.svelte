@@ -75,10 +75,17 @@ location = /50x.html {
 <code class="html">
     <pre>{`
 <!doctype html>
-<title>Site Maintenance</title>
-
-<style ✂prettier:content✂="CmJvZHkgewogICAgdGV4dC1hbGlnbjogY2VudGVyOwogICAgcGFkZGluZzogMTUwcHg7CiAgICBmb250OiAyMHB4ICdIZWx2ZXRpY2EnLCBzYW5zLXNlcmlmOwogICAgY29sb3I6ICMzMzMzMzM7Cn0KCmgxIHsKICAgIGZvbnQtc2l6ZTogNTBweDsKfQoKYXJ0aWNsZSB7CiAgICBkaXNwbGF5OiBibG9jazsKICAgIHRleHQtYWxpZ246IGxlZnQ7CiAgICB3aWR0aDogNjUwcHg7CiAgICBtYXJnaW46IDAgYXV0bzsKfQoKYSB7CiAgICBjb2xvcjogI2RjODEwMDsKICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTsKfQoKYTpob3ZlciB7CiAgICBjb2xvcjogIzMzMzMzMzsKICAgIHRleHQtZGVjb3JhdGlvbjogbm9uZTsKfQo=" ✂prettier:content✂="" ✂prettier:content✂=""></style>
-
+<head>
+    <title>Site Maintenance</title>
+    <style>
+        body { text-align: center; padding: 150px; }
+        h1 { font-size: 50px; }
+        body { font: 20px Helvetica, sans-serif; color: #333; }
+        article { display: block; text-align: left; width: 650px; margin: 0 auto; }
+        a { color: #dc8100; text-decoration: none; }
+        a:hover { color: #333; text-decoration: none; }
+    </style>
+</head>
 <article>
     <h1>We will be back soon!</h1>
     <div>
