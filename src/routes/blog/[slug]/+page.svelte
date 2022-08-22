@@ -1,8 +1,8 @@
 <script context="module">
     export const hydate = false;
 
-    export async function load({ page, fetch }) {
-        const res = await fetch(`/blog/${page.params.slug}.raw`);
+    export async function load({ params, fetch }) {
+        const res = await fetch(`/blog/${params.slug}.raw`);
         const body = await res.json();
 
         return {
@@ -16,7 +16,9 @@
 <script>
     import Article from '$lib/components/blog/Article.svelte';
 
-    export let article;
+    export let data;
+
+    let {article} = data;
 </script>
 
 <Article meta={article.meta} content={article.content} />

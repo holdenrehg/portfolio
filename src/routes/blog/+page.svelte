@@ -1,16 +1,20 @@
 <script>
     import debounce from 'debounce';
-    import { onMount, tick } from 'svelte';
+    import { onMount } from 'svelte';
     import { fetchArticles, byMostRecentDate } from '$lib/blog';
     import ArticlePreview from '$lib/components/blog/ArticlePreview.svelte';
     import SEO from '$lib/components/SEO.svelte';
 
-    export let articles = [];
-    export let currentArticles = [];
-    export let tags = [];
-    export let tagLimit = 5;
-    export let loading = true;
-    export let searchQuery;
+    export let data;
+
+    let {
+        articles = [],
+        currentArticles = [],
+        tags = [],
+        tagLimit = 5,
+        loading = true,
+        searchQuery
+    } = data;
 
     /**
      * Converts a string to an alphanumeric (with spaces) string.

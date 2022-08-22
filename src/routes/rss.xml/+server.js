@@ -34,12 +34,12 @@ function rssXml(articles) {
     `;
 }
 
-export async function get() {
-    return {
+export async function GET() {
+    const body = rssXml(await findArticles({ withContent: false }));
+    return new Response(body, {
         headers: {
             'Cache-Control': 'max-age=0, s-maxage=3600',
             'Content-Type': 'application/xml',
-        },
-        body: rssXml(await findArticles({ withContent: false })),
-    };
+        }
+    });
 }

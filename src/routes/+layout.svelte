@@ -1,8 +1,10 @@
 <script>
     import '../styles';
-    import { mode } from '$app/env';
     import SiteHeader from '$lib/components/SiteHeader.svelte';
     import SiteFooter from '$lib/components/SiteFooter.svelte';
+
+    const mode = process.env.NODE_ENV;
+
 
     /**
      * Generates the <script/> tags needed for google analytics.

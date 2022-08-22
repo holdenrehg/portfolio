@@ -1,15 +1,19 @@
 <script>
     import SEO from '$lib/components/SEO.svelte';
 
-    export const busterImages = [
-        '/images/portfolio/buster/laptop-mockup-bom.png',
-        '/images/portfolio/buster/laptop-mockup-integrations.png',
-        '/images/portfolio/buster/mockup_2_screens.png',
-        '/images/portfolio/buster/sales-dashboard.png',
-        '/images/portfolio/buster/tablet-mockup-product.png',
-        '/images/portfolio/buster/tablet-mockup-search-orders.png',
-        '/images/portfolio/buster/tablet-mockup-users.png',
-    ];
+    export let data;
+
+    let {
+        busterImages = [
+            '/images/portfolio/buster/laptop-mockup-bom.png',
+            '/images/portfolio/buster/laptop-mockup-integrations.png',
+            '/images/portfolio/buster/mockup_2_screens.png',
+            '/images/portfolio/buster/sales-dashboard.png',
+            '/images/portfolio/buster/tablet-mockup-product.png',
+            '/images/portfolio/buster/tablet-mockup-search-orders.png',
+            '/images/portfolio/buster/tablet-mockup-users.png',
+        ]
+    } = data;
 
     function showLightbox(id) {
         return () => {
@@ -123,7 +127,7 @@
                             </span>
                             <span class="block mt-3 text-sm tracking-article pb-1"> 2015 - 2020 </span>
                             <span class="block text-sm tracking-article pb-1">
-                                <a href="bhs1.com" class="underline">https://bhs1.com</a>
+                                <a href="https://bhs1.com" class="underline">https://bhs1.com</a>
                             </span>
                         </div>
                         <p class="mt-4 lg:mt-0 lg:w-1/2 text-gray-700 leading-6">
@@ -197,7 +201,7 @@
                                 Building a team.
                             </span>
                             <span class="block tracking-article pt-3">
-                                <a href="bluestingray.com">@ Blue Stingray</a>
+                                <a href="https://bluestingray.com">@ Blue Stingray</a>
                             </span>
                         </div>
                         <div class="lg:w-1/2 pt-6 lg:pt-0 text-gray-700 text-lg leading-6">

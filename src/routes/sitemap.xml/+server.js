@@ -22,22 +22,22 @@ function sitemapXml(routes) {
     `;
 }
 
-export async function get() {
+export async function GET() {
     const staticRoutes = ['', 'books', 'work-with-me', 'portfolio', 'blog'];
     const articles = await findArticles({ withContent: false });
+    const body = sitemapXml([
+        ...staticRoutes.map((route) => {
+            return { name: route, frequency: 'yearly' };
+        }),
+        ...articles.map((article) => {
+            return { name: `blog/${article.meta.id}`, frequency: 'daily' };
+        }),
+    ]);
 
-    return {
+    return new Response(body, {
         headers: {
             'Cache-Control': 'max-age=0, s-maxage=3600',
             'Content-Type': 'application/xml',
         },
-        body: sitemapXml([
-            ...staticRoutes.map((route) => {
-                return { name: route, frequency: 'yearly' };
-            }),
-            ...articles.map((article) => {
-                return { name: `blog/${article.meta.id}`, frequency: 'daily' };
-            }),
-        ]),
-    };
+    });
 }

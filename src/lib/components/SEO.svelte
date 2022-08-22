@@ -5,25 +5,25 @@
     export let title;
     export let description;
     export let image;
-    export let url; // defaults to window.location.href
+    export let url = undefined; // defaults to window.location.href
     export let follow = true;
 
     export let useTwitter = false;
     export let twitterCardType = 'summary';
     export let twitterHandle = siteData.twitter;
-    export let twitterTitle; // defaults to title
-    export let twitterDescription; // default to description
-    export let twitterImage; // defaults to image
+    export let twitterTitle = undefined; // defaults to title
+    export let twitterDescription = undefined; // default to description
+    export let twitterImage = undefined; // defaults to image
 
     export let useOpenGraph = false;
     export let ogType = 'website';
-    export let ogTitle; // defaults to title
-    export let ogDescription; // defaults to description
-    export let ogUrl; // defaults to url
-    export let ogPublishTime;
-    export let ogModifyTime;
+    export let ogTitle = undefined; // defaults to title
+    export let ogDescription = undefined; // defaults to description
+    export let ogUrl = undefined; // defaults to url
+    export let ogPublishTime = undefined;
+    export let ogModifyTime = undefined;
     export let ogTags = [];
-    export let ogImage; // defaults to image
+    export let ogImage = undefined; // defaults to image
 
     let schema;
 
