@@ -4,6 +4,7 @@
     import { fetchArticles, byMostRecentDate } from '$lib/blog';
     import ArticlePreview from '$lib/components/blog/ArticlePreview.svelte';
     import SEO from '$lib/components/SEO.svelte';
+    import { siteData } from '$lib/siteData';
 
     export let data;
 
@@ -74,7 +75,7 @@
 <SEO
     title="Software, Business, and Investing Articles from Holden Rehg"
     description="I'm writing for readers who are trying to learn more about software development, python, odoo, small business practices, or investing."
-    image="https://holdenrehg.com/images/portraits/self-portrait-1.jpg"
+    image={`${siteData.url}/images/portraits/self-portrait-1.jpg`}
     useTwitter={true}
     useOpenGraph={true}
 />

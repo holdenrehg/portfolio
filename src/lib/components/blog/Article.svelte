@@ -37,8 +37,8 @@
     title={meta.title}
     description={(meta.description || '').replace(/\n/g, ' ').replace(/\s+/g, ' ').trim()}
     image={meta.coverImage
-        ? `https://holdenrehg.com${meta.coverImage}`
-        : 'https://holdenrehg.com/images/portraits/self-portrait-1.jpg'}
+        ? `${siteData.url}${meta.coverImage}`
+        : `${siteData.url}/images/portraits/self-portrait-1.jpg`}
     useTwitter={true}
     useOpenGraph={true}
     ogType="article"
@@ -138,7 +138,7 @@
                                     meta.id
                                 }&mini=true&title=Holden Rehg's Blog&summary=${encodeURIComponent(
                                     meta.title
-                                )}&source=https://holdenrehg.com`}
+                                )}&source=${siteData.url}`}
                                 target="_blank"
                                 rel="noreferrer"
                             >

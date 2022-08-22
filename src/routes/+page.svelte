@@ -2,12 +2,13 @@
     import PortraitGallery from '$lib/components/PortraitGallery.svelte';
     import RecentArticles from '$lib/components/blog/RecentArticles.svelte';
     import SEO from '$lib/components/SEO.svelte';
+    import { siteData } from '$lib/siteData';
 </script>
 
 <SEO
     title="Holden Rehg: I'm a Software Developer, Freelancer, and Blogger"
     description="Building Simpler Software, Helping Companies Build Software With Python and Odoo, and Blogging About It"
-    image="https://holdenrehg.com/images/portraits/self-portrait-1.jpg"
+    image={`${siteData.url}/images/portraits/self-portrait-1.jpg`}
     useTwitter={true}
     useOpenGraph={true}
 />

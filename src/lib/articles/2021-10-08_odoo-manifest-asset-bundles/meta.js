@@ -1,4 +1,5 @@
 import { Meta, Tags } from '$lib/blog';
+import { siteData } from '$lib/siteData';
 
 export default new Meta({
     id: '2021-10-08_odoo-manifest-asset-bundles',
@@ -21,7 +22,7 @@ export default new Meta({
             As some people may know, I believe there are better options as a community than to do annual,
             non-backwards compatible releases without automated tooling provided as an upgrade path. I&#39;ve talked
             about that a bit in my <a
-                href="https://www.holdenrehg.com/blog/2021-09-09_how-i-manage-local-development-odoo-projects"
+                href="${siteData.url}/blog/2021-09-09_how-i-manage-local-development-odoo-projects"
                 >managing hundreds of local development projects article</a
             >.
         </p>

@@ -1,3 +1,9 @@
+<script>
+    import { siteData } from '$lib/siteData';
+
+    export let siteUrl = siteData.url;
+</script>
+
 <p>
     In the last few weeks I have migrated over 30 modules from version 14 to version 15 of Odoo. This seems to
     be part of our painstaking yearly ritual as Odoo developers to attempt to keep our projects up to date
@@ -7,7 +13,7 @@
     As some people may know, I believe there are better options as a community than to do annual,
     non-backwards compatible releases without automated tooling provided as an upgrade path. I&#39;ve talked
     about that a bit in my <a
-        href="https://www.holdenrehg.com/blog/2021-09-09_how-i-manage-local-development-odoo-projects"
+        href={`${siteUrl}/blog/2021-09-09_how-i-manage-local-development-odoo-projects`}
         >managing hundreds of local development projects article</a
     >.
 </p>

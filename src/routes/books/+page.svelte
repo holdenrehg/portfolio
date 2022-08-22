@@ -1,10 +1,11 @@
 <script>
     import SEO from '$lib/components/SEO.svelte';
+    import { siteData } from '$lib/siteData';
 </script>
 
 <SEO
     title="Books written by Holden Rehg"
-    image="https://holdenrehg.com/images/portraits/self-portrait-1.jpg"
+    image={`${siteData.url}/images/portraits/self-portrait-1.jpg`}
     useTwitter={true}
     useOpenGraph={true}
 />

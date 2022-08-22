@@ -60,7 +60,7 @@
                 name: `"${ogTitle || title}"`,
                 logo: {
                     '@type': 'ImageObject',
-                    url: 'https://holdenrehg.com/images/portraits/self-portrait-1.jpg',
+                    url: `${siteData.url}/images/portraits/self-portrait-1.jpg`,
                 },
             },
         });

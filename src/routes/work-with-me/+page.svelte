@@ -1,11 +1,12 @@
 <script>
     import SEO from '$lib/components/SEO.svelte';
+    import { siteData } from '$lib/siteData';
 </script>
 
 <SEO
     title="Reach Out, Tell Me About Your Project, Let's Work Together"
     description="Consulting and Freelancing with Companies using Python and Odoo"
-    image="https://holdenrehg.com/images/portraits/self-portrait-1.jpg"
+    image={`${siteData.url}/images/portraits/self-portrait-1.jpg`}
     useTwitter={true}
     useOpenGraph={true}
 />

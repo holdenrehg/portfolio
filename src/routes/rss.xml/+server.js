@@ -22,7 +22,7 @@ function rssXml(articles) {
                                 <p>
                                     Continue reading the full post at <a rel="nofollow" href="${
                                         siteData.url
-                                    }/blog/${article.meta.id}">holdenrehg.com</a>.
+                                    }/blog/${article.meta.id}">${siteData.url}</a>.
                                 </p>
                             </content:encoded>
                         </item>
