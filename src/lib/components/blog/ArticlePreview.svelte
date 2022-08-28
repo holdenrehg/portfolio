@@ -7,7 +7,7 @@
 
 {#if meta.coverImage}
     <a
-        sveltekit:prefetch
+        sveltekit:reload
         href={`/blog/${meta.id}`}
         class="block opacity-90 cursor-pointer hover:underline hover:opacity-100"
     >
@@ -33,7 +33,7 @@
     <!-- "no cover image" article preview style has a dark background, light -->
     <!-- font, bigger padding to stand out. -->
     <a
-        sveltekit:prefetch
+        sveltekit:reload
         href={`/blog/${meta.id}`}
         class="block py-16 cursor-pointer hover:underline hover:opacity-100 md:min-height-400"
         style={`background-color: ${meta.backgroundColor}; color: ${meta.textDecorationColor}`}

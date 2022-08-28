@@ -1,4 +1,3 @@
-
 export const hydate = false;
 
 export async function load({ params, fetch }) {

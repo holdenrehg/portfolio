@@ -33,12 +33,14 @@ export const Tags = {
  * Dynamically import an articles details based on its slug id.
  */
 export async function fetchArticle(slug, { withContent = true } = {}) {
-    const meta = (await import(`./articles/${slug}/meta.js`)).default;
+    slug = slug.replace('.js', '');  // bug from the static build process, appends .js
+    const meta = (await import(`$lib/articles/${slug}/meta.js`)).default;
 
     if (withContent) {
+        const content = (await import(`$lib/articles/${slug}/Content.svelte`)).default.render();
         return {
             meta: meta,
-            content: (await import(`./articles/${slug}/Content.svelte`)).default.render(),
+            content: content,
         };
     }
 
@@ -57,11 +59,26 @@ export async function fetchArticle(slug, { withContent = true } = {}) {
  *             {meta: { ... }, content: {html: ...}},
  *         ]
  */
-export async function fetchArticles({ withContent = true } = {}) {
-    const res = await fetch(`/blog/all.raw?content=${withContent}`);
+export async function fetchArticles() {
+    const res = await fetch(`/blog/all.raw`);
     const body = await res.json();
 
     return body.articles;
+}
+
+export async function findArticleSlugs() {
+    return syncFindArticleSlugs(
+        await import('fs'),
+        await import('path'),
+    );
+}
+
+export function syncFindArticleSlugs(fs, path) {
+    const articlesPath = 'src/lib/articles';
+    const isDir = (src) => fs.lstatSync(src).isDirectory();
+    const slugs = fs.readdirSync(articlesPath).filter((fileName) => isDir(path.join(articlesPath, fileName)));
+
+    return slugs;
 }
 
 /**
@@ -69,15 +86,11 @@ export async function fetchArticles({ withContent = true } = {}) {
  *
  * This depends on the filesystem and node, so cannot be used from the frontend.
  */
-export async function findArticles({ withContent = true } = {}) {
-    const fs = await import('fs');
-    const path = await import('path');
+export async function findArticles({ slugs = undefined } = {}) {
+    if (slugs === undefined) slugs = await findArticleSlugs();
+    const articles = await Promise.all(slugs.map((slug) => fetchArticle(slug)));
 
-    const articlesPath = 'src/lib/articles';
-    const isDir = (src) => fs.lstatSync(src).isDirectory();
-    const slugs = fs.readdirSync(articlesPath).filter((fileName) => isDir(path.join(articlesPath, fileName)));
-
-    return await Promise.all(slugs.map((slug) => fetchArticle(slug, { withContent: withContent })));
+    return articles;
 }
 
 /**

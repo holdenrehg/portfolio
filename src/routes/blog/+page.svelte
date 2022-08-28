@@ -1,4 +1,6 @@
 <script>
+    import * as fs from 'fs';
+    import * as path from 'path';
     import debounce from 'debounce';
     import { onMount } from 'svelte';
     import { fetchArticles, byMostRecentDate } from '$lib/blog';
@@ -65,7 +67,7 @@
     }
 
     onMount(async () => {
-        articles = (await fetchArticles({ withContent: false })).sort(byMostRecentDate);
+        articles = (await fetchArticles()).sort(byMostRecentDate);
         currentArticles = articles;
         tags = [...new Set([].concat(...articles.map((article) => article.meta.tags)))];
         loading = false;

@@ -9,8 +9,8 @@ module.exports = {
         ignoreHTTPSErrors: true,
     },
     webServer: {
-        command: 'svelte-kit dev --port=2999 >/dev/null 2>&1',
-        port: 2999,
+        command: 'npm run build && npm run preview',
+        port: 4173,
         timeout: 120 * 1000,
         reuseExistingServer: !process.env.CI,
     },

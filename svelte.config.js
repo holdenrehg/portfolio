@@ -1,11 +1,23 @@
-import adapter from '@sveltejs/adapter-static';
+import staticAdapter from '@sveltejs/adapter-static';
 import sveltePreprocess from 'svelte-preprocess';
+import { syncFindArticleSlugs } from './src/lib/blog.js';
+import * as fs from 'fs';
+import * as path from 'path';
 
+const articleSlugs = syncFindArticleSlugs(fs, path);
 const config = {
     kit: {
-        adapter: adapter(),
+        adapter: staticAdapter(),
+        files: {
+            lib: './src/lib',
+        },
         prerender: {
-            default: true
+            default: true,
+            entries: [
+                ...articleSlugs.map(slug => `/blog/${slug}`),
+                ...articleSlugs.map(slug => `/blog/${slug}.raw`),
+                '/blog/all.raw'
+            ],
         },
     },
 

@@ -1,6 +1,7 @@
 {
     "name": "portfolio-svelte",
     "version": "0.0.1",
+    "type": "module",
     "scripts": {
         "dev": "vite dev",
         "build": "vite build",
@@ -28,7 +29,6 @@
         "tailwindcss": "^2.2.15",
         "uvu": "^0.5.1"
     },
-    "type": "module",
     "dependencies": {
         "@sveltejs/adapter-node": "^1.0.0-next.51",
         "debounce": "^1.2.1",
