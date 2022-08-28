@@ -15,9 +15,6 @@
                 <a href="/blog" class="hover:underline">
                     <span>Blog</span>
                 </a>
-                <a href="/books" class="hover:underline">
-                    <span>Books</span>
-                </a>
                 <a href="/#about-me" class="hover:underline">
                     <span>About Me</span>
                 </a>

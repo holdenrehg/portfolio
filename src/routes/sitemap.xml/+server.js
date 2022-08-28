@@ -23,7 +23,7 @@ function sitemapXml(routes) {
 }
 
 export async function GET() {
-    const staticRoutes = ['', 'books', 'work-with-me', 'portfolio', 'blog'];
+    const staticRoutes = ['', 'work-with-me', 'portfolio', 'blog'];
     const articles = await findArticles();
     const body = sitemapXml([
         ...staticRoutes.map((route) => {

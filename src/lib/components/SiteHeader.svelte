@@ -60,29 +60,6 @@
                     </a>
                 </div>
                 <div>
-                    <a class="cursor-pointer hover:underline" href="/books">
-                        <!-- tablericons: book -->
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="inline mr-2 w-6 h-6 icon icon-tabler icon-tabler-book"
-                            viewBox="0 0 24 24"
-                            stroke-width="1.5"
-                            stroke="#2c3e50"
-                            fill="none"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                            <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
-                            <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
-                            <line x1="3" y1="6" x2="3" y2="19" />
-                            <line x1="12" y1="6" x2="12" y2="19" />
-                            <line x1="21" y1="6" x2="21" y2="19" />
-                        </svg>
-                        <span>Books</span>
-                    </a>
-                </div>
-                <div>
                     <a class="cursor-pointer hover:underline" href="/#about-me">
                         <!-- tablericons: user -->
                         <svg
@@ -263,31 +240,6 @@
                                     <line x1="8" y1="16" x2="12" y2="16" />
                                 </svg>
                                 <span>Blog</span>
-                            </a>
-                            <a
-                                href="/books"
-                                class="-m-3 p-3 text-lg flex items-center rounded-sm hover:bg-gray-50"
-                                on:click={() => (menuOpen = false)}
-                            >
-                                <!-- tablericons: book -->
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    class="inline mr-2 w-6 h-6 icon icon-tabler icon-tabler-book"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="1.5"
-                                    stroke="#2c3e50"
-                                    fill="none"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                    <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
-                                    <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
-                                    <line x1="3" y1="6" x2="3" y2="19" />
-                                    <line x1="12" y1="6" x2="12" y2="19" />
-                                    <line x1="21" y1="6" x2="21" y2="19" />
-                                </svg>
-                                <span>Books</span>
                             </a>
                             <a
                                 href="/#about-me"
