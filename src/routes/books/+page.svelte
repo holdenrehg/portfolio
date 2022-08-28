@@ -59,7 +59,7 @@
                     <mark class="text-lg md:text-xl text-purple-900 bg-purple-200">Coming soon in 2022.</mark>
                 </div>
                 <hr class="my-10 md:my-6 bg-gray-300" />
-                <p class="mt-10 text-base md:text-xl md:leading-10">
+                <p class="mt-10 text-base md:text-xl md:leading-8">
                     I'm writing the book that I wish I had when first starting a computer science program in
                     college or before I started my first professional software development job. There's an
                     endless number of languages, technologies, tools, and methodologies. There's also plenty
@@ -67,7 +67,7 @@
                     find a "How to Program In Ruby" book or tutorial for example. Finding a book that teaches
                     you the skills to adapt to any software development environment are harder to find.
                 </p>
-                <p class="mt-6 text-base md:text-xl md:leading-10">
+                <p class="mt-6 text-base md:text-xl md:leading-8">
                     Over the years, I've learned ways to think about problem solving with code. That way of
                     thinking can be applied to any programming language or stack. I want to teach people who
                     are brand new to programming how to think about approaching programming at a high level.
@@ -75,38 +75,80 @@
                     problems with code, the basic constructs and mechanisms used in nearly every language, and
                     the flow of data throughout programs.
                 </p>
-                <hr class="my-10 bg-gray-400" />
+                <hr class="my-10 md:my-6 bg-gray-400" />
                 <div id="mc_embed_signup">
                     <p class="mb-3 text-lg leading-8">
-                        <span class="block"><strong>Sign up to my newsletter below</strong> to follow the project.</span>
+                        <span class="block">Sign up below to follow the project.</span>
                         <span class="block mt-5 md:mt-1"
                             >I'll email you when the book is officially released and some sample chapters
                             along the way.</span
                         >
                     </p>
-                    <div id="revue-embed">
-                        <form action="https://www.getrevue.co/profile/reedrehg/add_subscriber" method="post" id="revue-form" name="revue-form"  target="_blank">
-                            <div class="revue-form-group mb-3">
-                                <label for="member_email" class="block"><strong>Email address</strong></label>
+                    <form
+                        action="https://holdenrehg.us5.list-manage.com/subscribe/post?u=07bdf54de638656c1e27c6183&amp;id=7d0794ca73"
+                        method="post"
+                        id="mc-embedded-subscribe-form"
+                        name="mc-embedded-subscribe-form"
+                        class="validate mt-10 md:mt-0"
+                        target="_blank"
+                        novalidate
+                    >
+                        <div id="mc_embed_signup_scroll">
+                            <div class="mc-field-group">
+                                <label for="mce-EMAIL" class="block font-bold mb-1 text-lg"
+                                    >Email Address
+                                </label>
                                 <input
-                                    class="revue-form-field w-full text-lg mt-1 py-1 px-3"
-                                    placeholder="Your email address..."
                                     type="email"
-                                    name="member[email]"
-                                    id="member_email"
+                                    name="EMAIL"
+                                    class="block w-full required email px-2 py-2 border text-black"
+                                    placeholder="e.g. myemail@email.com"
+                                    id="mce-EMAIL"
+                                    required
                                 />
                             </div>
-                            <div class="revue-form-actions mb-3">
+                            <div id="mce-responses" class="clear">
+                                <div class="response hidden" id="mce-error-response" />
+                                <div class="response hidden" id="mce-success-response" />
+                            </div>
+                            <div class="absolute" style="left: -5000px;" aria-hidden="true">
                                 <input
-                                    class="px-3 py-1 bg-purple-600 text-purple-100 text-lg font-bold"
+                                    type="text"
+                                    name="b_07bdf54de638656c1e27c6183_7d0794ca73"
+                                    tabindex="-1"
+                                    value=""
+                                />
+                            </div>
+                            <div class="clear">
+                                <input
                                     type="submit"
                                     value="Subscribe"
-                                    name="member[subscribe]"
-                                    id="member_submit"
+                                    name="subscribe"
+                                    id="mc-embedded-subscribe"
+                                    class="cursor-pointer button mt-3 text-lg px-2 py-2 text-purple-100 bg-purple-900"
                                 />
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                        <script
+                            type="text/javascript"
+                            src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+                        <script>
+                            window.fnames = new Array();
+                            window.ftypes = new Array();
+                            fnames[0] = 'EMAIL';
+                            ftypes[0] = 'email';
+                            fnames[1] = 'FNAME';
+                            ftypes[1] = 'text';
+                            fnames[2] = 'LNAME';
+                            ftypes[2] = 'text';
+                            fnames[3] = 'ADDRESS';
+                            ftypes[3] = 'address';
+                            fnames[4] = 'PHONE';
+                            ftypes[4] = 'phone';
+                            fnames[5] = 'BIRTHDAY';
+                            ftypes[5] = 'birthday';
+                        </script>
+                    </form>
                 </div>
             </div>
         </div>
