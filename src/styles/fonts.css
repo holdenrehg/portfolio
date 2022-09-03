@@ -288,20 +288,24 @@
         /* Legacy iOS */ url('/fonts/knewave-v8-latin-regular.svg#Knewave') format('svg');
 }
 
+html, body {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    line-height: 18px;
+}
+
 .text-roboto {
     @apply tracking-wider;
-    font-family: 'Roboto Condensed';
+    /*font-family: 'Roboto Condensed';*/
 }
 
 .text-vollkorn {
-    font-family: 'Vollkorn';
+    /*font-family: 'Vollkorn';*/
 }
 
 .text-knewave {
-    font-family: 'Knewave';
+    /*font-family: 'Knewave';*/
 }
 
 .text-helvetica {
-    font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial,
-        'Lucida Grande', sans-serif;
+    /*font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;*/
 }

@@ -4,7 +4,7 @@
     export let menuOpen = false;
 </script>
 
-<div class="relative">
+<div id="site-header" class="relative">
     <div class="mx-auto">
         <!-- Desktop Menu -->
         <div

@@ -1,5 +1,7 @@
 <script>
-    import '../styles';
+    export const prerender = true;
+
+    import '../../styles';
     import SiteHeader from '$lib/components/SiteHeader.svelte';
     import SiteFooter from '$lib/components/SiteFooter.svelte';
 
