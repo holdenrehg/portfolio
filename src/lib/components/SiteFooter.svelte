@@ -3,7 +3,7 @@
 </script>
 
 <div id="site-footer" class="z-40 w-full">
-    <footer class="w-full min-h-64 px-8 md:px-20 py-10 bg-indigo-900 text-orange-100 text-vollkorn">
+    <footer class="w-full min-h-64 px-8 md:px-20 py-10 bg-gray-800 text-vollkorn">
         <div class="content-wrapper text-indigo-50 text-left max-w-screen-xl">
             <p class="pb-3 text-3xl font-bold uppercase tracking-wider text-roboto">
                 <span>Holden Rehg</span>
