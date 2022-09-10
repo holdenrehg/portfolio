@@ -16,7 +16,8 @@ const config = {
             entries: [
                 ...articleSlugs.map(slug => `/blog/${slug}`),
                 ...articleSlugs.map(slug => `/blog/${slug}.raw`),
-                '/blog/all.raw'
+                '/blog/all.raw',
+                '/sitemap.xml',
             ],
         },
     },

@@ -8,7 +8,7 @@
     <div class="mx-auto">
         <!-- Desktop Menu -->
         <div
-            class="hidden md:flex justify-between items-center px-8 md:px-20 py-8 text-helvetica text-indigo-900 font-semibold mx-auto"
+            class="hidden md:flex justify-between items-center border-b-2 border-gray-500 px-8 md:px-20 py-5 text-helvetica text-indigo-900 font-semibold mx-auto"
             style="font-size: 0.96rem;"
         >
             <div class="flex flex-col gap-1">
@@ -115,8 +115,6 @@
 
             <Socials class="gap-8" color="indigo-900" size="26px" />
         </div>
-
-        <hr class="px-20 mx-auto mt-5 bg-indigo-900" style="opacity: 12%;" />
 
         <!-- Mobile Menu -->
         <div class="fixed top-0 inset-x-0 transition transform origin-top-right z-50 border-b md:hidden">
