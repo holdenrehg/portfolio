@@ -4,6 +4,7 @@ export default new Meta({
     id: '2021-09-20_rule-of-three',
     title: 'The Rule of Three: Applying abstractions and patterns',
     datePosted: '2021-09-30 10:45 AM',
+    dateModified: '2022-09-10 3:00 PM',
     coverImage: '/images/articles/rule-of-three/cover.jpg',
     thumbnailImage: '/images/articles/rule-of-three/cover-min.jpg',
     description:
