@@ -4,5 +4,6 @@ export const siteData = {
     description: 'The place where I write about my life and my work.',
     author: 'Holden Rehg',
     twitter: '@reedrehg',
+    bluesky: 'reedrehg.bsky.social',
     url: 'https://holdenrehg.com',
 };
